@@ -191,13 +191,13 @@ public handleRequest(request: express.Request, response: express.Response): bool
             method = action['method'];
         }
 
-        this.logger.log('debug', `Checking ${method} ${urlRegexString}`);
         if (request.method === method && urlRegex.test(request.url)) {
             this.logger.log('debug', `Found action with regex ${urlRegexString}`);
 
             const actionType: string = action['action-type'];
 
             if (actionType === 'SendResponse') {
+                this.logger.log('debug', `Sending: ${JSON.stringify(action['response'])}`);
                 response.json(action['response']);
             } else if (actionType === 'Fail') {
                 response.status(action['responseCode']).json(action['response']);

@@ -41,6 +41,13 @@ export class TrapHive<T> {
         }
     }
 
+    clearAllTrappedMessages(): void {
+        this.traps.forEach(trap => {
+            let capture = trap as CaptureTrap<any>;
+            capture.clearMessages();
+        });
+    }
+
     async catch(type: string, message: T): Promise<void> {
         let promises: Promise<void>[] = [];
         for (let trap of this.traps.values()) {

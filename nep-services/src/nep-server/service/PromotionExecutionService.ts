@@ -1,222 +1,11 @@
 'use strict';
 
-import * as wl from '@config/winston';
+import { CommonPromotion } from './CommonPromotion'
 import * as express from 'express';
 import { skipIfDummyMode } from './ServiceCommon';
-import { PromotionType, BasicItemPromotion, BasicOrderPromotion, ItemPromotion, OrderPromotion, IPromotion, TransactionOverLimitPromotion } from './Promotions';
-import { TrapHive, CaptureTrap } from './PesTrap';
-
-const logger = wl.init('PromotionExecutionService');
-let consumers : Map<string, object>
-let promotions: Array<IPromotion> = [];
-let trapHive: TrapHive<any> = new TrapHive<any>();
-let receiptMessages: Array<any> = [];
-let customStatusCode: number = null;
-const messages = getArrayWithLimitedLength();
-
-function initializeConsumers(body: any) {
-    let consumers = new Map<string, object>();
-    if ("consumers" in body) {
-        const data = body.consumers;
-        const propertyNames = ["identifierStatus", "consumerStatus", "firstName", "lastName", "internalId"];
-        data.forEach((consumer: any) => {
-            let consumerData:any = {};
-            for(const propertyName of propertyNames) {
-                if (propertyName in consumer) {
-                    consumerData[propertyName] = consumer[propertyName];
-                };
-            };
-
-            consumers.set(JSON.stringify([consumer.identifier, consumer.type]), consumerData);
-        });
-    };
-
-    return consumers;
-}
-
-function initializePromotions(body: any) {
-    let promotions: Array<IPromotion> = [];
-    if ("promotions" in body) {
-        const data = body.promotions;
-        data.forEach((promotion: any) => {
-            switch(promotion.type) {
-                case PromotionType.BasicItem:
-                    promotions.push(new BasicItemPromotion(promotion));
-                    break;
-                case PromotionType.BasicOrder:
-                    promotions.push(new BasicOrderPromotion(promotion));
-                    break;
-                case PromotionType.TransactionOverLimit:
-                    promotions.push(new TransactionOverLimitPromotion(promotion));
-                    break;
-            }
-        });
-    };
-
-    return promotions;
-}
-
-function initializeReceiptMessages(body: any) {
-    let messages: Array<any> = [];
-
-    if ("receiptMessages" in body) {
-        messages = body.receiptMessages;
-    };
-
-    return messages;
-}
-
-function generateConsumerData(body: any) {
-    let consumerData = {};
-    if (consumers !== undefined && ("consumerIds" in body) && (body.consumerIds.length > 0) && ("identifier" in body.consumerIds[0]) && ("type" in body.consumerIds[0])) {
-        let key = JSON.stringify([body.consumerIds[0].identifier, body.consumerIds[0].type]);
-        if (consumers.has(key))
-        {          
-            consumerData = consumers.get(key);
-        }
-    };
-
-    return consumerData;
-}
-
-function generateRewardPrompts(body: any, approvals:Map<string, string>) {
-    let rewardPrompts = [];
-    if ("items" in body) {
-        const items:any = body.items;
-        promotions.forEach((promotion: IPromotion) => {
-            if (promotion.requiresRewardApproval() && !promotion.isApproved(approvals) && !promotion.isRejected(approvals) && promotion.isApplicable(items)) {
-                const rewardPrompt:any = {
-                    "promotionId": promotion.data.promotionId,
-                    "description" : promotion.data.rewardApproval.description,
-                    "notificationFor" : promotion.data.rewardApproval.notificationFor,
-					"promotionName" : promotion.data.rewardApproval.promotionName,
-					"promotionDescription" : promotion.data.rewardApproval.promotionDescription
-                }
-
-                rewardPrompts.push(rewardPrompt);
-            }
-        });
-
-    }
-
-    return rewardPrompts;
-}
-
-function generateItemLevelAppliedRewards(body: any, approvals:Map<string, string>) {
-    let itemPromotions = [];
-    if ("items" in body) {
-        const items:any = body.items;
-
-        items.forEach((item: any) => {
-            let itemPromotion = {
-                "sequenceId" : item.sequenceId,
-                "categoryCode" : item.categoryCode,
-                "itemName" : item.itemName,
-                "discountRewards" : []
-            };
-
-            promotions.forEach((iPromotion: IPromotion) => {
-                if (iPromotion instanceof ItemPromotion) {
-                    let promotion: ItemPromotion = <ItemPromotion> iPromotion;
-                    if (promotion.isApplicableToTransactionItem(item) && promotion.isApplicable(items) && !promotion.isRejected(approvals)) {
-                        itemPromotion.discountRewards.push(promotion.getItemLevelDiscountReward(item.quantity.units));
-                    };
-                }
-            });
-
-            if (itemPromotion.discountRewards.length > 0) {
-                itemPromotions.push(itemPromotion);
-            };
-        });
-    };
-
-    return itemPromotions;
-}
-
-function generateOrderLevelAppliedRewards(body: any, approvals:Map<string, string>) {
-    let orderPromotion = null;
-    if ("items" in body) {
-        const items:any = body.items;
-
-        promotions.forEach((promotion: IPromotion) => {
-            if (promotion instanceof OrderPromotion && promotion.isApplicable(items) && !promotion.isRejected(approvals)) {
-                if (orderPromotion === null) {
-                    orderPromotion = {
-                        "discountRewards" : []
-                    }
-                }
-                orderPromotion.discountRewards.push(promotion.getOrderLevelDiscountReward());
-            };
-        });
-    }
-
-    return orderPromotion;
-}
-
-function generateSellingEngineNotifications(request_type = 'get') {
-    let sellingEngineNotifications = [{
-        "receiptMessages": receiptMessages[request_type]
-    }];
-    
-    return sellingEngineNotifications;
-}
-
-function generateNotifications(prompts: any) {
-    let notification = [ {
-            "maxRewardApprovals": 1,
-            "rewardApprovals": prompts
-        }
-    ];
-
-    return notification;
-}
-
-function readRewardApprovals(body: any) {
-    let rewardApprovals = new Map<string, string>();
-    if ("rewardApprovals" in body) {
-        const approvals = body.rewardApprovals;
-        approvals.forEach((approval: any) => {
-            rewardApprovals.set(approval.promotionId, approval.approvalFlag);
-        });
-    };
-
-    return rewardApprovals;
-}
-
-function getTrapValidator(body: any): (callType: string, message: any) => boolean {
-    if ("callType" in body) {
-        return (callType: string, message: any) => callType == body.callType;
-    }
-
-    return (callType: string, message: any) => true;
-}
-
-function getArrayWithLimitedLength() {
-    var array = new Array();
-
-    array.push = function () {
-        if (this.length >= 100) {
-            this.shift();
-        }
-        return Array.prototype.push.apply(this,arguments);
-    }
-
-    return array;
-
-}
-
-function getCustomStatusCode() {
-    const useCode: boolean = customStatusCode != null;
-    return { use: useCode, value: customStatusCode }
-}
-
-function checkHeaders(headers : any) {
-    const requiredHeaders = ["content-type", "nep-enterprise-unit", "nep-application-key", "nep-organization", "nep-device-id"]
-    const actualHeaders = Object.keys(headers)
-    return requiredHeaders.every(header => actualHeaders.includes(header))
-}
 
 export function initializeRoutes(app, simulatorContext) {
+    let commonPromotion = new CommonPromotion('PromotionExecutionService', simulatorContext);
    /**
      * @swagger
      * /promotion-execution/promotions/get:
@@ -239,93 +28,7 @@ export function initializeRoutes(app, simulatorContext) {
      *                      schema:
      *                          type: string
      */
-    app.post('/promotion-execution/promotions/get',
-        async (req: express.Request, res: express.Response, next: express.NextFunction ): Promise<void> => {
-            logger.log('info', 'Handling get promotions request');
-            
-            await trapHive.catch("Get", req.body);
-
-            if (simulatorContext.isDummyMode()) {
-                next();
-            } else {
-                const statusCode = getCustomStatusCode();
-                if (statusCode.use) {
-                    res.status(statusCode.value).end();
-                } else {
-                    const approvals:Map<string, string> = readRewardApprovals(req.body);
-                    const consumer = generateConsumerData(req.body);
-                    const prompts = generateRewardPrompts(req.body, approvals);
-
-                    let resBody:any = {
-                        "orderBeginDateTime" : req.body["orderBeginDateTime"],
-                        "consumer" : consumer,
-                    };
-
-                    if (prompts.length > 0) {
-                        resBody.notifications = generateNotifications(prompts);
-                    } else {
-                        resBody.itemLevelAppliedRewards = generateItemLevelAppliedRewards(req.body, approvals);
-                        resBody.orderLevelAppliedRewards = generateOrderLevelAppliedRewards(req.body, approvals);
-                        resBody.sellingEngineNotifications = generateSellingEngineNotifications('get');
-                    };
-
-                    if(checkHeaders(req.headers)) {
-                        res.json(resBody);
-                    } else {
-                        logger.log('error', "HTTP request has missing required header.");
-                        res.status(400).end();
-                    }
-                }
-            };
-
-            messages.push(req.body);
-        });
-
-   /**
-     * @swagger
-     * /promotion-execution/promotions/finalize:
-     *  post:
-     *      summary: This rest endpoint is used to finalize the consumer's orders, and hence awarded rewards
-     *      tags:
-     *          - PES interface
-     *      requestBody:
-     *          description: https://developer.ncr.com/portals/dev-portal/api-explorer/details/10/documentation?version=1.9.0-20190807121816-707cce4&path=post_promotions_finalize
-     *          required: true
-     *          content:
-     *              application/json:
-     *                  schema:
-     *                      type: string
-     *      responses:
-     *          204:
-     *              description: Success.
-     */
-    app.post('/promotion-execution/promotions/finalize', skipIfDummyMode(simulatorContext), async (req: express.Request, res: express.Response): Promise<void> => {
-        logger.log('info', 'Handling finalize promotions request');
-
-        await trapHive.catch("Finalize", req.body);
-
-        if(checkHeaders(req.headers)) {
-            const statusCode = getCustomStatusCode()
-            if (statusCode.use) {
-                res.status(statusCode.value).end();
-            } else {
-                const consumer = generateConsumerData(req.body);
-                let resBody:any = {
-                    "orderBeginDateTime" : req.body["orderBeginDateTime"],
-                    "consumer" : consumer,
-                };
-
-                resBody.sellingEngineNotifications = generateSellingEngineNotifications('finalize');
-                res.json(resBody);
-                res.status(200).end();
-            }
-        } else {
-            logger.log('error', "HTTP request has missing required header.");
-            res.status(400).end();
-        }
-
-        messages.push(req.body);
-    });
+    app.post('/promotion-execution/promotions/get', (req: express.Request, res: express.Response, next: express.NextFunction) => commonPromotion.getPromotions(req, res, next));
 
    /**
      * @swagger
@@ -345,33 +48,7 @@ export function initializeRoutes(app, simulatorContext) {
      *          204:
      *              description: Success.
      */
-    app.post('/promotion-execution/promotions/sync-finalize', skipIfDummyMode(simulatorContext), async (req: express.Request, res: express.Response): Promise<void> => {
-        logger.log('info', 'Handling sync-finalize promotions request');
-
-        await trapHive.catch("SyncFinalize", req.body);
-
-        if(checkHeaders(req.headers)) {
-            const statusCode = getCustomStatusCode()
-            if (statusCode.use) {
-                res.status(statusCode.value).end();
-            } else {
-                const consumer = generateConsumerData(req.body);
-                let resBody:any = {
-                    "orderBeginDateTime" : req.body["orderBeginDateTime"],
-                    "consumer" : consumer,
-                };
-
-                resBody.sellingEngineNotifications = generateSellingEngineNotifications('sync-finalize');
-                res.json(resBody);
-                res.status(200).end();
-            }
-        } else {
-            logger.log('error', "HTTP request has missing required header.");
-            res.status(400).end();
-        }
-
-        messages.push(req.body);
-    });
+    app.post('/promotion-execution/promotions/sync-finalize', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.finalize(req, res));
 
     /**
      * @swagger
@@ -391,25 +68,7 @@ export function initializeRoutes(app, simulatorContext) {
      *          204:
      *              description: Success.
      */
-    app.post('/promotion-execution/promotions/void', skipIfDummyMode(simulatorContext), async (req: express.Request, res: express.Response): Promise<void> => {
-        logger.log('info', 'Handling void promotions request');
-
-        await trapHive.catch("Void", req.body);
-
-        if(checkHeaders(req.headers)) {
-            const statusCode = getCustomStatusCode()
-            if (statusCode.use) {
-                res.status(statusCode.value).end();
-            } else {
-                res.status(204).end();
-            }
-        } else {
-            logger.log('error', "HTTP request has missing required header.");
-            res.status(400).end();
-        }
-
-        messages.push(req.body);
-    });
+    app.post('/promotion-execution/promotions/void', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.voidPromotion(req, res));
 
     // ---------------------------------------------------
     // PRIVATE SIMULATOR METHODS
@@ -624,6 +283,26 @@ export function initializeRoutes(app, simulatorContext) {
      *                                                  required: true
      *                                      locale:
      *                                          type: string
+     *                          supportedCards:
+     *                               type: array
+     *                               items:
+     *                                   type: object
+     *                                   properties:
+     *                                       cardNumber:
+     *                                           type: string
+     *                                           required: true
+     *                                       promptType:
+     *                                           type: string
+     *                                           required: true
+     *                                           enum: [
+     *                                               BOOLEAN,
+     *                                               NUMERIC,
+     *                                               FREE_TEXT,
+     *                                               MULTI_SELECT
+     *                                           ]
+     *                                       promptMessage:
+     *                                           type: string
+     *                                           required: false
      *                  example:
      *                      {
      *                          "consumers":[
@@ -796,6 +475,13 @@ export function initializeRoutes(app, simulatorContext) {
      *                                  ],
      *                                  "locale": "en-GB"
      *                              }
+     *                          ],
+     *                          "supportedCards": [
+     *                              {
+     *                                  "cardNumber": "1234444321",
+     *                                  "promptType": "BOOLEAN",
+     *                                  "promptMessage": "Apply this fantastic discount?"
+     *                              }
      *                          ]
      *                      }
      *      responses:
@@ -806,14 +492,7 @@ export function initializeRoutes(app, simulatorContext) {
      *                      schema:
      *                          type: string
      */
-    app.post('/promotion-execution/simulator/configuration', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response): void => {
-        consumers = initializeConsumers(req.body);
-        promotions = initializePromotions(req.body);
-        receiptMessages = initializeReceiptMessages(req.body);
-        res.json({
-            "configured" : true
-        });
-    });
+    app.post('/promotion-execution/simulator/configuration', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.configure(req, res));
 
     /**
      * @swagger
@@ -830,9 +509,7 @@ export function initializeRoutes(app, simulatorContext) {
      *                      schema:
      *                          type: string
      */
-    app.get('/promotion-execution/simulator/messages', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response): void => {
-        res.json(messages);
-    });
+    app.get('/promotion-execution/simulator/messages', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.getMessages(req, res));
 
     /**
      * @swagger
@@ -849,14 +526,7 @@ export function initializeRoutes(app, simulatorContext) {
      *                      schema:
      *                          type: string
      */
-    app.delete('/promotion-execution/simulator/messages', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response): void => {
-        const resBody:any = {
-            "deletedMessages" : messages.length
-        };
-
-        messages.length = 0;
-        res.json(resBody);
-    });
+    app.delete('/promotion-execution/simulator/messages', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.deleteMessages(req, res));
 
     /**
      * @swagger
@@ -889,10 +559,7 @@ export function initializeRoutes(app, simulatorContext) {
      *                      schema:
      *                          type: string
      */
-    app.get('/promotion-execution/simulator/capture-trap', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response): void => {
-        const trapId: number = trapHive.createCaptureTrap(getTrapValidator(req.body));
-        res.json({ "trapId": trapId });
-    });
+    app.get('/promotion-execution/simulator/capture-trap', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.captureTrap(req, res));
 
     /**
      * @swagger
@@ -929,16 +596,7 @@ export function initializeRoutes(app, simulatorContext) {
      *          400:
      *              description: Missing "trapDelay" element.
      */
-    app.get('/promotion-execution/simulator/delay-trap', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response): void => {
-        const reqBody: any = req.body;
-        if ("trapDelay" in reqBody) {
-            const delay: number = reqBody.trapDelay;
-            const trapId: number = trapHive.createDelayTrap(getTrapValidator(req.body), delay);
-            res.json({ "trapId": trapId });
-        } else {
-            res.status(400).send("Missing 'trapDelay' element in request.");
-        }
-    });
+    app.get('/promotion-execution/simulator/delay-trap', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.delayTrap(req, res));
 
     /**
      * @swagger
@@ -967,16 +625,7 @@ export function initializeRoutes(app, simulatorContext) {
      *          400:
      *              description: Missing "trapId" element.
      */
-    app.delete('/promotion-execution/simulator/trap', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response): void => {
-        const reqBody: any = req.body;
-        if ("trapId" in reqBody) {
-            const trapId: number = reqBody.trapId;
-            trapHive.disposeTrap(trapId);
-            res.json({ "result": "success" });
-        } else {
-            res.status(400).send("Missing 'trapId' element in request.");
-        }
-    });
+    app.delete('/promotion-execution/simulator/trap', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.deleteTrap(req, res));
 
     /**
      * @swagger
@@ -1014,28 +663,7 @@ export function initializeRoutes(app, simulatorContext) {
      *          400:
      *              description: Missing "trapId" or "timeout" element.
      */
-    app.get('/promotion-execution/simulator/waitForMessages', skipIfDummyMode(simulatorContext), async (req: express.Request, res: express.Response): Promise<void> => {
-        const reqBody: any = req.body;
-        if (("trapId" in reqBody) && ("timeout" in reqBody))
-        {
-            const trapId: number = reqBody.trapId;
-            const timeout: number = reqBody.timeout;
-
-            try {
-                const trap: CaptureTrap<any> = trapHive.getTrap<CaptureTrap<any>>(trapId);
-                if (trap != null) {
-                    let messages: any[] = await trap.waitForMessagesAsync(timeout);
-                    res.json(messages);
-                } else {
-                    res.status(400).send(`Invalid trap ID ${trapId}.`);
-                }
-            } catch (exception) {
-                res.status(500).send(exception);
-            }
-        } else {
-            res.status(400).send("Missing 'trapId' or 'timeout' element in request.");
-        }
-    });
+    app.get('/promotion-execution/simulator/waitForMessages', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.waitForMessages(req, res));
 
     /**
      * @swagger
@@ -1068,21 +696,7 @@ export function initializeRoutes(app, simulatorContext) {
      *          400:
      *              description: Missing "trapId" element.
      */
-    app.delete('/promotion-execution/simulator/trappedMessages', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response): void => {
-        const reqBody: any = req.body;
-        if ("trapId" in reqBody) {
-            const trapId: number = reqBody.trapId;
-            const trap: CaptureTrap<any> = trapHive.getTrap<CaptureTrap<any>>(trapId);
-            if (trap != null) {
-                trap.clearMessages();
-                res.json({ "result": "success" });
-            } else {
-                res.status(400).send(`Invalid trap ID ${trapId}.`);
-            }
-        } else {
-            res.status(400).send("Missing 'trapId' element in request.");
-        }
-    });
+    app.delete('/promotion-execution/simulator/trappedMessages', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.deleteTrap(req, res));
 
     /**
      * @swagger
@@ -1115,22 +729,19 @@ export function initializeRoutes(app, simulatorContext) {
      *          400:
      *              description: Missing "statusCode" element.
      */
-    app.post('/promotion-execution/simulator/customStatusCode', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response): void => {
-        const reqBody: any = req.body;
-        if ("statusCode" in reqBody) {
-            const statusCode: number = reqBody.statusCode;
-            customStatusCode = statusCode;
-            res.json({ "result": "success" });
-        } else {
-            res.status(400).send("Missing 'statusCode' element in request.");
-        }
-    });
+    app.post('/promotion-execution/simulator/customStatusCode', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.addCustomStatusCode(req, res));
 
     /**
      * @swagger
      * /promotion-execution/simulator/customStatusCode:
      *  delete:
      *      summary: Clears configured custom status code or do nothing if the status code is not configured.
+     *      parameters:
+     *          - in: query
+     *            name: clear
+     *            schema:
+     *                type: string
+     *            description: Value 'true' means all trapped messages should be deleted. Default is 'false'.
      *      tags:
      *          - PES interface
      *      responses:
@@ -1141,8 +752,5 @@ export function initializeRoutes(app, simulatorContext) {
      *                      schema:
      *                          type: string
      */
-    app.delete('/promotion-execution/simulator/customStatusCode', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response): void => {
-        customStatusCode = null;
-        res.json({ "result": "success" });
-    });
+    app.delete('/promotion-execution/simulator/customStatusCode', skipIfDummyMode(simulatorContext), (req: express.Request, res: express.Response) => commonPromotion.deleteCustomStatusCode(req, res));
 }

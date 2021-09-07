@@ -14,6 +14,9 @@ import * as storageService from './service/StorageService';
 import * as provisioningService from './service/ProvisioningService';
 import * as rcmServerService from './service/RCMServerService';
 import * as promotionExecutionService from './service/PromotionExecutionService';
+import * as unifiedLoyaltyPromotions from './service/UnifiedLoyaltyPromotion';
+import * as posConnectService from './service/PosConnectService';
+
 import {Context} from './simulator/Context'
 import * as router from './simulator/Router';
 
@@ -35,8 +38,10 @@ app.use((req: express.Request, res: express.Response, next: express.NextFunction
         if (req.headers['content-type'] !== undefined) {
             logger.log('debug', `Detected ${req.headers['content-type']}`);
         } else {
-            logger.log('warning', `Failed to detect content-type`);
+            logger.log('warn', `Failed to detect content-type`);
         }
+    } else {
+        logger.log('debug', `Received ${req.headers['content-type']}`);
     }
 
     next();
@@ -47,6 +52,7 @@ app.use(bodyParser.raw({ limit: '50mb', type: 'binary/octet-stream' }));
 app.use(bodyParser.json({ limit: '50mb', type: 'application/json' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000, type: 'application/x-www-form-urlencoding' }));
 app.use(bodyParser.raw({ limit: '50mb', type: 'application/xml' }));
+app.use(bodyParser.text({ limit: '50mb', type: 'text/plain' }));
 
 app.use((req: express.Request, res: express.Response, next: express.NextFunction): void => {
     if (typeis(req, ['application/xml'])) {
@@ -105,6 +111,8 @@ export function initializeServer(simulatorContext: Context, serverPort: number):
     provisioningService.initializeRoutes(app, simulatorContext);
     rcmServerService.initializeRoutes(app, simulatorContext);
     promotionExecutionService.initializeRoutes(app, simulatorContext);
+    unifiedLoyaltyPromotions.initializeRoutes(app, simulatorContext);
+    posConnectService.initializeRoutes(app, simulatorContext);
 
     app.use((req: express.Request, res: express.Response): void => {
         res.status(400).json({
@@ -122,4 +130,3 @@ export function initializeServer(simulatorContext: Context, serverPort: number):
 
     logger.log('info', `NEP Server started on ${serverPort}`);
 };
-    

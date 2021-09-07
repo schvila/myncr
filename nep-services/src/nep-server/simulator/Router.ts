@@ -14,7 +14,8 @@ export function initializeRoutes(app: any, server: any, context: Context) {
     });
 
     app.route('/simulator/requests').delete((request: express.Request, response: express.Response) => {
-        response.json(context.clearAllRequests());
+        context.clearAllRequests();
+        response.status(204).end();
     });
 
     app.route('/simulator/request').get((request: express.Request, response: express.Response) => {
@@ -33,7 +34,7 @@ export function initializeRoutes(app: any, server: any, context: Context) {
 
     app.route('/simulator/response-action').post((request: express.Request, response: express.Response) => {
         context.storeResponseAction(request);
-        response.end();
+        response.status(204).end();
     });
 
     app.route('/simulator/response-action').delete((request: express.Request, response: express.Response) => {

@@ -16,7 +16,9 @@ let orderNotificationsTopic = 'order_change_3'
 let orderVersion = 3;
 
 function updateOrder(order: express.Request): void {
-    order['dateUpdated'] = new Date().toISOString();
+    let newDate = new Date().toISOString();
+    logger.log('info',`Updating order date: from ${order['dateUpdated']} to ${newDate}`);
+    order['dateUpdated'] = newDate;
     order['etag'] = order['dateUpdated'];
 }
 
@@ -56,6 +58,14 @@ function replaceOrder(order) {
     for (let i = 0; i < orders.length; i++) {
         if (orders[i].id === order.id) {
             orders[i] = order;
+        }
+    }
+}
+
+function patchOrder(order: express.Request, patch: any): void {
+    for (let key in patch) {
+        if (key in order) {
+            order[key] = patch[key]
         }
     }
 }
@@ -181,6 +191,23 @@ export function initializeRoutes(app, simulatorContext: Context) {
             delete order['lock'];
             updateOrder(order);
             res.json(order);
+        } else {
+            createOrderNotFoundResponse(res, orderId);
+        }
+    });
+
+    app.patch(`${baseUrl}/:orderId`, skipIfDummyMode(simulatorContext), (req, res) => {
+        const orderId = req.params['orderId'];
+        logger.log('info', `Patching order ${orderId}`);
+        checkServiceAPIVersionIsCorrect(orderVersion, req.params['version'], res);
+        const patch = req.body;
+        logger.log('info', `Patch: ${JSON.stringify(patch)}`);
+        const order = findOrder(orderId);
+        if (order != null) {
+            patchOrder(order, patch);
+            updateOrder(order);
+            res.json(order);
+            sendOrderUpdatedNotification(order, simulatorContext);
         } else {
             createOrderNotFoundResponse(res, orderId);
         }

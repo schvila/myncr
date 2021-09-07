@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>SC;unknown_ver;2018-02-07T09:54:22-05:00</Description>
+        <Version>1</Version>
+    </FileHeader>
+    <CarWashRecs>
+        <record>
+            <ItemId>5070000057</ItemId>
+            <Modifier1DefaultId>0</Modifier1DefaultId>
+            <Modifier2DefaultId>0</Modifier2DefaultId>
+            <Modifier3DefaultId>0</Modifier3DefaultId>
+            <WashNum>1</WashNum>
+        </record>
+        <record>
+            <ItemId>990000000014</ItemId>
+            <Modifier1DefaultId>990000000004</Modifier1DefaultId>
+            <Modifier2DefaultId>0</Modifier2DefaultId>
+            <Modifier3DefaultId>0</Modifier3DefaultId>
+            <WashNum>7</WashNum>
+        </record>
+    </CarWashRecs>
+</RelayFile>

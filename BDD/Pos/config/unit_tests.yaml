@@ -1,0 +1,17 @@
+# Configuration file for BDD Python unit tests
+
+# Paths to folders with unit test modules
+paths:
+    - 6.1/POS/BDD/Pos/package/cfrpos/tests/relay/
+    - 6.1/POS/BDD/Pos/package/cfrpos/tests/bdd_utils/
+    - 6.1/POS/Simulators/package/sim4cfrpos/tests/
+
+# Name of unit test python scripts or patterns to include
+# Lists patterns and unit test scripts that should be run
+include:
+    - "*_ut.py"
+
+# Name of unit test python scripts to exclude from running
+# Lists failing unit test scripts that should be fixed
+exclude:
+    - test_poscache_transaction_mgr.py

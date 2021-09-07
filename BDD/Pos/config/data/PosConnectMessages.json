@@ -1,0 +1,1006 @@
+{
+  "AvailableMessages": [
+    {
+      "Name": "Pos/SignOn",
+      "IsContentSensitive": true,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 1,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "OfflineSignOn": "@Retain",
+                "NewDayNotCreated": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/SignOff",
+      "IsContentSensitive": true,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 2,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "OfflineSignOff": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/LockTerminal",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 3
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/SetState",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 4
+        }
+      ]
+    },
+    {
+      "Name": "Pos/ApplyUpdate",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 5
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/SafeDrop",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 6
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/PrintReceipt",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 7
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/CancelTransaction",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 8,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "CancelledTransactionSequenceNumber": "@Retain",
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/AbortTransaction",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 9
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/ChangeDestination",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 10
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/AddTender",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 11,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain",
+                "CashBack": "@Retain",
+                "TenderAmount": "@Retain",
+                "RemainingBalance": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/StoreTransaction",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 12,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "StoredTransactionSequenceNumber": "@Retain",
+                "AbortedTransactionSequenceNumber": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/RecallTransaction",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 13,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/SubTotalOrder",
+      "IsContentSensitive": false,
+      "Stateless": true,
+      "Versions": [
+        {
+          "SubEventId": 14,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "ItemList": "@Retain",
+                "TransactionTaxAmount": "@Retain",
+                "TransactionSubTotal": "@Retain",
+                "TransactionBalance": "@Retain",
+                "TransactionTotal": "@Retain",
+                "OriginSystemId": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "SubTotalOrder",
+      "IsContentSensitive": false,
+      "Stateless": true,
+      "Versions": [
+        {
+          "SubEventId": 14,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "ItemList": {
+                  "@TranslationName": "#V1BatchOrderItemListTranslation"
+                },
+                "TransactionTaxAmount": "@Retain",
+                "TransactionSubTotal": "@Retain",
+                "TransactionBalance": "@Retain",
+                "OriginSystemId": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/StoreOrder",
+      "IsContentSensitive": false,
+      "Stateless": true,
+      "Versions": [
+        {
+          "SubEventId": 15,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "ItemList": "@Retain",
+                "TransactionTaxAmount": "@Retain",
+                "TransactionSubTotal": "@Retain",
+                "TransactionBalance": "@Retain",
+                "TransactionTotal": "@Retain",
+                "OriginSystemId": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "StoreOrder",
+      "IsContentSensitive": false,
+      "Stateless": true,
+      "Versions": [
+        {
+          "SubEventId": 15,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "ItemList": {
+                  "@TranslationName": "#V1BatchOrderItemListTranslation"
+                },
+                "TransactionTaxAmount": "@Retain",
+                "TransactionSubTotal": "@Retain",
+                "TransactionBalance": "@Retain",
+                "OriginSystemId": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/StartTransaction",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 16
+        }
+      ]
+    },
+    {
+      "Name": "Pos/SubTotalTransaction",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 17,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/CancelItem",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 18,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/ChangeItemQuantity",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 19,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/ModifyItem",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 20
+        }
+      ]
+    },
+    {
+      "Name": "Pos/SellItem",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 21,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain",
+                "RemovedItemList": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/SellCondiment",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 22,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+
+        }
+      ]
+    },
+    {
+      "Name": "Pos/CancelCondiment",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 23
+        }
+      ]
+    },
+    {
+      "Name": "Pos/SellCombo",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 24
+        }
+      ]
+    },
+    {
+      "Name": "Pos/ChangeItemPrice",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 25,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/SellFuel",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 26,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/AddLoyalty",
+      "IsContentSensitive": true,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 27,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain",
+                "TenderRequested": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "AddLoyalty",
+      "IsContentSensitive": true,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 27,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/AddDiscountTrigger",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 28,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/SelectCoupon",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 29,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/SelectDiscount",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 30,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/GetOperator",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 31,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "Name": "@Retain",
+                "ShiftId": "@Retain",
+                "ExternalId": "@Retain",
+                "IsOverridden": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/GetTransaction",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 32,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "ItemList": "@Retain",
+                "TransactionTaxAmount": "@Retain",
+                "TransactionSubTotal": "@Retain",
+                "TransactionBalance": "@Retain",
+                "TransactionTotal": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/GetState",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 33,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "State": "@Retain",
+                "IsUpdateRequired": "@Retain",
+                "DeviceStates": "@Retain",
+                "NodeNumber": "@Retain",
+                "IsPaymentAvailable": "@Retain",
+                "IsCashAlertActive": "@Retain",
+                "Shift": "@Retain",
+                "Messages": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+
+    },
+    {
+      "Name": "State",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 33,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "State": {
+                  "@Values": [
+                    "Ready",
+                    "Locked",
+                    [
+                      "WaitingForCardSwipe",
+                      { "@ReplaceWith": "Ready" }
+                    ],
+                    [
+                      "PendingPinPadPrompt",
+                      { "@ReplaceWith": "Ready" }
+                    ]
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/DecodeBarcode",
+      "IsContentSensitive": true,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 34,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "DecodedType": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/GetPumpState",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 35,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "PumpList": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/DrawerLoan",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 36
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/CustomerDisplayMessage",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 37
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/PromptForSwipe",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 38,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "Token": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/CaptureSwipe",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 39,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "Token": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/CancelSwipe",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 40
+        }
+      ]
+    },
+    {
+      "Name": "Pos/RetrieveSwipe",
+      "IsContentSensitive": true,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 41,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "EntryMethod": "@Retain",
+                "Data": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/CustomerPrintReceipt",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 42,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "Token": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/Configuration",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 43,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "Entities": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/ValidatePermission",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 44,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "OperatorExternalId": "@Retain",
+                "StoreId": "@Retain",
+                "IsAllowed": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+
+    },
+    {
+      "Name": "Pos/FinalizeOrder",
+      "IsContentSensitive": false,
+      "Stateless": true,
+      "Versions": [
+        {
+          "SubEventId": 45,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "ItemList": "@Retain",
+                "TransactionTaxAmount": "@Retain",
+                "TransactionSubTotal": "@Retain",
+                "TransactionBalance": "@Retain",
+                "TransactionTotal": "@Retain",
+                "OriginSystemId": "@Retain",
+                "Receipt": "@Retain",
+                "Warning": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/DisplayWebBrowser",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 46
+        }
+      ]
+    },
+    {
+      "Name": "Pos/CloseWebBrowser",
+      "IsContentSensitive": false,
+      "Stateless": false,
+      "Versions": [
+        {
+          "SubEventId": 47
+        }
+      ]
+    },
+    {
+      "Name": "Pos/GetStoredTransactions",
+      "IsContentSensitive": false,
+      "Stateless": true,
+      "Versions": [
+        {
+            "SubEventId": 48,
+            "Translation": {
+                "Response": {
+                    "@Object": {
+                        "Count": "@Retain",
+                        "Transactions": {
+                            "@Rename":  "StoredTransactions"
+                        }
+                    }
+                }
+            }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/ViewStoredOrders",
+      "IsContentSensitive": false,
+      "Stateless": true,
+      "Versions": [
+        {
+          "SubEventId": 49,
+          "Translation": {
+            "Response": {
+              "@Object": {
+                "TransactionData": "@Retain"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Pos/RemoveStoredOrders",
+      "IsContentSensitive": false,
+      "Stateless": true,
+      "Versions": [
+        {
+            "SubEventId": 50,
+            "Translation": {
+                "Response": {
+                    "@Object": {
+                      "Transactions": "@Retain"
+                    }
+                }
+            }
+         }
+      ]
+     },
+     {
+       "Name": "Pos/VoidLoyaltyTransaction",
+       "IsContentSensitive": false,
+       "Stateless": false,
+        "Versions": [
+          {
+            "SubEventId": 51
+          }
+        ]
+     }
+  ],
+    "DataNeeded": [
+        {
+            "IsContentSensitive": true,
+            "MinApiVersion": "2.0.0",
+            "OutgoingName": "Pos/DataNeeded",
+            "IncomingName": "Pos/DataNeededResponse",
+            "Translation": {
+                "Response": {
+                    "@Object": {
+                        "DataType": "@Retain",
+                        "PromptId": "@Retain",
+                        "PromptText": "@Retain",
+                        "ListSelections": "@Retain",
+                        "AvailableOperations": "@Retain",
+                        "MessageBody": "@Retain",
+                        "PromptType": "@Retain",
+                        "DataNeededId": "@Retain",
+                        "ErrorCode": {
+                            "@Rename": "ReturnCode"
+                        },
+                        "ErrorCodeDescription": {
+                            "@Rename": "ReturnCodeDescription"
+                        },
+                        "UnhandledError": {
+                          "@TranslationName": "UnhandledError_Translation"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+
+    "GlobalRequestTranslation": {
+        "@Object": {
+            "OriginSystemId": "@Retain",
+            "OriginReferenceId": "@Retain"
+        }
+    },
+    "GlobalResponseTranslation": {
+        "@Object": {
+            "ErrorCode": {
+                "@Rename": "ReturnCode"
+            },
+            "ErrorCodeDescription": {
+                "@Rename": "ReturnCodeDescription"
+            },
+            "TransactionSequenceNumber": "@Retain",
+            "UnhandledError": {
+              "@TranslationName": "UnhandledError_Translation"
+            }
+        }
+    },
+    "TranslationDefinitions": [
+        {
+          "Name": "UnhandledError_Translation",
+          "@Object": {
+              "MessageId": "@Retain",
+              "Title": "@Retain",
+              "MessageText": {
+                  "@Rename": "Message"
+              },
+              "StateId": "@Retain"
+          }
+        }
+    ],
+
+  "ResourcePathDefinitions": [
+    {
+      "Path": "/",
+      "ApiVersion": "1.0.0",
+      "AutoLogon": false
+    },
+    {
+      "Path": "/rposshop",
+      "ApiVersion": "1.0.0",
+      "AutoLogon": false
+    },
+    {
+      "Path": "/rpossco",
+      "ApiVersion": "2.0.0",
+      "AutoLogon": true
+    },
+    {
+      "Path": "/rpos7eleven",
+      "ApiVersion": "2.0.0",
+      "AutoLogon": false
+    },
+    {
+      "Path": "/rposdeviceaccess",
+      "ApiVersion": "2.0.0",
+      "AutoLogon": false
+    },
+    {
+      "Path": "/rpospttrm",
+      "ApiVersion": "2.0.0",
+      "AutoLogon": false
+    }
+  ]
+}

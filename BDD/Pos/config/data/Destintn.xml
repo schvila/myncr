@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>SC;unknown_ver;2018-02-07T09:54:22-05:00</Description>
+        <Version>6</Version>
+    </FileHeader>
+    <DestRecs>
+        <record>
+            <DestinationId>1</DestinationId>
+            <DescriptionId>0</DescriptionId>
+            <RequiredSecurity>0</RequiredSecurity>
+            <DeviceListId>1</DeviceListId>
+            <DeviceControl>0</DeviceControl>
+            <Description>Default Destination</Description>
+            <KDSDestID>1</KDSDestID>
+        </record>
+    </DestRecs>
+    <DestinationExternalIds>
+        <record>
+            <DestinationId>1</DestinationId>
+            <ExternalId>1</ExternalId>
+        </record>
+    </DestinationExternalIds>
+</RelayFile>

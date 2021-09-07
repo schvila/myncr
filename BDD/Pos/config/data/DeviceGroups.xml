@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>SC;unknown_ver;2018-02-07T09:54:22-05:00</Description>
+        <Version>3</Version>
+    </FileHeader>
+    <DeviceGroupRecords>
+        <record>
+            <Device_Group_Id>1</Device_Group_Id>
+            <Device_Group_Name>Default</Device_Group_Name>
+            <Device_Group_Priority>1</Device_Group_Priority>
+            <Active_Flag>1</Active_Flag>
+            <Allow_KDS>0</Allow_KDS>
+            <Brand_Id>0</Brand_Id>
+        </record>
+        <record>
+            <Device_Group_Id>70000003</Device_Group_Id>
+            <Device_Group_Name>h Default</Device_Group_Name>
+            <Device_Group_Priority>1</Device_Group_Priority>
+            <Active_Flag>1</Active_Flag>
+            <Allow_KDS>0</Allow_KDS>
+            <Brand_Id>0</Brand_Id>
+        </record>
+        <record>
+            <Device_Group_Id>70000010</Device_Group_Id>
+            <Device_Group_Name>WildFood device group</Device_Group_Name>
+            <Device_Group_Priority>1</Device_Group_Priority>
+            <Active_Flag>1</Active_Flag>
+            <Allow_KDS>1</Allow_KDS>
+            <Brand_Id>0</Brand_Id>
+        </record>
+        <record>
+            <Device_Group_Id>70000033</Device_Group_Id>
+            <Device_Group_Name>CSS Food Burgers</Device_Group_Name>
+            <Device_Group_Priority>1</Device_Group_Priority>
+            <Active_Flag>1</Active_Flag>
+            <Allow_KDS>1</Allow_KDS>
+            <Brand_Id>0</Brand_Id>
+        </record>
+        <record>
+            <Device_Group_Id>70000034</Device_Group_Id>
+            <Device_Group_Name>CSS Food Other</Device_Group_Name>
+            <Device_Group_Priority>1</Device_Group_Priority>
+            <Active_Flag>1</Active_Flag>
+            <Allow_KDS>1</Allow_KDS>
+            <Brand_Id>0</Brand_Id>
+        </record>
+        <record>
+            <Device_Group_Id>70000035</Device_Group_Id>
+            <Device_Group_Name>CSS Food Condiments Prepared</Device_Group_Name>
+            <Device_Group_Priority>13</Device_Group_Priority>
+            <Active_Flag>1</Active_Flag>
+            <Allow_KDS>1</Allow_KDS>
+            <Brand_Id>0</Brand_Id>
+        </record>
+        <record>
+            <Device_Group_Id>70000036</Device_Group_Id>
+            <Device_Group_Name>CSS Food Condiments</Device_Group_Name>
+            <Device_Group_Priority>99</Device_Group_Priority>
+            <Active_Flag>1</Active_Flag>
+            <Allow_KDS>0</Allow_KDS>
+            <Brand_Id>0</Brand_Id>
+        </record>
+        <record>
+            <Device_Group_Id>70000038</Device_Group_Id>
+            <Device_Group_Name>CSS Cold Drinks</Device_Group_Name>
+            <Device_Group_Priority>22</Device_Group_Priority>
+            <Active_Flag>1</Active_Flag>
+            <Allow_KDS>1</Allow_KDS>
+            <Brand_Id>0</Brand_Id>
+        </record>
+        <record>
+            <Device_Group_Id>10000000002</Device_Group_Id>
+            <Device_Group_Name>Default RSM Device Group</Device_Group_Name>
+            <Device_Group_Priority>1</Device_Group_Priority>
+            <Active_Flag>1</Active_Flag>
+            <Allow_KDS>0</Allow_KDS>
+            <Brand_Id>0</Brand_Id>
+        </record>
+    </DeviceGroupRecords>
+</RelayFile>

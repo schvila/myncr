@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>SC;unknown_ver;2018-02-07T09:54:22-05:00</Description>
+        <Version>1</Version>
+    </FileHeader>
+    <Department>
+        <record>
+            <DepartmentId>990000000003</DepartmentId>
+            <Description>Dept 88</Description>
+            <ItemId>990000000015</ItemId>
+        </record>
+        <record>
+            <DepartmentId>990000000004</DepartmentId>
+            <Description>Dept 99</Description>
+            <ItemId>990000000016</ItemId>
+        </record>
+    </Department>
+    <Category />
+    <SubCategory />
+    <EndOfFileNumber>
+        <EndOfFileNumber>255</EndOfFileNumber>
+    </EndOfFileNumber>
+</RelayFile>

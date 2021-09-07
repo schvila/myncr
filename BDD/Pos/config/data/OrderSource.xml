@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>BDD;0.0.0.000;0</Description>
+        <Version>1</Version>
+    </FileHeader>
+    <OrderSourceRecs>
+        <record>
+            <ExternalId>TestSourceAllow</ExternalId>
+            <DeferAgeVerificationFlag>1</DeferAgeVerificationFlag>
+        </record>
+    </OrderSourceRecs>
+</RelayFile>

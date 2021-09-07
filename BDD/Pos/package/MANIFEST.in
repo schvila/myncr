@@ -1,0 +1,5 @@
+include readme.txt 
+include version 
+include cfrpos/features/*.feature 
+include cfrpos/features/*/*.feature 
+include cfrpos/testSuites/*.txt 

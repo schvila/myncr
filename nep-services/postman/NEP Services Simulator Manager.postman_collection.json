@@ -1,0 +1,1881 @@
+{
+	"info": {
+		"_postman_id": "96525e26-71ec-4667-8623-1b7f2abda9d8",
+		"name": "NEP Services Simulator Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{simulator-baseuri}}/state",
+							"host": [
+								"{{simulator-baseuri}}"
+							],
+							"path": [
+								"state"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Simulator",
+					"item": [
+						{
+							"name": "Notifications",
+							"item": [
+								{
+									"name": "Subscriptions created notification",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"subscriptionsCreated\": 1}"
+										},
+                                        "url": {
+                                            "raw": "{{simulator-baseuri}}/notifications/simulator/order_change_3/message",
+                                            "host": [
+                                                "{{simulator-baseuri}}"
+                                            ],
+                                            "path": [
+                                                "notifications",
+                                                "simulator",
+                                                "message"
+                                            ]
+                                        }
+									},
+									"response": []
+								},
+								{
+									"name": "Order by notification",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"message\": {\r\n\t\t\"topicId\": {\r\n\t\t\t\"name\": \"ORDER_CHANGE_3\"\r\n\t\t},\r\n\t\t\"payload\": \"{\\\"id\\\":\\\"13273652391352000667\\\",\\\"updatedOrder\\\":{\\\"dateCreated\\\":\\\"2018-06-12T14:37:21.118Z\\\",\\\"dateUpdated\\\":\\\"2018-06-12T14:37:21.118Z\\\",\\\"id\\\":\\\"13273652391352000667\\\",\\\"expireAt\\\":\\\"2018-09-10T14:37:21.125Z\\\",\\\"sourceOrganization\\\":\\\"radiant-pos-uat\\\",\\\"enterpriseUnitId\\\":\\\"48ba68ef96b64166b0d7955f4aeb7987\\\",\\\"comments\\\":\\\"People on the Go, Go to Wawa!\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"customer\\\":{\\\"firstName\\\":\\\"John\\\",\\\"lastName\\\":\\\"Doe\\\",\\\"phone\\\":\\\"555-1212\\\"},\\\"referenceId\\\":\\\"123465789\\\",\\\"source\\\":\\\"GrubHub\\\",\\\"status\\\":\\\"OrderPlaced\\\",\\\"totals\\\":[{\\\"type\\\":\\\"Net\\\",\\\"value\\\":4.5,\\\"lineId\\\":\\\"lineId\\\"}],\\\"fulfillment\\\":{\\\"address\\\":{\\\"line1\\\":\\\"864 Spring St NW\\\",\\\"city\\\":\\\"Atlanta\\\",\\\"state\\\":\\\"GA\\\",\\\"postalCode\\\":\\\"30308\\\"},\\\"pickupDate\\\":\\\"2018-05-29T00:00:00Z\\\",\\\"type\\\":\\\"Delivery\\\",\\\"autoRelease\\\":true},\\\"fees\\\":[],\\\"orderLines\\\":[{\\\"extendedAmount\\\":4.5,\\\"notes\\\":[],\\\"productId\\\":{\\\"type\\\":\\\"RPOS-ID\\\",\\\"value\\\":\\\"5070000318-70000000020-0-0\\\"},\\\"quantity\\\":{\\\"value\\\":1},\\\"substitutionAllowed\\\":false,\\\"unitPrice\\\":4.5,\\\"overridePrice\\\":true,\\\"lineId\\\":\\\"1\\\"}],\\\"payments\\\":[{\\\"amount\\\":4.5,\\\"description\\\":\\\"description\\\",\\\"status\\\":\\\"Paid\\\",\\\"type\\\":\\\"Cash\\\",\\\"payBalance\\\":true,\\\"lineId\\\":\\\"c5869ee68715427a83b2498ccb8aaa14\\\"}],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"Jane Doe\\\",\\\"company\\\":\\\"GrubHub\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"555-1212\\\",\\\"hasArrived\\\":false},\\\"etag\\\":\\\"2018-06-12T14:37:21.118Z\\\"}}\"\r\n\r\n\t}\r\n}"
+										},
+                                        "url": {
+                                            "raw": "{{simulator-baseuri}}/notifications/simulator/order_change_3/message",
+                                            "host": [
+                                                "{{simulator-baseuri}}"
+                                            ],
+                                            "path": [
+                                                "notifications",
+                                                "simulator",
+                                                "message"
+                                            ]
+                                        }
+									},
+									"response": []
+								},
+								{
+									"name": "Order by notification - no id",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"message\": {\r\n\t\t\"topicId\": {\r\n\t\t\t\"name\": \"ORDER_CHANGE_3\"\r\n\t\t},\r\n\t\t\"payload\": \"{\\\"id\\\":\\\"13273652391352000666\\\",\\\"updatedOrder\\\":{\\\"dateCreated\\\":\\\"2018-06-12T14:37:21.118Z\\\",\\\"dateUpdated\\\":\\\"2018-06-12T14:37:21.118Z\\\",\\\"idXXX\\\":\\\"13273652391352000666\\\",\\\"expireAt\\\":\\\"2018-09-10T14:37:21.125Z\\\",\\\"sourceOrganization\\\":\\\"radiant-pos-uat\\\",\\\"enterpriseUnitId\\\":\\\"48ba68ef96b64166b0d7955f4aeb7987\\\",\\\"comments\\\":\\\"People on the Go, Go to Wawa!\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"customer\\\":{\\\"firstName\\\":\\\"John\\\",\\\"lastName\\\":\\\"Doe\\\",\\\"phone\\\":\\\"555-1212\\\"},\\\"referenceId\\\":\\\"123465789\\\",\\\"source\\\":\\\"GrubHub\\\",\\\"status\\\":\\\"OrderPlaced\\\",\\\"totals\\\":[{\\\"type\\\":\\\"Net\\\",\\\"value\\\":4.5,\\\"lineId\\\":\\\"lineId\\\"}],\\\"fulfillment\\\":{\\\"address\\\":{\\\"line1\\\":\\\"864 Spring St NW\\\",\\\"city\\\":\\\"Atlanta\\\",\\\"state\\\":\\\"GA\\\",\\\"postalCode\\\":\\\"30308\\\"},\\\"pickupDate\\\":\\\"2018-05-29T00:00:00Z\\\",\\\"type\\\":\\\"Delivery\\\",\\\"autoRelease\\\":true},\\\"fees\\\":[],\\\"orderLines\\\":[{\\\"extendedAmount\\\":4.5,\\\"notes\\\":[],\\\"productId\\\":{\\\"type\\\":\\\"RPOS-ID\\\",\\\"value\\\":\\\"5070000318-70000000020-0-0\\\"},\\\"quantity\\\":{\\\"value\\\":1},\\\"substitutionAllowed\\\":false,\\\"unitPrice\\\":4.5,\\\"overridePrice\\\":true,\\\"lineId\\\":\\\"1\\\"}],\\\"payments\\\":[{\\\"amount\\\":4.5,\\\"description\\\":\\\"description\\\",\\\"status\\\":\\\"Paid\\\",\\\"type\\\":\\\"Cash\\\",\\\"payBalance\\\":true,\\\"lineId\\\":\\\"c5869ee68715427a83b2498ccb8aaa14\\\"}],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"Jane Doe\\\",\\\"company\\\":\\\"GrubHub\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"555-1212\\\",\\\"hasArrived\\\":false},\\\"etag\\\":\\\"2018-06-12T14:37:21.118Z\\\"}}\"\r\n\r\n\t}\r\n}"
+										},
+                                        "url": {
+                                            "raw": "{{simulator-baseuri}}/notifications/simulator/order_change_3/message",
+                                            "host": [
+                                                "{{simulator-baseuri}}"
+                                            ],
+                                            "path": [
+                                                "notifications",
+                                                "simulator",
+                                                "message"
+                                            ]
+                                        }
+									},
+									"response": []
+								},
+								{
+									"name": "Close connections",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{simulator-baseuri}}/notifications/simulator/connections",
+											"host": [
+												"{{simulator-baseuri}}"
+											],
+											"path": [
+												"notifications",
+												"simulator",
+												"connections"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Get captured requests",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/requests",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete captured requests",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/requests",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get next captured request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/request",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Auto mode",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"mode\": \"Auto\"\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/configuration",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"configuration"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set Dummy mode",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"mode\": \"Dummy\"\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/configuration",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"configuration"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete prepared responses",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"url-regex\": \"security/authentication/login\",\n\t\"method\": \"POST\",\t\n\t\"action-type\": \"SendResponse\",\n\t\"response\": {\n\t    \"token\": \"eyJhbGciOiJFUzI1NiJ9.eyJtdGgiOlsicGFzc3dvcmQiXSwic3ViIjoiYWNjdDpyYWRpYW50LXBvcy11YXRAamlyb3VzX3RlY2h1c2VyMSIsIm5iZiI6MTUzMDE5NTA3MCwib3JnIjoiL3RlYW1zLXVhdC9pbnRlcm5hbC11YXQvcmFkaWFudC1wb3MtdWF0LyIsImlzcyI6Ik5DUiIsInJscyI6ImVKeDFqMTBTd2lBTWhKK1QwK2dSSXNST0hBcE1TTnZwL1M5aUN4VWR0VS9rWi9QdGNrSFBzemhHVUNhUE1HVlB0bldlQSs4ditWR2lGRk95cEFpRHBpa2o5RFc0N2F3V1g4SU9PcmlEVXJRL3NsbDQ0YTE0Y1NqdmVFMkIwYStSUm5FSXR1YnFVRmR0QjdDbzJINTRSdFFyUWxKZkpVVnFraDlwZHorUFJVWWhEWGdxalp4cjZDQ2JWRkxjM1RJN2E1eEhtalJTa1BoSkdMa1VHdHFzVExmaVZHNHRabXZ5d2VrSHg0K1BOaWFUZTNkN0E1NEthbWl0IiwiZXhwIjoxNTMwMjIzODcwLCJpYXQiOjE1MzAxOTUwNzAsImp0aSI6IjIxNmYwNjAwLTUyM2QtNGM2ZS1hNzkwLTIzZWFmNzkxNDZmYiJ9.MEUCICsiTnsV_itnON_bpQLDCW3kPlC8fIzZ2AkhTSSMQdgGAiEArZT20nmhOBk-heoZc2T1Yh94vrBXRfU_2FB-twlSoVw\",\n\t    \"maxIdleTime\": 1800,\n\t    \"maxSessionTime\": 28800,\n\t    \"remainingTime\": 28800\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/response-action",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"response-action"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Prepare: Security token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"url-regex\": \"security/authentication/login\",\n\t\"method\": \"POST\",\t\n\t\"action-type\": \"SendResponse\",\n\t\"response\": {\n\t    \"token\": \"eyJhbGciOiJFUzI1NiJ9.eyJtdGgiOlsicGFzc3dvcmQiXSwic3ViIjoiYWNjdDpyYWRpYW50LXBvcy11YXRAamlyb3VzX3RlY2h1c2VyMSIsIm5iZiI6MTUzMDE5NTA3MCwib3JnIjoiL3RlYW1zLXVhdC9pbnRlcm5hbC11YXQvcmFkaWFudC1wb3MtdWF0LyIsImlzcyI6Ik5DUiIsInJscyI6ImVKeDFqMTBTd2lBTWhKK1QwK2dSSXNST0hBcE1TTnZwL1M5aUN4VWR0VS9rWi9QdGNrSFBzemhHVUNhUE1HVlB0bldlQSs4ditWR2lGRk95cEFpRHBpa2o5RFc0N2F3V1g4SU9PcmlEVXJRL3NsbDQ0YTE0Y1NqdmVFMkIwYStSUm5FSXR1YnFVRmR0QjdDbzJINTRSdFFyUWxKZkpVVnFraDlwZHorUFJVWWhEWGdxalp4cjZDQ2JWRkxjM1RJN2E1eEhtalJTa1BoSkdMa1VHdHFzVExmaVZHNHRabXZ5d2VrSHg0K1BOaWFUZTNkN0E1NEthbWl0IiwiZXhwIjoxNTMwMjIzODcwLCJpYXQiOjE1MzAxOTUwNzAsImp0aSI6IjIxNmYwNjAwLTUyM2QtNGM2ZS1hNzkwLTIzZWFmNzkxNDZmYiJ9.MEUCICsiTnsV_itnON_bpQLDCW3kPlC8fIzZ2AkhTSSMQdgGAiEArZT20nmhOBk-heoZc2T1Yh94vrBXRfU_2FB-twlSoVw\",\n\t    \"maxIdleTime\": 1800,\n\t    \"maxSessionTime\": 28800,\n\t    \"remainingTime\": 28800\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/response-action",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"response-action"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Prepare: Find unacknowledged",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"url-regex\": \"order/3/orders/1/find-unacknowledged\",\n\t\"action-type\": \"SendResponse\",\n\t\"response\": {\n    \"orders\": [\n        {\n            \"dateCreated\": \"2018-06-29T07:56:10.715Z\",\n            \"dateUpdated\": \"2018-06-29T07:56:10.715Z\",\n            \"id\": \"09422837483890706890\",\n            \"expireAt\": \"2018-09-27T07:56:10.716Z\",\n            \"sourceOrganization\": \"radiant-pos-uat\",\n            \"enterpriseUnitId\": \"48ba68ef96b64166b0d7955f4aeb7987\",\n            \"comments\": \"People on the Go, Go to Wawa!\",\n            \"channel\": \"PhoneIn\",\n            \"customer\": {\n                \"firstName\": \"John\",\n                \"lastName\": \"Doe\",\n                \"phone\": \"555-1212\"\n            },\n            \"referenceId\": \"12346578912345678900123456789465115165\",\n            \"source\": \"GrubHub\",\n            \"status\": \"OrderPlaced\",\n            \"totals\": [\n                {\n                    \"type\": \"Net\",\n                    \"value\": 4.5,\n                    \"lineId\": \"lineId\"\n                }\n            ],\n            \"fulfillment\": {\n                \"address\": {\n                    \"line1\": \"864 Spring St NW\",\n                    \"city\": \"Atlanta\",\n                    \"state\": \"GA\",\n                    \"postalCode\": \"30308\"\n                },\n                \"pickupDate\": \"2018-05-29T00:00:00Z\",\n                \"type\": \"Delivery\",\n                \"autoRelease\": true\n            },\n            \"fees\": [],\n            \"orderLines\": [\n                {\n                    \"extendedAmount\": 4.5,\n                    \"notes\": [],\n                    \"productId\": {\n                        \"type\": \"RPOS-ID\",\n                        \"value\": \"5070000318-70000000020-0-0\"\n                    },\n                    \"quantity\": {\n                        \"value\": 1\n                    },\n                    \"substitutionAllowed\": false,\n                    \"unitPrice\": 4.5,\n                    \"overridePrice\": true,\n                    \"lineId\": \"1\"\n                }\n            ],\n            \"payments\": [\n                {\n                    \"amount\": 4.5,\n                    \"description\": \"description\",\n                    \"status\": \"Paid\",\n                    \"type\": \"Cash\",\n                    \"payBalance\": true,\n                    \"lineId\": \"beceeb592e5b46f9a0d915fdfc021040\"\n                }\n            ],\n            \"taxes\": [],\n            \"additionalReferenceIds\": {},\n            \"taxExempt\": false,\n            \"taxExemptId\": \"sampleString\",\n            \"totalModifiers\": [],\n            \"partySize\": 0,\n            \"pickupContact\": {\n                \"name\": \"Jane Doe\",\n                \"company\": \"GrubHub\",\n                \"imageLink\": \"sampleString\",\n                \"phone\": \"555-1212\",\n                \"hasArrived\": false\n            },\n            \"etag\": \"2018-06-29T07:56:10.715Z\"\n        }\n    ],\n    \"totalResults\": 1,\n    \"totalPages\": 1,\n    \"pageNumber\": 0,\n    \"lastPage\": true\n}\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/response-action",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"response-action"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Prepare: Acknowledge",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"url-regex\": \"order/3/orders/1/\\\\d+/acks\",\n\t\"method\": \"POST\",\t\n\t\"action-type\": \"SendResponse\",\n\t\"response\": {\n\t    \"dateCreated\": \"2018-06-29T07:56:10.715Z\",\n\t    \"dateUpdated\": \"2018-06-29T07:56:10.715Z\",\n\t    \"id\": \"13273652391352000667\",\n\t    \"expireAt\": \"2018-09-27T07:56:10.716Z\",\n\t    \"sourceOrganization\": \"radiant-pos-uat\",\n\t    \"dateAcknowledged\": \"2018-06-29T07:58:22.717Z\",\n\t    \"enterpriseUnitId\": \"48ba68ef96b64166b0d7955f4aeb7987\",\n\t    \"comments\": \"People on the Go, Go to Wawa!\",\n\t    \"channel\": \"PhoneIn\",\n\t    \"customer\": {\n\t        \"firstName\": \"John\",\n\t        \"lastName\": \"Doe\",\n\t        \"phone\": \"555-1212\"\n\t    },\n\t    \"referenceId\": \"12346578912345678900123456789465115165\",\n\t    \"source\": \"GrubHub\",\n\t    \"status\": \"OrderPlaced\",\n\t    \"totals\": [\n\t        {\n\t            \"type\": \"Net\",\n\t            \"value\": 4.5,\n\t            \"lineId\": \"lineId\"\n\t        }\n\t    ],\n\t    \"fulfillment\": {\n\t        \"address\": {\n\t            \"line1\": \"864 Spring St NW\",\n\t            \"city\": \"Atlanta\",\n\t            \"state\": \"GA\",\n\t            \"postalCode\": \"30308\"\n\t        },\n\t        \"pickupDate\": \"2018-05-29T00:00:00Z\",\n\t        \"type\": \"Delivery\",\n\t        \"autoRelease\": true\n\t    },\n\t    \"fees\": [],\n\t    \"orderLines\": [\n\t        {\n\t            \"extendedAmount\": 4.5,\n\t            \"notes\": [],\n\t            \"productId\": {\n\t                \"type\": \"RPOS-ID\",\n\t                \"value\": \"5070000318-70000000020-0-0\"\n\t            },\n\t            \"quantity\": {\n\t                \"value\": 1\n\t            },\n\t            \"substitutionAllowed\": false,\n\t            \"unitPrice\": 4.5,\n\t            \"lineId\": \"1\"\n\t        }\n\t    ],\n\t    \"payments\": [\n\t        {\n\t            \"amount\": 4.5,\n\t            \"description\": \"description\",\n\t            \"status\": \"Paid\",\n\t            \"type\": \"Cash\",\n\t            \"lineId\": \"beceeb592e5b46f9a0d915fdfc021040\"\n\t        }\n\t    ],\n\t    \"taxes\": [],\n\t    \"taxExempt\": false,\n\t    \"totalModifiers\": [],\n\t    \"partySize\": 0,\n\t    \"etag\": \"2018-06-29T07:56:10.715Z\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/response-action",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"response-action"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Prepare: Acknowledge [FAILED]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"url-regex\": \"order/3/orders/1/\\\\d+/acks\",\n\t\"method\": \"POST\",\t\n\t\"action-type\": \"Fail\",\n\t\"responseCode\": 400,\n\t\"response\": {\n\t  \"message\": \"Failed to process request\",\n      \"errorType\": \"simulated.error\",\n      \"details\": [\"Simulator made the request fail\"]\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/response-action",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"response-action"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Prepare: Lock",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"url-regex\": \"order/3/orders/1/\\\\d+/lock\",\n\t\"method\": \"POST\",\t\n\t\"action-type\": \"SendResponse\",\n\t\"response\": {\n\t    \"dateCreated\": \"2018-06-29T07:56:10.715Z\",\n\t    \"dateUpdated\": \"2018-06-29T08:04:24.130Z\",\n\t    \"id\": \"13273652391352000667\",\n\t    \"lock\": {\n\t        \"lockedBy\": \"[48ba68ef96b64166b0d7955f4aeb7987][SC-123-OrderService]\",\n\t        \"lockedDate\": \"2018-06-29T08:04:24.130Z\"\n\t    },\n\t    \"expireAt\": \"2018-09-27T07:56:10.716Z\",\n\t    \"sourceOrganization\": \"radiant-pos-uat\",\n\t    \"dateAcknowledged\": \"2018-06-29T07:58:22.717Z\",\n\t    \"enterpriseUnitId\": \"48ba68ef96b64166b0d7955f4aeb7987\",\n\t    \"comments\": \"People on the Go, Go to Wawa!\",\n\t    \"channel\": \"PhoneIn\",\n\t    \"customer\": {\n\t        \"firstName\": \"John\",\n\t        \"lastName\": \"Doe\",\n\t        \"phone\": \"555-1212\"\n\t    },\n\t    \"referenceId\": \"12346578912345678900123456789465115165\",\n\t    \"source\": \"GrubHub\",\n\t    \"status\": \"OrderPlaced\",\n\t    \"totals\": [\n\t        {\n\t            \"type\": \"Net\",\n\t            \"value\": 4.5,\n\t            \"lineId\": \"lineId\"\n\t        }\n\t    ],\n\t    \"fulfillment\": {\n\t        \"address\": {\n\t            \"line1\": \"864 Spring St NW\",\n\t            \"city\": \"Atlanta\",\n\t            \"state\": \"GA\",\n\t            \"postalCode\": \"30308\"\n\t        },\n\t        \"pickupDate\": \"2018-05-29T00:00:00Z\",\n\t        \"type\": \"Delivery\",\n\t        \"autoRelease\": true\n\t    },\n\t    \"fees\": [],\n\t    \"orderLines\": [\n\t        {\n\t            \"extendedAmount\": 4.5,\n\t            \"notes\": [],\n\t            \"productId\": {\n\t                \"type\": \"RPOS-ID\",\n\t                \"value\": \"5070000318-70000000020-0-0\"\n\t            },\n\t            \"quantity\": {\n\t                \"value\": 1\n\t            },\n\t            \"substitutionAllowed\": false,\n\t            \"unitPrice\": 4.5,\n\t            \"overridePrice\": true,\n\t            \"lineId\": \"1\"\n\t        }\n\t    ],\n\t    \"payments\": [\n\t        {\n\t            \"amount\": 4.5,\n\t            \"description\": \"description\",\n\t            \"status\": \"Paid\",\n\t            \"type\": \"Cash\",\n\t            \"payBalance\": true,\n\t            \"lineId\": \"beceeb592e5b46f9a0d915fdfc021040\"\n\t        }\n\t    ],\n\t    \"taxes\": [],\n\t    \"additionalReferenceIds\": {},\n\t    \"taxExempt\": false,\n\t    \"taxExemptId\": \"sampleString\",\n\t    \"totalModifiers\": [],\n\t    \"partySize\": 0,\n\t    \"pickupContact\": {\n\t        \"name\": \"Jane Doe\",\n\t        \"company\": \"GrubHub\",\n\t        \"imageLink\": \"sampleString\",\n\t        \"phone\": \"555-1212\",\n\t        \"hasArrived\": false\n\t    },\n\t    \"etag\": \"2018-06-29T08:04:24.130Z\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/response-action",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"response-action"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Prepare: ReadyForPickup update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"url-regex\": \"/order/3/orders/1/\\\\d+\",\n\t\"method\": \"PUT\",\n\t\"action-type\": \"SendResponse\",\n\t\"response\": {\n\t    \"dateCreated\": \"2018-06-29T07:56:10.715Z\",\n\t    \"dateUpdated\": \"2018-06-29T08:04:24.130Z\",\n\t    \"id\": \"13273652391352000667\",\n\t    \"lock\": {\n\t        \"lockedBy\": \"[48ba68ef96b64166b0d7955f4aeb7987][SC-123-OrderService]\",\n\t        \"lockedDate\": \"2018-06-29T08:04:24.130Z\"\n\t    },\n\t    \"expireAt\": \"2018-09-27T07:56:10.716Z\",\n\t    \"sourceOrganization\": \"radiant-pos-uat\",\n\t    \"dateAcknowledged\": \"2018-06-29T07:58:22.717Z\",\n\t    \"enterpriseUnitId\": \"48ba68ef96b64166b0d7955f4aeb7987\",\n\t    \"comments\": \"People on the Go, Go to Wawa!\",\n\t    \"channel\": \"PhoneIn\",\n\t    \"customer\": {\n\t        \"firstName\": \"John\",\n\t        \"lastName\": \"Doe\",\n\t        \"phone\": \"555-1212\"\n\t    },\n\t    \"referenceId\": \"12346578912345678900123456789465115165\",\n\t    \"source\": \"GrubHub\",\n\t    \"status\": \"ReadyForPickup\",\n\t    \"totals\": [\n\t        {\n\t            \"type\": \"Net\",\n\t            \"value\": 4.5,\n\t            \"lineId\": \"lineId\"\n\t        }\n\t    ],\n\t    \"fulfillment\": {\n\t        \"address\": {\n\t            \"line1\": \"864 Spring St NW\",\n\t            \"city\": \"Atlanta\",\n\t            \"state\": \"GA\",\n\t            \"postalCode\": \"30308\"\n\t        },\n\t        \"pickupDate\": \"2018-05-29T00:00:00Z\",\n\t        \"type\": \"Delivery\",\n\t        \"autoRelease\": true\n\t    },\n\t    \"fees\": [],\n\t    \"orderLines\": [\n\t        {\n\t            \"extendedAmount\": 4.5,\n\t            \"notes\": [],\n\t            \"productId\": {\n\t                \"type\": \"RPOS-ID\",\n\t                \"value\": \"5070000318-70000000020-0-0\"\n\t            },\n\t            \"quantity\": {\n\t                \"value\": 1\n\t            },\n\t            \"substitutionAllowed\": false,\n\t            \"unitPrice\": 4.5,\n\t            \"overridePrice\": true,\n\t            \"lineId\": \"1\"\n\t        }\n\t    ],\n\t    \"payments\": [\n\t        {\n\t            \"amount\": 4.5,\n\t            \"description\": \"description\",\n\t            \"status\": \"Paid\",\n\t            \"type\": \"Cash\",\n\t            \"payBalance\": true,\n\t            \"lineId\": \"beceeb592e5b46f9a0d915fdfc021040\"\n\t        }\n\t    ],\n\t    \"taxes\": [],\n\t    \"additionalReferenceIds\": {},\n\t    \"taxExempt\": false,\n\t    \"taxExemptId\": \"sampleString\",\n\t    \"totalModifiers\": [],\n\t    \"partySize\": 0,\n\t    \"pickupContact\": {\n\t        \"name\": \"Jane Doe\",\n\t        \"company\": \"GrubHub\",\n\t        \"imageLink\": \"sampleString\",\n\t        \"phone\": \"555-1212\",\n\t        \"hasArrived\": false\n\t    },\n\t    \"etag\": \"2018-06-29T08:04:24.130Z\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/response-action",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"response-action"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Prepare: Unlock",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"url-regex\": \"order/3/orders/1/\\\\d+/unlock\",\n\t\"method\": \"POST\",\t\n\t\"action-type\": \"SendResponse\",\n\t\"response\": {\n\t    \"dateCreated\": \"2018-06-29T07:56:10.715Z\",\n\t    \"dateUpdated\": \"2018-06-29T08:04:24.130Z\",\n\t    \"id\": \"13273652391352000667\",\n\t    \"expireAt\": \"2018-09-27T07:56:10.716Z\",\n\t    \"sourceOrganization\": \"radiant-pos-uat\",\n\t    \"dateAcknowledged\": \"2018-06-29T07:58:22.717Z\",\n\t    \"enterpriseUnitId\": \"48ba68ef96b64166b0d7955f4aeb7987\",\n\t    \"comments\": \"People on the Go, Go to Wawa!\",\n\t    \"channel\": \"PhoneIn\",\n\t    \"customer\": {\n\t        \"firstName\": \"John\",\n\t        \"lastName\": \"Doe\",\n\t        \"phone\": \"555-1212\"\n\t    },\n\t    \"referenceId\": \"12346578912345678900123456789465115165\",\n\t    \"source\": \"GrubHub\",\n\t    \"status\": \"OrderPlaced\",\n\t    \"totals\": [\n\t        {\n\t            \"type\": \"Net\",\n\t            \"value\": 4.5,\n\t            \"lineId\": \"lineId\"\n\t        }\n\t    ],\n\t    \"fulfillment\": {\n\t        \"address\": {\n\t            \"line1\": \"864 Spring St NW\",\n\t            \"city\": \"Atlanta\",\n\t            \"state\": \"GA\",\n\t            \"postalCode\": \"30308\"\n\t        },\n\t        \"pickupDate\": \"2018-05-29T00:00:00Z\",\n\t        \"type\": \"Delivery\",\n\t        \"autoRelease\": true\n\t    },\n\t    \"fees\": [],\n\t    \"orderLines\": [\n\t        {\n\t            \"extendedAmount\": 4.5,\n\t            \"notes\": [],\n\t            \"productId\": {\n\t                \"type\": \"RPOS-ID\",\n\t                \"value\": \"5070000318-70000000020-0-0\"\n\t            },\n\t            \"quantity\": {\n\t                \"value\": 1\n\t            },\n\t            \"substitutionAllowed\": false,\n\t            \"unitPrice\": 4.5,\n\t            \"overridePrice\": true,\n\t            \"lineId\": \"1\"\n\t        }\n\t    ],\n\t    \"payments\": [\n\t        {\n\t            \"amount\": 4.5,\n\t            \"description\": \"description\",\n\t            \"status\": \"Paid\",\n\t            \"type\": \"Cash\",\n\t            \"payBalance\": true,\n\t            \"lineId\": \"beceeb592e5b46f9a0d915fdfc021040\"\n\t        }\n\t    ],\n\t    \"taxes\": [],\n\t    \"additionalReferenceIds\": {},\n\t    \"taxExempt\": false,\n\t    \"taxExemptId\": \"sampleString\",\n\t    \"totalModifiers\": [],\n\t    \"partySize\": 0,\n\t    \"pickupContact\": {\n\t        \"name\": \"Jane Doe\",\n\t        \"company\": \"GrubHub\",\n\t        \"imageLink\": \"sampleString\",\n\t        \"phone\": \"555-1212\",\n\t        \"hasArrived\": false\n\t    },\n\t    \"etag\": \"2018-06-29T08:04:24.130Z\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{simulator-baseuri}}/simulator/response-action",
+									"host": [
+										"{{simulator-baseuri}}"
+									],
+									"path": [
+										"simulator",
+										"response-action"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Service",
+					"item": [
+						{
+							"name": "Place order - Burger",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "{{nep-application-key}}"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "{{nep-enterprice-unit}}"
+									},
+									{
+										"key": "nep-organization",
+										"value": "{{nep-organization}}"
+									},
+									{
+										"key": "nr1-device-id",
+										"value": "{{nr1-device-id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"fulfillment\": {\r\n\t\t\"autoRelease\": true,\r\n\t\t\"address\": {\r\n\t\t\t\"line1\": \"864 Spring St NW\",\r\n\t\t\t\"city\": \"Atlanta\",\r\n\t\t\t\"state\": \"GA\",\r\n\t\t\t\"postalCode\": \"30308\"\r\n\t\t},\r\n\t\t\"pickupDate\": \"2018-05-29\",\r\n\t\t\"type\": \"Delivery\"\r\n\t},\r\n\t\"fees\": [],\r\n\t\"comments\": \"People on the Go, Go to Wawa!\",\r\n\t\"source\": \"GrubHub\",\r\n\t\"orderLines\": [{\r\n\t\t\"overridePrice\" : true,\r\n\t\t\"extendedAmount\": 4.50,\r\n\t\t\"notes\": [],\r\n\t\t\"productId\": {\r\n\t\t\t\"type\": \"RPOS-ID\",\r\n\t\t\t\"value\": \"5070000318-70000000020-0-0\"\r\n\t\t},\r\n\t\t\"quantity\": {\r\n\t\t\t\"value\": 1.0\r\n\t\t},\r\n\t\t\"unitPrice\": 4.50,\r\n\t\t\"lineId\": \"1\"\r\n\t}],\r\n\t\"payments\" : [ {\r\n\t    \"amount\" : 4.50,\r\n\t    \"description\" : \"description\",\r\n\t    \"payBalance\" : true,\r\n\t    \"type\" : \"Cash\",\r\n    \t\"status\" : \"Paid\"\r\n\t}],\r\n\t\"taxes\": [],\r\n\t\"additionalReferenceIds\": {},\r\n\t\"taxExempt\": false,\r\n\t\"taxExemptId\": \"sampleString\",\r\n\t\"totalModifiers\": [],\r\n\t\"partySize\": 0,\r\n\t\"pickupContact\": {\r\n\t\t\"name\": \"Jane Doe\",\r\n\t\t\"company\": \"GrubHub\",\r\n\t\t\"imageLink\": \"sampleString\",\r\n\t\t\"phone\": \"555-1212\",\r\n\t\t\"hasArrived\": false\r\n\t},\r\n\t\"channel\": \"PhoneIn\",\r\n\t\"customer\": {\r\n\t\t\"firstName\": \"John\",\r\n\t\t\"lastName\": \"Doe\",\r\n\t\t\"phone\": \"555-1212\"\r\n\t},\r\n\t\"status\": \"OrderPlaced\",\r\n\t\"totals\" : [{\r\n    \"lineId\" : \"lineId\",\r\n    \"type\" : \"Net\",\r\n    \"value\" : 4.50\r\n\t}],\r\n\t\"referenceId\": \"12346578912345678900123456789465115165\"\r\n}"
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/order/3/orders/1",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"order",
+										"3",
+										"orders",
+										"1"
+									]
+								},
+								"description": "Generated from a curl request: \ncurl --request POST \\\n  --url http://nep-gateway.swenglabs.ncr.com/order/orders \\\n  --header 'nep-application-key: 19c7b50447ef0a4e0147ef8067900000' \\\n  --header 'nep-correlation-id: SOME_STRING_VALUE' \\\n  --header 'nep-enterprise-unit: SOME_STRING_VALUE' \\\n  --header 'nep-organization: SOME_STRING_VALUE' \\\n  --header 'nep-service-version: 3.1.0-SNAPSHOT' \\\n  --header 'nep-source-organization: SOME_STRING_VALUE' \\\n  --data '{\\\"fulfillment\\\":{\\\"address\\\":{\\\"type\\\":\\\"Business\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"line1\\\":\\\"sampleString\\\",\\\"line2\\\":\\\"sampleString\\\",\\\"city\\\":\\\"sampleString\\\",\\\"state\\\":\\\"sampleString\\\",\\\"country\\\":\\\"sampleString\\\",\\\"postalCode\\\":\\\"sampleString\\\",\\\"coordinates\\\":{\\\"latitude\\\":0,\\\"longitude\\\":0},\\\"crossStreets\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"businessInfo\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"department\\\":\\\"sampleString\\\"}},\\\"leadTimes\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"pickupDate\\\":\\\"sampleString\\\",\\\"pickupLocation\\\":\\\"sampleString\\\",\\\"fulfillmentTime\\\":\\\"sampleString\\\",\\\"type\\\":\\\"Delivery\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"autoRelease\\\":false},\\\"fees\\\":[],\\\"orderLines\\\":[],\\\"payments\\\":[],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"company\\\":\\\"sampleString\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"hasArrived\\\":false},\\\"comments\\\":\\\"sampleString\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"currency\\\":\\\"sampleString\\\",\\\"customer\\\":{\\\"id\\\":\\\"sampleString\\\",\\\"externalIds\\\":[],\\\"name\\\":\\\"sampleString\\\",\\\"firstName\\\":\\\"sampleString\\\",\\\"lastName\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"phoneExtension\\\":\\\"sampleString\\\",\\\"email\\\":\\\"sampleString\\\"},\\\"groupMembers\\\":[],\\\"errorDescription\\\":\\\"sampleString\\\",\\\"owner\\\":\\\"sampleString\\\",\\\"referenceId\\\":\\\"sampleString\\\",\\\"source\\\":\\\"sampleString\\\",\\\"status\\\":\\\"Canceled\\\",\\\"totals\\\":[]}'"
+							},
+							"response": []
+						},
+						{
+							"name": "Place order - Burger [Predefined Id]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "{{nep-application-key}}"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "{{nep-enterprice-unit}}"
+									},
+									{
+										"key": "nep-organization",
+										"value": "{{nep-organization}}"
+									},
+									{
+										"key": "nr1-device-id",
+										"value": "{{nr1-device-id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": \"1531218171011\",\r\n\t\"fulfillment\": {\r\n\t\t\"autoRelease\": true,\r\n\t\t\"address\": {\r\n\t\t\t\"line1\": \"864 Spring St NW\",\r\n\t\t\t\"city\": \"Atlanta\",\r\n\t\t\t\"state\": \"GA\",\r\n\t\t\t\"postalCode\": \"30308\"\r\n\t\t},\r\n\t\t\"pickupDate\": \"2018-05-29\",\r\n\t\t\"type\": \"Delivery\"\r\n\t},\r\n\t\"fees\": [],\r\n\t\"comments\": \"People on the Go, Go to Wawa!\",\r\n\t\"source\": \"GrubHub\",\r\n\t\"orderLines\": [{\r\n\t\t\"overridePrice\" : true,\r\n\t\t\"extendedAmount\": 4.50,\r\n\t\t\"notes\": [],\r\n\t\t\"productId\": {\r\n\t\t\t\"type\": \"RPOS-ID\",\r\n\t\t\t\"value\": \"5070000318-70000000020-0-0\"\r\n\t\t},\r\n\t\t\"quantity\": {\r\n\t\t\t\"value\": 1.0\r\n\t\t},\r\n\t\t\"unitPrice\": 4.50,\r\n\t\t\"lineId\": \"1\"\r\n\t}],\r\n\t\"payments\" : [ {\r\n\t    \"amount\" : 4.50,\r\n\t    \"description\" : \"description\",\r\n\t    \"payBalance\" : true,\r\n\t    \"type\" : \"Cash\",\r\n    \t\"status\" : \"Paid\"\r\n\t}],\r\n\t\"taxes\": [],\r\n\t\"additionalReferenceIds\": {},\r\n\t\"taxExempt\": false,\r\n\t\"taxExemptId\": \"sampleString\",\r\n\t\"totalModifiers\": [],\r\n\t\"partySize\": 0,\r\n\t\"pickupContact\": {\r\n\t\t\"name\": \"Jane Doe\",\r\n\t\t\"company\": \"GrubHub\",\r\n\t\t\"imageLink\": \"sampleString\",\r\n\t\t\"phone\": \"555-1212\",\r\n\t\t\"hasArrived\": false\r\n\t},\r\n\t\"channel\": \"PhoneIn\",\r\n\t\"customer\": {\r\n\t\t\"firstName\": \"John\",\r\n\t\t\"lastName\": \"Doe\",\r\n\t\t\"phone\": \"555-1212\"\r\n\t},\r\n\t\"status\": \"OrderPlaced\",\r\n\t\"totals\" : [{\r\n    \"lineId\" : \"lineId\",\r\n    \"type\" : \"Net\",\r\n    \"value\" : 4.50\r\n\t}],\r\n\t\"referenceId\": \"12346578912345678900123456789465115165\"\r\n}"
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/order/3/orders/1",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"order",
+										"3",
+										"orders",
+										"1"
+									]
+								},
+								"description": "Generated from a curl request: \ncurl --request POST \\\n  --url http://nep-gateway.swenglabs.ncr.com/order/orders \\\n  --header 'nep-application-key: 19c7b50447ef0a4e0147ef8067900000' \\\n  --header 'nep-correlation-id: SOME_STRING_VALUE' \\\n  --header 'nep-enterprise-unit: SOME_STRING_VALUE' \\\n  --header 'nep-organization: SOME_STRING_VALUE' \\\n  --header 'nep-service-version: 3.1.0-SNAPSHOT' \\\n  --header 'nep-source-organization: SOME_STRING_VALUE' \\\n  --data '{\\\"fulfillment\\\":{\\\"address\\\":{\\\"type\\\":\\\"Business\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"line1\\\":\\\"sampleString\\\",\\\"line2\\\":\\\"sampleString\\\",\\\"city\\\":\\\"sampleString\\\",\\\"state\\\":\\\"sampleString\\\",\\\"country\\\":\\\"sampleString\\\",\\\"postalCode\\\":\\\"sampleString\\\",\\\"coordinates\\\":{\\\"latitude\\\":0,\\\"longitude\\\":0},\\\"crossStreets\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"businessInfo\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"department\\\":\\\"sampleString\\\"}},\\\"leadTimes\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"pickupDate\\\":\\\"sampleString\\\",\\\"pickupLocation\\\":\\\"sampleString\\\",\\\"fulfillmentTime\\\":\\\"sampleString\\\",\\\"type\\\":\\\"Delivery\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"autoRelease\\\":false},\\\"fees\\\":[],\\\"orderLines\\\":[],\\\"payments\\\":[],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"company\\\":\\\"sampleString\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"hasArrived\\\":false},\\\"comments\\\":\\\"sampleString\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"currency\\\":\\\"sampleString\\\",\\\"customer\\\":{\\\"id\\\":\\\"sampleString\\\",\\\"externalIds\\\":[],\\\"name\\\":\\\"sampleString\\\",\\\"firstName\\\":\\\"sampleString\\\",\\\"lastName\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"phoneExtension\\\":\\\"sampleString\\\",\\\"email\\\":\\\"sampleString\\\"},\\\"groupMembers\\\":[],\\\"errorDescription\\\":\\\"sampleString\\\",\\\"owner\\\":\\\"sampleString\\\",\\\"referenceId\\\":\\\"sampleString\\\",\\\"source\\\":\\\"sampleString\\\",\\\"status\\\":\\\"Canceled\\\",\\\"totals\\\":[]}'"
+							},
+							"response": []
+						},
+						{
+							"name": "Acknowledge order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "{{nep-application-key}}"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "{{nep-enterprice-unit}}"
+									},
+									{
+										"key": "nep-organization",
+										"value": "{{nep-organization}}"
+									},
+									{
+										"key": "nr1-device-id",
+										"value": "{{nr1-device-id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/order/3/orders/1/1531296678873/acks",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"order",
+										"3",
+										"orders",
+										"1",
+										"1531296678873",
+										"acks"
+									]
+								},
+								"description": "Generated from a curl request: \ncurl --request POST \\\n  --url http://nep-gateway.swenglabs.ncr.com/order/orders \\\n  --header 'nep-application-key: 19c7b50447ef0a4e0147ef8067900000' \\\n  --header 'nep-correlation-id: SOME_STRING_VALUE' \\\n  --header 'nep-enterprise-unit: SOME_STRING_VALUE' \\\n  --header 'nep-organization: SOME_STRING_VALUE' \\\n  --header 'nep-service-version: 3.1.0-SNAPSHOT' \\\n  --header 'nep-source-organization: SOME_STRING_VALUE' \\\n  --data '{\\\"fulfillment\\\":{\\\"address\\\":{\\\"type\\\":\\\"Business\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"line1\\\":\\\"sampleString\\\",\\\"line2\\\":\\\"sampleString\\\",\\\"city\\\":\\\"sampleString\\\",\\\"state\\\":\\\"sampleString\\\",\\\"country\\\":\\\"sampleString\\\",\\\"postalCode\\\":\\\"sampleString\\\",\\\"coordinates\\\":{\\\"latitude\\\":0,\\\"longitude\\\":0},\\\"crossStreets\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"businessInfo\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"department\\\":\\\"sampleString\\\"}},\\\"leadTimes\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"pickupDate\\\":\\\"sampleString\\\",\\\"pickupLocation\\\":\\\"sampleString\\\",\\\"fulfillmentTime\\\":\\\"sampleString\\\",\\\"type\\\":\\\"Delivery\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"autoRelease\\\":false},\\\"fees\\\":[],\\\"orderLines\\\":[],\\\"payments\\\":[],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"company\\\":\\\"sampleString\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"hasArrived\\\":false},\\\"comments\\\":\\\"sampleString\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"currency\\\":\\\"sampleString\\\",\\\"customer\\\":{\\\"id\\\":\\\"sampleString\\\",\\\"externalIds\\\":[],\\\"name\\\":\\\"sampleString\\\",\\\"firstName\\\":\\\"sampleString\\\",\\\"lastName\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"phoneExtension\\\":\\\"sampleString\\\",\\\"email\\\":\\\"sampleString\\\"},\\\"groupMembers\\\":[],\\\"errorDescription\\\":\\\"sampleString\\\",\\\"owner\\\":\\\"sampleString\\\",\\\"referenceId\\\":\\\"sampleString\\\",\\\"source\\\":\\\"sampleString\\\",\\\"status\\\":\\\"Canceled\\\",\\\"totals\\\":[]}'"
+							},
+							"response": []
+						},
+						{
+							"name": "Lock order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "{{nep-application-key}}"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "{{nep-enterprice-unit}}"
+									},
+									{
+										"key": "nep-organization",
+										"value": "{{nep-organization}}"
+									},
+									{
+										"key": "nr1-device-id",
+										"value": "{{nr1-device-id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/order/3/orders/1/1531296678873/lock",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"order",
+										"3",
+										"orders",
+										"1",
+										"1531296678873",
+										"lock"
+									]
+								},
+								"description": "Generated from a curl request: \ncurl --request POST \\\n  --url http://nep-gateway.swenglabs.ncr.com/order/orders \\\n  --header 'nep-application-key: 19c7b50447ef0a4e0147ef8067900000' \\\n  --header 'nep-correlation-id: SOME_STRING_VALUE' \\\n  --header 'nep-enterprise-unit: SOME_STRING_VALUE' \\\n  --header 'nep-organization: SOME_STRING_VALUE' \\\n  --header 'nep-service-version: 3.1.0-SNAPSHOT' \\\n  --header 'nep-source-organization: SOME_STRING_VALUE' \\\n  --data '{\\\"fulfillment\\\":{\\\"address\\\":{\\\"type\\\":\\\"Business\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"line1\\\":\\\"sampleString\\\",\\\"line2\\\":\\\"sampleString\\\",\\\"city\\\":\\\"sampleString\\\",\\\"state\\\":\\\"sampleString\\\",\\\"country\\\":\\\"sampleString\\\",\\\"postalCode\\\":\\\"sampleString\\\",\\\"coordinates\\\":{\\\"latitude\\\":0,\\\"longitude\\\":0},\\\"crossStreets\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"businessInfo\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"department\\\":\\\"sampleString\\\"}},\\\"leadTimes\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"pickupDate\\\":\\\"sampleString\\\",\\\"pickupLocation\\\":\\\"sampleString\\\",\\\"fulfillmentTime\\\":\\\"sampleString\\\",\\\"type\\\":\\\"Delivery\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"autoRelease\\\":false},\\\"fees\\\":[],\\\"orderLines\\\":[],\\\"payments\\\":[],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"company\\\":\\\"sampleString\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"hasArrived\\\":false},\\\"comments\\\":\\\"sampleString\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"currency\\\":\\\"sampleString\\\",\\\"customer\\\":{\\\"id\\\":\\\"sampleString\\\",\\\"externalIds\\\":[],\\\"name\\\":\\\"sampleString\\\",\\\"firstName\\\":\\\"sampleString\\\",\\\"lastName\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"phoneExtension\\\":\\\"sampleString\\\",\\\"email\\\":\\\"sampleString\\\"},\\\"groupMembers\\\":[],\\\"errorDescription\\\":\\\"sampleString\\\",\\\"owner\\\":\\\"sampleString\\\",\\\"referenceId\\\":\\\"sampleString\\\",\\\"source\\\":\\\"sampleString\\\",\\\"status\\\":\\\"Canceled\\\",\\\"totals\\\":[]}'"
+							},
+							"response": []
+						},
+						{
+							"name": "Replace (update) order Copy",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "{{nep-application-key}}"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "{{nep-enterprice-unit}}"
+									},
+									{
+										"key": "nep-organization",
+										"value": "{{nep-organization}}"
+									},
+									{
+										"key": "nr1-device-id",
+										"value": "{{nr1-device-id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"1531296678873\",\n    \"fulfillment\": {\n        \"autoRelease\": true,\n        \"address\": {\n            \"line1\": \"864 Spring St NW\",\n            \"city\": \"Atlanta\",\n            \"state\": \"GA\",\n            \"postalCode\": \"30308\"\n        },\n        \"pickupDate\": \"2018-05-29\",\n        \"type\": \"Delivery\"\n    },\n    \"fees\": [],\n    \"comments\": \"People on the Go, Go to Wawa!\",\n    \"source\": \"GrubHub\",\n    \"orderLines\": [\n        {\n            \"overridePrice\": true,\n            \"extendedAmount\": 4.5,\n            \"notes\": [],\n            \"productId\": {\n                \"type\": \"RPOS-ID\",\n                \"value\": \"5070000318-70000000020-0-0\"\n            },\n            \"quantity\": {\n                \"value\": 1\n            },\n            \"unitPrice\": 4.5,\n            \"lineId\": \"1\"\n        }\n    ],\n    \"payments\": [\n        {\n            \"amount\": 4.5,\n            \"description\": \"description\",\n            \"payBalance\": true,\n            \"type\": \"Cash\",\n            \"status\": \"Paid\"\n        }\n    ],\n    \"taxes\": [],\n    \"additionalReferenceIds\": {},\n    \"taxExempt\": false,\n    \"taxExemptId\": \"sampleString\",\n    \"totalModifiers\": [],\n    \"partySize\": 0,\n    \"pickupContact\": {\n        \"name\": \"Jane Doe\",\n        \"company\": \"GrubHub\",\n        \"imageLink\": \"sampleString\",\n        \"phone\": \"555-1212\",\n        \"hasArrived\": false\n    },\n    \"channel\": \"PhoneIn\",\n    \"customer\": {\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"phone\": \"555-1212\"\n    },\n    \"status\": \"ReadyForPickup\",\n    \"totals\": [\n        {\n            \"lineId\": \"lineId\",\n            \"type\": \"Net\",\n            \"value\": 4.5\n        }\n    ],\n    \"referenceId\": \"12346578912345678900123456789465115165\",\n    \"dateCreated\": \"2018-07-09T11:53:50.602Z\",\n    \"dateUpdated\": \"2018-07-09T11:53:56.244Z\",\n    \"etag\": \"2018-07-09T11:53:56.244Z\",\n    \"sourceOrganization\": \"radiant-pos-uat\",\n    \"enterpriseUnitId\": \"48ba68ef96b64166b0d7955f4aeb7987\",\n    \"dateAcknowledged\": \"2018-07-09T11:53:53.393Z\",\n    \"lock\": {\n        \"lockedBy\": \"mj185102.local\",\n        \"lockedDate\": \"2018-07-09T11:53:56.244Z\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/order/3/orders/1/1531296678873",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"order",
+										"3",
+										"orders",
+										"1",
+										"1531296678873"
+									]
+								},
+								"description": "Generated from a curl request: \ncurl --request POST \\\n  --url http://nep-gateway.swenglabs.ncr.com/order/orders \\\n  --header 'nep-application-key: 19c7b50447ef0a4e0147ef8067900000' \\\n  --header 'nep-correlation-id: SOME_STRING_VALUE' \\\n  --header 'nep-enterprise-unit: SOME_STRING_VALUE' \\\n  --header 'nep-organization: SOME_STRING_VALUE' \\\n  --header 'nep-service-version: 3.1.0-SNAPSHOT' \\\n  --header 'nep-source-organization: SOME_STRING_VALUE' \\\n  --data '{\\\"fulfillment\\\":{\\\"address\\\":{\\\"type\\\":\\\"Business\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"line1\\\":\\\"sampleString\\\",\\\"line2\\\":\\\"sampleString\\\",\\\"city\\\":\\\"sampleString\\\",\\\"state\\\":\\\"sampleString\\\",\\\"country\\\":\\\"sampleString\\\",\\\"postalCode\\\":\\\"sampleString\\\",\\\"coordinates\\\":{\\\"latitude\\\":0,\\\"longitude\\\":0},\\\"crossStreets\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"businessInfo\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"department\\\":\\\"sampleString\\\"}},\\\"leadTimes\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"pickupDate\\\":\\\"sampleString\\\",\\\"pickupLocation\\\":\\\"sampleString\\\",\\\"fulfillmentTime\\\":\\\"sampleString\\\",\\\"type\\\":\\\"Delivery\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"autoRelease\\\":false},\\\"fees\\\":[],\\\"orderLines\\\":[],\\\"payments\\\":[],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"company\\\":\\\"sampleString\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"hasArrived\\\":false},\\\"comments\\\":\\\"sampleString\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"currency\\\":\\\"sampleString\\\",\\\"customer\\\":{\\\"id\\\":\\\"sampleString\\\",\\\"externalIds\\\":[],\\\"name\\\":\\\"sampleString\\\",\\\"firstName\\\":\\\"sampleString\\\",\\\"lastName\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"phoneExtension\\\":\\\"sampleString\\\",\\\"email\\\":\\\"sampleString\\\"},\\\"groupMembers\\\":[],\\\"errorDescription\\\":\\\"sampleString\\\",\\\"owner\\\":\\\"sampleString\\\",\\\"referenceId\\\":\\\"sampleString\\\",\\\"source\\\":\\\"sampleString\\\",\\\"status\\\":\\\"Canceled\\\",\\\"totals\\\":[]}'"
+							},
+							"response": []
+						},
+						{
+							"name": "Unlock order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "{{nep-application-key}}"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "{{nep-enterprice-unit}}"
+									},
+									{
+										"key": "nep-organization",
+										"value": "{{nep-organization}}"
+									},
+									{
+										"key": "nr1-device-id",
+										"value": "{{nr1-device-id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/order/3/orders/1/1531296678873/unlock",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"order",
+										"3",
+										"orders",
+										"1",
+										"1531296678873",
+										"unlock"
+									]
+								},
+								"description": "Generated from a curl request: \ncurl --request POST \\\n  --url http://nep-gateway.swenglabs.ncr.com/order/orders \\\n  --header 'nep-application-key: 19c7b50447ef0a4e0147ef8067900000' \\\n  --header 'nep-correlation-id: SOME_STRING_VALUE' \\\n  --header 'nep-enterprise-unit: SOME_STRING_VALUE' \\\n  --header 'nep-organization: SOME_STRING_VALUE' \\\n  --header 'nep-service-version: 3.1.0-SNAPSHOT' \\\n  --header 'nep-source-organization: SOME_STRING_VALUE' \\\n  --data '{\\\"fulfillment\\\":{\\\"address\\\":{\\\"type\\\":\\\"Business\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"line1\\\":\\\"sampleString\\\",\\\"line2\\\":\\\"sampleString\\\",\\\"city\\\":\\\"sampleString\\\",\\\"state\\\":\\\"sampleString\\\",\\\"country\\\":\\\"sampleString\\\",\\\"postalCode\\\":\\\"sampleString\\\",\\\"coordinates\\\":{\\\"latitude\\\":0,\\\"longitude\\\":0},\\\"crossStreets\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"businessInfo\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"department\\\":\\\"sampleString\\\"}},\\\"leadTimes\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"pickupDate\\\":\\\"sampleString\\\",\\\"pickupLocation\\\":\\\"sampleString\\\",\\\"fulfillmentTime\\\":\\\"sampleString\\\",\\\"type\\\":\\\"Delivery\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"autoRelease\\\":false},\\\"fees\\\":[],\\\"orderLines\\\":[],\\\"payments\\\":[],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"company\\\":\\\"sampleString\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"hasArrived\\\":false},\\\"comments\\\":\\\"sampleString\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"currency\\\":\\\"sampleString\\\",\\\"customer\\\":{\\\"id\\\":\\\"sampleString\\\",\\\"externalIds\\\":[],\\\"name\\\":\\\"sampleString\\\",\\\"firstName\\\":\\\"sampleString\\\",\\\"lastName\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"phoneExtension\\\":\\\"sampleString\\\",\\\"email\\\":\\\"sampleString\\\"},\\\"groupMembers\\\":[],\\\"errorDescription\\\":\\\"sampleString\\\",\\\"owner\\\":\\\"sampleString\\\",\\\"referenceId\\\":\\\"sampleString\\\",\\\"source\\\":\\\"sampleString\\\",\\\"status\\\":\\\"Canceled\\\",\\\"totals\\\":[]}'"
+							},
+							"response": []
+						},
+						{
+							"name": "Find unacknowledged",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "{{nep-application-key}}"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "{{nep-enterprice-unit}}"
+									},
+									{
+										"key": "nep-organization",
+										"value": "{{nep-organization}}"
+									},
+									{
+										"key": "nr1-device-id",
+										"value": "{{nr1-device-id}}"
+									}
+								],
+								"url": {
+									"raw": "{{nep-server-baseuri}}/order/3/orders/1/find-unacknowledged",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"order",
+										"3",
+										"orders",
+										"1",
+										"find-unacknowledged"
+									]
+								},
+								"description": "Generated from a curl request: \ncurl --request POST \\\n  --url http://nep-gateway.swenglabs.ncr.com/order/orders \\\n  --header 'nep-application-key: 19c7b50447ef0a4e0147ef8067900000' \\\n  --header 'nep-correlation-id: SOME_STRING_VALUE' \\\n  --header 'nep-enterprise-unit: SOME_STRING_VALUE' \\\n  --header 'nep-organization: SOME_STRING_VALUE' \\\n  --header 'nep-service-version: 3.1.0-SNAPSHOT' \\\n  --header 'nep-source-organization: SOME_STRING_VALUE' \\\n  --data '{\\\"fulfillment\\\":{\\\"address\\\":{\\\"type\\\":\\\"Business\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"line1\\\":\\\"sampleString\\\",\\\"line2\\\":\\\"sampleString\\\",\\\"city\\\":\\\"sampleString\\\",\\\"state\\\":\\\"sampleString\\\",\\\"country\\\":\\\"sampleString\\\",\\\"postalCode\\\":\\\"sampleString\\\",\\\"coordinates\\\":{\\\"latitude\\\":0,\\\"longitude\\\":0},\\\"crossStreets\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"businessInfo\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"department\\\":\\\"sampleString\\\"}},\\\"leadTimes\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"pickupDate\\\":\\\"sampleString\\\",\\\"pickupLocation\\\":\\\"sampleString\\\",\\\"fulfillmentTime\\\":\\\"sampleString\\\",\\\"type\\\":\\\"Delivery\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"autoRelease\\\":false},\\\"fees\\\":[],\\\"orderLines\\\":[],\\\"payments\\\":[],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"company\\\":\\\"sampleString\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"hasArrived\\\":false},\\\"comments\\\":\\\"sampleString\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"currency\\\":\\\"sampleString\\\",\\\"customer\\\":{\\\"id\\\":\\\"sampleString\\\",\\\"externalIds\\\":[],\\\"name\\\":\\\"sampleString\\\",\\\"firstName\\\":\\\"sampleString\\\",\\\"lastName\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"phoneExtension\\\":\\\"sampleString\\\",\\\"email\\\":\\\"sampleString\\\"},\\\"groupMembers\\\":[],\\\"errorDescription\\\":\\\"sampleString\\\",\\\"owner\\\":\\\"sampleString\\\",\\\"referenceId\\\":\\\"sampleString\\\",\\\"source\\\":\\\"sampleString\\\",\\\"status\\\":\\\"Canceled\\\",\\\"totals\\\":[]}'"
+							},
+							"response": []
+						},
+						{
+							"name": "Get order",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "{{nep-application-key}}"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "{{nep-enterprice-unit}}"
+									},
+									{
+										"key": "nep-organization",
+										"value": "{{nep-organization}}"
+									},
+									{
+										"key": "nr1-device-id",
+										"value": "{{nr1-device-id}}"
+									}
+								],
+								"url": {
+									"raw": "{{nep-server-baseuri}}/order/3/orders/1/1531296678873",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"order",
+										"3",
+										"orders",
+										"1",
+										"1531296678873"
+									]
+								},
+								"description": "Generated from a curl request: \ncurl --request POST \\\n  --url http://nep-gateway.swenglabs.ncr.com/order/orders \\\n  --header 'nep-application-key: 19c7b50447ef0a4e0147ef8067900000' \\\n  --header 'nep-correlation-id: SOME_STRING_VALUE' \\\n  --header 'nep-enterprise-unit: SOME_STRING_VALUE' \\\n  --header 'nep-organization: SOME_STRING_VALUE' \\\n  --header 'nep-service-version: 3.1.0-SNAPSHOT' \\\n  --header 'nep-source-organization: SOME_STRING_VALUE' \\\n  --data '{\\\"fulfillment\\\":{\\\"address\\\":{\\\"type\\\":\\\"Business\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"line1\\\":\\\"sampleString\\\",\\\"line2\\\":\\\"sampleString\\\",\\\"city\\\":\\\"sampleString\\\",\\\"state\\\":\\\"sampleString\\\",\\\"country\\\":\\\"sampleString\\\",\\\"postalCode\\\":\\\"sampleString\\\",\\\"coordinates\\\":{\\\"latitude\\\":0,\\\"longitude\\\":0},\\\"crossStreets\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"businessInfo\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"department\\\":\\\"sampleString\\\"}},\\\"leadTimes\\\":[],\\\"notes\\\":\\\"sampleString\\\",\\\"pickupDate\\\":\\\"sampleString\\\",\\\"pickupLocation\\\":\\\"sampleString\\\",\\\"fulfillmentTime\\\":\\\"sampleString\\\",\\\"type\\\":\\\"Delivery\\\",\\\"typeLabel\\\":\\\"sampleString\\\",\\\"autoRelease\\\":false},\\\"fees\\\":[],\\\"orderLines\\\":[],\\\"payments\\\":[],\\\"taxes\\\":[],\\\"additionalReferenceIds\\\":{},\\\"taxExempt\\\":false,\\\"taxExemptId\\\":\\\"sampleString\\\",\\\"totalModifiers\\\":[],\\\"partySize\\\":0,\\\"pickupContact\\\":{\\\"name\\\":\\\"sampleString\\\",\\\"company\\\":\\\"sampleString\\\",\\\"imageLink\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"hasArrived\\\":false},\\\"comments\\\":\\\"sampleString\\\",\\\"channel\\\":\\\"PhoneIn\\\",\\\"currency\\\":\\\"sampleString\\\",\\\"customer\\\":{\\\"id\\\":\\\"sampleString\\\",\\\"externalIds\\\":[],\\\"name\\\":\\\"sampleString\\\",\\\"firstName\\\":\\\"sampleString\\\",\\\"lastName\\\":\\\"sampleString\\\",\\\"phone\\\":\\\"sampleString\\\",\\\"phoneExtension\\\":\\\"sampleString\\\",\\\"email\\\":\\\"sampleString\\\"},\\\"groupMembers\\\":[],\\\"errorDescription\\\":\\\"sampleString\\\",\\\"owner\\\":\\\"sampleString\\\",\\\"referenceId\\\":\\\"sampleString\\\",\\\"source\\\":\\\"sampleString\\\",\\\"status\\\":\\\"Canceled\\\",\\\"totals\\\":[]}'"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Item Avalability",
+			"item": [
+				{
+					"name": "Update Item Availability ",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "nep-enterprise-unit",
+								"value": "d3054b09a214400580857f568f6d847c"
+							},
+							{
+								"key": "nep-application-key",
+								"value": "8a808f29602bec9c016206789d140224"
+							},
+							{
+								"key": "nep-organization",
+								"value": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"availableForSale\": false\n}"
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/ias/1/item-availability/1/1234",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"ias",
+								"1",
+								"item-availability",
+								"1",
+								"1234"
+							]
+						},
+						"description": "This rest endpoint updates the availability information for all items in the request for a specific enterprise unit. Requires the IAS_MULTI_ITEM_ADMINISTRATOR role."
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk Update Item Availability",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "nep-enterprise-unit",
+								"value": "d3054b09a214400580857f568f6d847c"
+							},
+							{
+								"key": "nep-application-key",
+								"value": "8a808f29602bec9c016206789d140224"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "nep-organization",
+								"value": "radiant-pos-uat"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"multiItemAvailabilityWriteData\": [\r\n        {\r\n            \"availableForSale\": false,\r\n            \"categoryCode\": \"1234\"\r\n        },\r\n        {\r\n            \"availableForSale\": false,\r\n            \"categoryCode\": \"1236\"\r\n        }\r\n        \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/ias/1/item-availability/1",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"ias",
+								"1",
+								"item-availability",
+								"1"
+							]
+						},
+						"description": "This rest endpoint updates the availability information for all items in the request for a specific enterprise unit. Requires the IAS_MULTI_ITEM_ADMINISTRATOR role."
+					},
+					"response": []
+				},
+				{
+					"name": "Clear All Unavailable Items",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "nep-enterprise-unit",
+								"value": "{{nep-enterprise-unit}}"
+							},
+							{
+								"key": "nep-application-key",
+								"value": "19c7b50447ef0a4e0147ef8067900000"
+							},
+							{
+								"key": "nep-organization",
+								"value": ""
+							},
+							{
+								"key": "nep-service-version",
+								"value": "1.0.1-SNAPSHOT"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://nep-gateway.swenglabs.ncr.com/ias/item-availability",
+							"protocol": "http",
+							"host": [
+								"nep-gateway",
+								"swenglabs",
+								"ncr",
+								"com"
+							],
+							"path": [
+								"ias",
+								"item-availability"
+							]
+						},
+						"description": "This rest endpoint will clear all unavailable items for the specified enterprise unit. Requires the IAS_CLEAR_ALL role."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Item Availability",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "nep-enterprise-unit",
+								"value": "{{nep-enterprise-unit}}"
+							},
+							{
+								"key": "nep-application-key",
+								"value": "8a808f29602bec9c016206789d140224"
+							},
+							{
+								"key": "nep-organization",
+								"value": ""
+							},
+							{
+								"key": "nep-service-version",
+								"value": "1:1",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{nep-server-baseuri}}/ias/1/item-availability/1/1234",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"ias",
+								"1",
+								"item-availability",
+								"1",
+								"1234"
+							]
+						},
+						"description": "This rest endpoint retrieves the availability information for the specified item & enterprise unit. Requires the IAS_SINGLE_ITEM_VIEWER role."
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk Get Item Availability",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "nep-enterprise-unit",
+								"value": "{{nep-enterprise-unit}}"
+							},
+							{
+								"key": "nep-application-key",
+								"value": "8a808f29602bec9c016206789d140224"
+							},
+							{
+								"key": "nep-organization",
+								"value": ""
+							},
+							{
+								"key": "nep-service-version",
+								"value": "1:1",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{nep-server-baseuri}}/ias/1/item-availability/1",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"ias",
+								"1",
+								"item-availability",
+								"1"
+							]
+						},
+						"description": "This rest endpoint retrieves the availability information for the specified item & enterprise unit. Requires the IAS_SINGLE_ITEM_VIEWER role."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "Item-attributes",
+					"item": [
+						{
+							"name": "Add Item-Attributes",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"itemAttributes\": [{\r\n            \"version\": 10,\r\n            \"blockForSale\": false,\r\n            \"shortDescription\": {\r\n                \"values\": [{\r\n                        \"locale\": \"en-US\",\r\n                        \"value\": \"Item 1 Description\"\r\n                    }\r\n                ]\r\n            },\r\n            \"status\": \"ACTIVE\",\r\n            \"dynamicAttributes\": [],\r\n            \"groups\": [],\r\n            \"linkGroups\": [\"LinkedGroup1\", \"LinkedGroup2\"],\r\n            \"imageUrls\": [],\r\n            \"itemAttributesId\": {\r\n                \"categoryCode\": \"CategoryIdForItem1\",\r\n                \"enterpriseUnitId\": \"MyEnterpriseUnit\"\r\n            }\r\n        },\r\n        {\r\n            \"version\": 10,\r\n            \"blockForSale\": false,\r\n            \"shortDescription\": {\r\n                \"values\": [{\r\n                        \"locale\": \"en-US\",\r\n                        \"value\": \"Item 2 Description\"\r\n                    }\r\n                ]\r\n            },\r\n            \"status\": \"ACTIVE\",\r\n            \"dynamicAttributes\": [],\r\n            \"groups\": [],\r\n            \"linkGroups\": [\"LinkedGroup1\", \"LinkedGroup2\"],\r\n            \"imageUrls\": [],\r\n            \"itemAttributesId\": {\r\n                \"categoryCode\": \"CategoryIdForItem2\",\r\n                \"enterpriseUnitId\": \"MyEnterpriseUnit\"\r\n            }\r\n        }\r\n    ]\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-attributes/1",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-attributes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Multiple Item-Attributes",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "MyEnterpriseUnit"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"itemIds\": [{\r\n            \"categoryCode\": \"CategoryIdForItem1\"\r\n        },\r\n        {\r\n        \t\"categoryCode\": \"CategoryIdForItem2\"\r\n        }\r\n    ]\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-attributes/1/get-multiple",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-attributes",
+										"1",
+										"get-multiple"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Item-Attributes Snapshot",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "nep-enterprise-unit",
+										"value": "MyEnterpriseUnit"
+									},
+									{
+										"key": "nep-snapshot-version",
+										"value": "0"
+									}
+								],
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-attributes/1/snapshot",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-attributes",
+										"1",
+										"snapshot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Item-Attribute",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "nep-enterprise-unit",
+										"value": "MyEnterpriseUnit"
+									}
+								],
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-attributes/1/CategoryIdForItem2",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-attributes",
+										"1",
+										"CategoryIdForItem2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Single Item-Attribute",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "nep-enterprise-unit",
+										"value": "MyEnterpriseUnit"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"version\": 100,\r\n    \"blockForSale\": false,\r\n    \"shortDescription\": {\r\n        \"values\": [{\r\n                \"locale\": \"en-US\",\r\n                \"value\": \"Item 2 updated\"\r\n            }\r\n        ]\r\n    },\r\n    \"status\": \"ACTIVE\",\r\n    \"dynamicAttributes\": [],\r\n    \"groups\": [],\r\n    \"linkGroups\": [\"LinkedGroup3\", \"LinkedGroup4\"],\r\n    \"imageUrls\": [],\r\n    \"itemAttributesId\": {\r\n        \"categoryCode\": \"CategoryIdForItem2\",\r\n        \"enterpriseUnitId\": \"MyEnterpriseUnit\"\r\n    }\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-attributes/1/CategoryIdForItem2",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-attributes",
+										"1",
+										"CategoryIdForItem2"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Item Prices",
+					"item": [
+						{
+							"name": "Import Prices",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"itemPrices\": [{\r\n            \"version\": 80,\r\n            \"price\": 71,\r\n            \"currency\": \"String\",\r\n            \"effectiveDate\": \"2018-08-23T17:39:57.731Z\",\r\n            \"endDate\": \"2019-02-01T06:51:55.245Z\",\r\n            \"status\": \"INACTIVE\",\r\n            \"basePrice\": false,\r\n            \"linkGroupId\": {\r\n                \"linkGroupCode\": \"String\"\r\n            },\r\n            \"dynamicAttributes\": [{\r\n                    \"type\": \"String\",\r\n                    \"attributes\": []\r\n                }\r\n            ],\r\n            \"priceId\": {\r\n                \"categoryCode\": \"item1\",\r\n                \"enterpriseUnitId\": \"MyEnterpriseUnit\",\r\n                \"priceCode\": \"price1\"\r\n            }\r\n        },\r\n        {\r\n            \"version\": 80,\r\n            \"price\": 71,\r\n            \"currency\": \"String\",\r\n            \"effectiveDate\": \"2018-08-23T17:39:57.731Z\",\r\n            \"endDate\": \"2019-02-01T06:51:55.245Z\",\r\n            \"status\": \"INACTIVE\",\r\n            \"basePrice\": false,\r\n            \"linkGroupId\": {\r\n                \"linkGroupCode\": \"String\"\r\n            },\r\n            \"dynamicAttributes\": [{\r\n                    \"type\": \"String\",\r\n                    \"attributes\": []\r\n                }\r\n            ],\r\n            \"priceId\": {\r\n                \"categoryCode\": \"item1\",\r\n                \"enterpriseUnitId\": \"MyEnterpriseUnit\",\r\n                \"priceCode\": \"price2\"\r\n            }\r\n        },\r\n        {\r\n            \"version\": 80,\r\n            \"price\": 71,\r\n            \"currency\": \"String\",\r\n            \"effectiveDate\": \"2018-08-23T17:39:57.731Z\",\r\n            \"endDate\": \"2019-02-01T06:51:55.245Z\",\r\n            \"status\": \"INACTIVE\",\r\n            \"basePrice\": false,\r\n            \"linkGroupId\": {\r\n                \"linkGroupCode\": \"String\"\r\n            },\r\n            \"dynamicAttributes\": [{\r\n                    \"type\": \"String\",\r\n                    \"attributes\": []\r\n                }\r\n            ],\r\n            \"priceId\": {\r\n                \"categoryCode\": \"item2\",\r\n                \"enterpriseUnitId\": \"MyEnterpriseUnit\",\r\n                \"priceCode\": \"price3\"\r\n            }\r\n        }\r\n    ]\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-prices/1",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-prices",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get-Multiple Prices",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "MyEnterpriseUnit"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"itemIds\": [{\r\n            \"categoryCode\": \"CAT_PANINI\"\r\n        },\r\n        {\r\n        \t\"categoryCode\": \"item1\"\r\n        },\r\n        {\r\n        \t\"categoryCode\": \"item2\"\r\n        }\r\n    ]\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-prices/1/get-multiple",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-prices",
+										"1",
+										"get-multiple"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Snapshot",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "nep-snapshot-version",
+										"value": "1537352370275"
+									}
+								],
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-prices/1/snapshot",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-prices",
+										"1",
+										"snapshot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Single Item-Price",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "nep-enterprise-unit",
+										"value": "MyEnterpriseUnit"
+									}
+								],
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-prices/1/item1/price1",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-prices",
+										"1",
+										"item1",
+										"price1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Single Item-Price",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "MyEnterpriseUnit"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"version\": 85,\r\n    \"price\": 100,\r\n    \"currency\": \"String\",\r\n    \"effectiveDate\": \"2018-08-23T17:39:57Z\",\r\n    \"endDate\": \"2019-02-01T06:51:55Z\",\r\n    \"status\": \"INACTIVE\",\r\n    \"basePrice\": false,\r\n    \"linkGroupId\": {\r\n        \"linkGroupCode\": \"String\"\r\n    },\r\n    \"dynamicAttributes\": [{\r\n            \"type\": \"String\",\r\n            \"attributes\": []\r\n        }\r\n    ]\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{nep-server-baseuri}}/catalog/2.2.1/item-prices/1/item1/price1",
+									"host": [
+										"{{nep-server-baseuri}}"
+									],
+									"path": [
+										"catalog",
+										"2.2.1",
+										"item-prices",
+										"1",
+										"item1",
+										"price1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "StorageService",
+			"item": [
+				{
+					"name": "Get Storage File",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{nep-server-baseuri}}/storage/storage-objects/i2inpiau.gz",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"storage",
+								"storage-objects",
+								"i2inpiau.gz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Mini Threshold",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "mini-batch-threshold",
+								"value": "3"
+							}
+						],
+						"url": {
+							"raw": "{{nep-server-baseuri}}/storageSimulator/MiniBatchThreshold",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"storageSimulator",
+								"MiniBatchThreshold"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get MiniBatchThreshold",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{nep-server-baseuri}}/storageSimulator/MiniBatchThreshold",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"storageSimulator",
+								"MiniBatchThreshold"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Allow File Save Value",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{nep-server-baseuri}}/storageSimulator/AllowSaveFile",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"storageSimulator",
+								"AllowSaveFile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Allow File Save",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "allow-save-file",
+								"value": "false",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/storageSimulator/AllowSaveFile",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"storageSimulator",
+								"AllowSaveFile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RCM",
+			"item": [
+				{
+					"name": "RSM - RSL Access Point",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\"?>\r\n<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\" SOAP:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">\r\n    <SOAP:Body>\r\n        <GetCurrentMessage>\r\n            <siteId>{{rcmSiteId}}</siteId>\r\n            <queueId></queueId>\r\n            <msgId></msgId>\r\n            <xmlMsg></xmlMsg>\r\n            <errorXML></errorXML>\r\n        </GetCurrentMessage>\r\n    </SOAP:Body>\r\n</SOAP:Envelope>"
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/rcm/rsl-access-point",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"rcm",
+								"rsl-access-point"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RCM - Acknowledge Message by Id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\"?>\r\n<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\" SOAP:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">\r\n\t<SOAP:Body>\r\n\t\t<CurrentAckSuccess>\r\n\t\t\t<siteId>{{rcmSiteId}}</siteId>\r\n\t\t\t<queueId/>\r\n\t\t\t<msgId>2</msgId>\r\n\t\t\t<serverResponse/>\r\n\t\t\t<errorXML/>\r\n\t\t</CurrentAckSuccess>\r\n\t</SOAP:Body>\r\n</SOAP:Envelope>\r\n"
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/rcm/rsl-access-point",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"rcm",
+								"rsl-access-point"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RCM - Queue Download",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "last-modified",
+								"value": "Wed, 21 Oct 2015 07:28:00 GMT",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"siteId\": \"{{rcmSiteId}}\",\n\t\"updateId\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/rcm/simulator/messages/download-request",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"rcm",
+								"simulator",
+								"messages",
+								"download-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RCM - Download file",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<G>\r\n    <S>56f2d4c8-13eb-4ac7-bf7f-90bea7d56b18</S>\r\n    <F>c:\\rcmdata\\Site_70000099\\PFUpdate_70000099_70000015527.xml</F>\r\n    <O>0</O>\r\n    <WFD>\r\n        <CTH>0</CTH>\r\n        <CTL>0</CTL>\r\n        <WTH>0</WTH>\r\n        <WTL>0</WTL>\r\n        <SH>0</SH>\r\n        <SL>0</SL>\r\n    </WFD>\r\n</G>"
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/RCMHostServices/File?fullpath=pfg/EEUpdate_70000099_70000015944.xml",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"RCMHostServices",
+								"File"
+							],
+							"query": [
+								{
+									"key": "fullpath",
+									"value": "pfg/EEUpdate_70000099_70000015944.xml"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RCM - Prepare file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TestFile>\n\t<Text>Hello World</Text>\n</TestFile>"
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/rcm/simulator/files/pfg/testFile.xml?destFileName=hello.xml",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"rcm",
+								"simulator",
+								"files",
+								"pfg",
+								"testFile.xml"
+							],
+							"query": [
+								{
+									"key": "destFileName",
+									"value": "hello.xml"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RCM - Delete files",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<TestFile>\n\t<Text>Hello World</Text>\n</TestFile>"
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/rcm/simulator/files",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"rcm",
+								"simulator",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RCM - Set site transform",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{nep-server-baseuri}}/rcm/site-transform",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"rcm",
+								"site-transform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RCM - Get site transform",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "{{nep-server-baseuri}}/rcm/site-transform?version=v2019.2.206.0&appversion=PCS-RPOS-G6",
+							"host": [
+								"{{nep-server-baseuri}}"
+							],
+							"path": [
+								"rcm",
+								"site-transform"
+							],
+							"query": [
+								{
+									"key": "version",
+									"value": "v2019.2.206.0"
+								},
+								{
+									"key": "appversion",
+									"value": "PCS-RPOS-G6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ce74ea5c-e688-4239-abd4-33faa15521f1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3fdbc628-361c-411b-b3e3-6b9eb905d483",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "22a6a16c-2194-4ca7-9683-d438b8218301",
+			"key": "simulator-baseuri",
+			"value": "http://localhost:52345",
+			"type": "string"
+		},
+		{
+			"id": "d16b3089-9ed1-405d-8897-4a9946382137",
+			"key": "nep-server-baseuri",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"id": "12ccfe67-ef24-4bac-8a5f-0234d2443174",
+			"key": "nep-application-key",
+			"value": "8a808f29602bec9c016206789d140224",
+			"type": "string"
+		},
+		{
+			"id": "3f1e01b3-9b3c-4464-9798-37327c3d87ee",
+			"key": "nep-enterprice-unit",
+			"value": "yourenterpriceunit",
+			"type": "string"
+		},
+		{
+			"id": "ed3cf234-def5-4f97-8bf6-e562810953d7",
+			"key": "nep-organization",
+			"value": "radiant-pos-uat",
+			"type": "string"
+		},
+		{
+			"id": "571dfeb7-da86-4959-a700-afbae858ed86",
+			"key": "nr1-device-id",
+			"value": "yourdeviceid",
+			"type": "string"
+		},
+		{
+			"id": "48e4d42e-8a4e-4a42-82ab-18397a6f5a1a",
+			"key": "rcmSiteId",
+			"value": "56f2d4c8-13eb-4ac7-bf7f-90bea7d56b18",
+			"type": "string"
+		}
+	]
+}

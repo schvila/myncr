@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<Setup>
+	<Host>127.0.0.1</Host>
+	<SocketPort>8900</SocketPort>
+	<Path>/POSServicesConfiguration/WebConfiguration.xml</Path>
+</Setup>

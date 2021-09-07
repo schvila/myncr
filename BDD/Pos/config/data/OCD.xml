@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>OCD Relay File</Description>
+        <Version>3</Version>
+    </FileHeader>
+    <MediaDirectoryRecord>
+        <record>
+            <NTDirectory>c:\Program Files\Radiant\Fastpoint\Media\</NTDirectory>
+            <CEDirectory>\Storage Card\Media\</CEDirectory>
+        </record>
+    </MediaDirectoryRecord>
+    <OCDInfoRecs>
+        <record>
+            <MarqueeMessage>Have a nice day! 1</MarqueeMessage>
+            <MarqueeForegroundColor>15</MarqueeForegroundColor>
+            <MarqueeForegroundColorDepth>0</MarqueeForegroundColorDepth>
+            <MarqueeBackgroundColor>12</MarqueeBackgroundColor>
+            <MarqueeBackgroundColorDepth>0</MarqueeBackgroundColorDepth>
+            <FooterForegroundColor>15</FooterForegroundColor>
+            <FooterForegroundColorDepth>0</FooterForegroundColorDepth>
+            <FooterBackgroundColor>12</FooterBackgroundColor>
+            <FooterBackgroundColorDepth>0</FooterBackgroundColorDepth>
+            <ReceiptImage>RECEIPT.AVI</ReceiptImage>
+            <ReceiptFont>DragonFly.uft</ReceiptFont>
+            <ReceiptRunningTotalString>Total</ReceiptRunningTotalString>
+            <ReceiptTotalString>Your total is</ReceiptTotalString>
+            <ReceiptChangeString>Change</ReceiptChangeString>
+            <ReceiptPaidString>Amount paid</ReceiptPaidString>
+            <ReceiptShowComboItems>1</ReceiptShowComboItems>
+            <ReceiptShowTax>1</ReceiptShowTax>
+            <ReceiptTaxString>Tax</ReceiptTaxString>
+            <MiscForceRefresh>1</MiscForceRefresh>
+            <MiscDuration>10</MiscDuration>
+            <LanguageCodePage>0</LanguageCodePage>
+            <TransNumberShow>1</TransNumberShow>
+            <TransNumberNumberOfDigits>3</TransNumberNumberOfDigits>
+            <TransNumberMessage>Your order is</TransNumberMessage>
+            <DimmerTime>0</DimmerTime>
+        </record>
+        <record>
+            <MarqueeMessage>Welcome to Dodge's!</MarqueeMessage>
+            <MarqueeForegroundColor>15</MarqueeForegroundColor>
+            <MarqueeForegroundColorDepth>0</MarqueeForegroundColorDepth>
+            <MarqueeBackgroundColor>12</MarqueeBackgroundColor>
+            <MarqueeBackgroundColorDepth>0</MarqueeBackgroundColorDepth>
+            <FooterForegroundColor>15</FooterForegroundColor>
+            <FooterForegroundColorDepth>0</FooterForegroundColorDepth>
+            <FooterBackgroundColor>12</FooterBackgroundColor>
+            <FooterBackgroundColorDepth>0</FooterBackgroundColorDepth>
+            <ReceiptImage>RECEIPT.AVI</ReceiptImage>
+            <ReceiptFont>lucidaconsole28b.uft</ReceiptFont>
+            <ReceiptRunningTotalString>Total</ReceiptRunningTotalString>
+            <ReceiptTotalString>Your total is</ReceiptTotalString>
+            <ReceiptChangeString>Change</ReceiptChangeString>
+            <ReceiptPaidString>Amount paid</ReceiptPaidString>
+            <ReceiptShowComboItems>1</ReceiptShowComboItems>
+            <ReceiptShowTax>1</ReceiptShowTax>
+            <ReceiptTaxString>Tax</ReceiptTaxString>
+            <MiscForceRefresh>1</MiscForceRefresh>
+            <MiscDuration>10</MiscDuration>
+            <LanguageCodePage>0</LanguageCodePage>
+            <TransNumberShow>1</TransNumberShow>
+            <TransNumberNumberOfDigits>3</TransNumberNumberOfDigits>
+            <TransNumberMessage>Your order is</TransNumberMessage>
+            <DimmerTime>0</DimmerTime>
+        </record>
+    </OCDInfoRecs>
+    <SlideShowSlidesRecs>
+        <record>
+            <SlideShowSlideFileName>idle.avi</SlideShowSlideFileName>
+        </record>
+    </SlideShowSlidesRecs>
+</RelayFile>

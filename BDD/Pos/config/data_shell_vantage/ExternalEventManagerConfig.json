@@ -1,0 +1,48 @@
+{
+    "RadPipes":
+    [
+        {
+            "RadPipeDescription": "Shell IFSF EPS DC RadPipe",
+            "RadPipeConfig":
+            {
+                "PipeName": "IFSF_EPS_SHELL_BAPIDC",
+                "PipeOptions": 2,
+                "ReplyTimeout": 1000
+            }
+        }
+    ],
+    "ExternalEvents":
+    [
+        {
+        "ExternalEventName": "EVENT_EXTERNAL_IFSF_EPS",
+        "ExternalEventConfig":
+        {
+            "PipeName": "IFSF_EPS_SHELL_BAPIDC",
+            "EventId":    60000,
+            "SubEventId": null,
+            "Timeout":    420
+        }
+        },
+        {
+        "ExternalEventName": "EVENT_EXTERNAL__NEW_TRAN_STARTED,SUBEVENT_EXTERNAL__NEW_TRAN_STARTED__DISPATCH",
+        "ExternalEventConfig":
+        {
+            "PipeName": "IFSF_EPS_SHELL_BAPIDC",
+            "EventId":    11030,
+            "SubEventId": 1,
+            "Timeout":    0
+        }
+        },
+        {
+        "ExternalEventName": "EVENT_EXTERNAL__PRE_TOTAL,SUBEVENT_EXTERNAL__PRE_TOTAL__DISPATCH",
+        "ExternalEventConfig":
+        {
+            "PipeName": "IFSF_EPS_SHELL_BAPIDC",
+            "EventId":    11031,
+            "SubEventId": 1,
+            "Timeout":    420
+        }
+        }
+    ],
+    "MessageEncoding":                  "JSON"
+}

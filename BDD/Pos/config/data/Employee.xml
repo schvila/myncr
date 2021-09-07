@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>BDD;0.0.0.000;0</Description>
+        <Version>4</Version>
+    </FileHeader>
+    <EmployeeRecords>
+        <record>
+            <FirstName>ICR</FirstName>
+            <LastName>ICR</LastName>
+            <MiddleInitial>
+            </MiddleInitial>
+            <EmployeeId>1</EmployeeId>
+            <OperatorMode>0</OperatorMode>
+            <OperatorActive>1</OperatorActive>
+        </record>
+        <record>
+            <FirstName>&#x1F780;Cashier&#x1F781;</FirstName>
+            <LastName>1234</LastName>
+            <MiddleInitial>
+            </MiddleInitial>
+            <EmployeeId>70000000014</EmployeeId>
+            <OperatorMode>2</OperatorMode>
+            <OperatorActive>1</OperatorActive>
+        </record>
+        <record>
+            <FirstName>&#x1F782;Manager&#x1F783;</FirstName>
+            <LastName>2345</LastName>
+            <MiddleInitial>
+            </MiddleInitial>
+            <EmployeeId>70000000015</EmployeeId>
+            <OperatorMode>2</OperatorMode>
+            <OperatorActive>1</OperatorActive>
+        </record>
+        <record>
+            <FirstName>CAT Op1</FirstName>
+            <LastName>1001</LastName>
+            <MiddleInitial>
+            </MiddleInitial>
+            <EmployeeId>70000000235</EmployeeId>
+            <OperatorMode>8</OperatorMode>
+            <OperatorActive>1</OperatorActive>
+        </record>
+    </EmployeeRecords>
+</RelayFile>

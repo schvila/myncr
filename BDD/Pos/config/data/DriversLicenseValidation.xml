@@ -1,0 +1,583 @@
+<?xml version="1.0"?>
+<DriversValidationRules>
+  <Rule>
+    <StateName>Alabama</StateName>
+    <StateCode>AL</StateCode>
+    <IIN>636033</IIN>
+    <Masks>
+      <Mask Digits="7-8">NNNNNNNn</Mask>
+      <Mask Digits="7">XNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Alaska</StateName>
+    <StateCode>AK</StateCode>
+    <IIN>636059</IIN>
+    <Masks>
+      <Mask Digits="1-7">Nnnnnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Alberta</StateName>
+    <StateCode>AB</StateCode>
+    <Masks>
+      <Mask Digits="5-9">NNNNNnnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>American Samoa</StateName>
+    <StateCode>AS</StateCode>
+    <IIN>604427</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Arizona</StateName>
+    <StateCode>AZ</StateCode>
+    <IIN>636026</IIN>
+    <Masks>
+      <Mask Digits="9">ANNNNNNNN</Mask>
+      <Mask Digits="9-10">NNNNNNNNNn</Mask>
+      <Mask Digits="5-8">AANNNnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Arkansas</StateName>
+    <StateCode>AR</StateCode>
+    <IIN>636021</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>British Columbia</StateName>
+    <StateCode>BC</StateCode>
+    <IIN>636028</IIN>
+    <Masks>
+      <Mask Digits="7">NNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>California</StateName>
+    <StateCode>CA</StateCode>
+    <IIN>636014</IIN>
+    <Masks>
+      <Mask Digits="8">ANNNNNNN</Mask>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Colorado</StateName>
+    <StateCode>CO</StateCode>
+    <IIN>636020</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="4-7">ANNNnnn</Mask>
+      <Mask Digits="4-7">AANNnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Connecticut</StateName>
+    <StateCode>CT</StateCode>
+    <IIN>636006</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>District of Columbia</StateName>
+    <StateCode>DC</StateCode>
+    <IIN>636043</IIN>
+    <Masks>
+      <Mask Digits="7">NNNNNNN</Mask>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Delaware</StateName>
+    <StateCode>DE</StateCode>
+    <IIN>636011</IIN>
+    <Masks>
+      <Mask Digits="1-7">Nnnnnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Florida</StateName>
+    <StateCode>FL</StateCode>
+    <IIN>636010</IIN>
+    <Masks>
+      <Mask Digits="12-13">ANNNNNNNNNNNn</Mask>
+      <Mask Digits="13-14">NNNNNNNNNNNNNn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Georgia</StateName>
+    <StateCode>GA</StateCode>
+    <IIN>636055</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Guam</StateName>
+    <StateCode>GU</StateCode>
+    <IIN>636019</IIN>
+    <Masks>
+      <Mask Digits="5-10">NNNNNnnnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Hawaii</StateName>
+    <StateCode>HI</StateCode>
+    <IIN>636047</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="9">ANNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Idaho</StateName>
+    <StateCode>ID</StateCode>
+    <IIN>636050</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="9">AANNNNNNA</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Illinois</StateName>
+    <StateCode>IL</StateCode>
+    <IIN>636035</IIN>
+    <Masks>
+      <Mask Digits="12">ANNNNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Indiana</StateName>
+    <StateCode>IN</StateCode>
+    <IIN>636037</IIN>
+    <Masks>
+      <Mask Digits="9-10">NNNNNNNNNn</Mask>
+      <Mask Digits="10">ANNNNNNNNN</Mask>
+      <Mask Digits="12">NNNNSNNSNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Iowa</StateName>
+    <StateCode>IA</StateCode>
+    <IIN>636018</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="9">NNNAANNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Kansas</StateName>
+    <StateCode>KS</StateCode>
+    <IIN>636022</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="9">ANNNNNNNN</Mask>
+      <Mask Digits="6">ANANAN</Mask>
+      <Mask Digits="6">XNXNXN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Kentucky</StateName>
+    <StateCode>KY</StateCode>
+    <IIN>636046</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="9">ANNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Louisiana</StateName>
+    <StateCode>LA</StateCode>
+    <IIN>636007</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Maine</StateName>
+    <StateCode>ME</StateCode>
+    <IIN>636041</IIN>
+    <Masks>
+      <Mask Digits="7">NNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Manitoba</StateName>
+    <StateCode>MB</StateCode>
+    <IIN>636048</IIN>
+    <Masks>
+      <Mask Digits="12">AASSSASNNNXX</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Maryland</StateName>
+    <StateCode>MD</StateCode>
+    <IIN>636003</IIN>
+    <Masks>
+      <Mask Digits="13">ANNNNNNNNNNNN</Mask>
+      <Mask Digits="17">AXNNNXNNNXNNNXNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Massachusetts</StateName>
+    <StateCode>MA</StateCode>
+    <IIN>636002</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="9">ANNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Michigan</StateName>
+    <StateCode>MI</StateCode>
+    <IIN>636032</IIN>
+    <Masks>
+      <Mask Digits="12">NNNNNNNNNNNN</Mask>
+      <Mask Digits="13">ANNNNNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Minnesota</StateName>
+    <StateCode>MN</StateCode>
+    <IIN>636038</IIN>
+    <Masks>
+      <Mask Digits="13">ANNNNNNNNNNNN</Mask>
+      <Mask Digits="14">NNNNNNNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Mississippi</StateName>
+    <StateCode>MS</StateCode>
+    <IIN>636051</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Missouri</StateName>
+    <StateCode>MO</StateCode>
+    <IIN>636030</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="7-10">ANNNNNNnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Montana</StateName>
+    <StateCode>MT</StateCode>
+    <IIN>636008</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="10">NNNNNNNNNN</Mask>
+      <Mask Digits="13">NNNNNNNNNNNNN</Mask>
+      <Mask Digits="9">ANSNNAAAN</Mask>
+      <Mask Digits="9">ANXNNXXXN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Nebraska</StateName>
+    <StateCode>NE</StateCode>
+    <IIN>636054</IIN>
+    <Masks>
+      <Mask Digits="9">ANNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Nevada</StateName>
+    <StateCode>NV</StateCode>
+    <IIN>636049</IIN>
+    <Masks>
+      <Mask Digits="10">NNNNNNNNNN</Mask>
+      <Mask Digits="12">NNNNNNNNNNNN</Mask>
+      <Mask Digits="9">ANNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>New Brunswick</StateName>
+    <StateCode>NB</StateCode>
+    <IIN>636017</IIN>
+    <Masks>
+      <Mask Digits="4-7">XXXXxxx</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>New Hampshire</StateName>
+    <StateCode>NH</StateCode>
+    <IIN>636039</IIN>
+    <Masks>
+      <Mask Digits="10">NNAAANNNNN</Mask>
+      <Mask Digits="10">NNNAAANNNN</Mask>
+      <Mask Digits="11">AAANNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>New Jersey</StateName>
+    <StateCode>NJ</StateCode>
+    <IIN>636036</IIN>
+    <Masks>
+      <Mask Digits="15">ANNNNNNNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>New Mexico</StateName>
+    <StateCode>NM</StateCode>
+    <IIN>636009</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>New York</StateName>
+    <StateCode>NY</StateCode>
+    <IIN>636001</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="19">AXXXXXXXXXXXXXXXXXX</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Newfoundland</StateName>
+    <StateCode>NL</StateCode>
+    <IIN>636016</IIN>
+    <Masks>
+      <Mask Digits="10">ANNNNNNNNN</Mask>
+      <Mask Digits="5-7">NNNNNnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>North Carolina</StateName>
+    <StateCode>NC</StateCode>
+    <IIN>636004</IIN>
+    <Masks>
+      <Mask Digits="1-12">Nnnnnnnnnnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>North Dakota</StateName>
+    <StateCode>ND</StateCode>
+    <IIN>636034</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="9">AAANNNNNN</Mask>
+      <Mask Digits="9">ANNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Northwest Territories</StateName>
+    <StateCode>NT</StateCode>
+    <Masks>
+      <Mask Digits="5-10">NNNNNnnnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Nova Scotia</StateName>
+    <StateCode>NS</StateCode>
+    <IIN>636013</IIN>
+    <Masks>
+      <Mask Digits="12-14">AASSSNNNNNNNnn</Mask>
+      <Mask Digits="11">AASSASNNNXX</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Ohio</StateName>
+    <StateCode>OH</StateCode>
+    <IIN>636023</IIN>
+    <Masks>
+      <Mask Digits="8">AANNNNNN</Mask>
+      <Mask Digits="9-10">NNNNNNNNNn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Oklahoma</StateName>
+    <StateCode>OK</StateCode>
+    <IIN>636058</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="10">ANNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Ontario</StateName>
+    <StateCode>ON</StateCode>
+    <IIN>636012</IIN>
+    <Masks>
+      <Mask Digits="15">ANNNNNNNNNNNNNN</Mask>
+      <Mask Digits="16">NNNNNNNNNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Oregon</StateName>
+    <StateCode>OR</StateCode>
+    <IIN>636029</IIN>
+    <Masks>
+      <Mask Digits="1-9">Nnnnnnnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Pennsylvania</StateName>
+    <StateCode>PA</StateCode>
+    <IIN>636025</IIN>
+    <Masks>
+      <Mask Digits="8">NNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Prince Edward Island</StateName>
+    <StateCode>PE</StateCode>
+    <IIN>604426</IIN>
+    <Masks>
+      <Mask Digits="12">NNNNNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Puerto Rico</StateName>
+    <StateCode>PR</StateCode>
+    <Masks>
+      <Mask Digits="6-7">NNNNNNn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Quebec</StateName>
+    <StateCode>QC</StateCode>
+    <IIN>604428</IIN>
+    <Masks>
+      <Mask Digits="13">ANNNNNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Rhode Island</StateName>
+    <StateCode>RI</StateCode>
+    <IIN>636052</IIN>
+    <Masks>
+      <Mask Digits="7">NNNNNNN</Mask>
+      <Mask Digits="7">ANNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Saskatchewan</StateName>
+    <StateCode>SK</StateCode>
+    <IIN>636044</IIN>
+    <Masks>
+      <Mask Digits="8">NNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>South Carolina</StateName>
+    <StateCode>SC</StateCode>
+    <IIN>636005</IIN>
+    <Masks>
+      <Mask Digits="5-11">NNNNNnnnnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>South Dakota</StateName>
+    <StateCode>SD</StateCode>
+    <IIN>636042</IIN>
+    <Masks>
+      <Mask Digits="6-12">NNNNNNnnnnnn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Tennessee</StateName>
+    <StateCode>TN</StateCode>
+    <IIN>636053</IIN>
+    <Masks>
+      <Mask Digits="8-9">NNNNNNNNn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Texas</StateName>
+    <StateCode>TX</StateCode>
+    <IIN>636015</IIN>
+    <Masks>
+      <Mask Digits="8">NNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>US Virgin Islands</StateName>
+    <StateCode>VI</StateCode>
+    <IIN>636062</IIN>
+    <Masks>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+      <Mask Digits="9">ANNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Utah</StateName>
+    <StateCode>UT</StateCode>
+    <IIN>636040</IIN>
+    <Masks>
+      <Mask Digits="4-9">NNNNnnnnn</Mask>
+      <Mask Digits="10">NNNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Vermont</StateName>
+    <StateCode>VT</StateCode>
+    <IIN>636024</IIN>
+    <Masks>
+      <Mask Digits="8">NNNNNNNN</Mask>
+      <Mask Digits="8">NNNNNNNA</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Virginia</StateName>
+    <StateCode>VA</StateCode>
+    <IIN>636000</IIN>
+    <Masks>
+      <Mask Digits="9-12">ANNNNNNNNnnn</Mask>
+      <Mask Digits="9">NNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Washington</StateName>
+    <StateCode>WA</StateCode>
+    <IIN>636045</IIN>
+    <Masks>
+      <Mask Digits="12">AXXXXAXNNNAA</Mask>
+      <Mask Digits="12">AXXXXAXNNNAN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>West Virginia</StateName>
+    <StateCode>WV</StateCode>
+    <IIN>636061</IIN>
+    <Masks>
+      <Mask Digits="7">ANNNNNN</Mask>
+      <Mask Digits="7">AANNNNN</Mask>
+      <Mask Digits="7">NANNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Wisconsin</StateName>
+    <StateCode>WI</StateCode>
+    <IIN>636031</IIN>
+    <Masks>
+      <Mask Digits="14">ANNNNNNNNNNNNN</Mask>
+      <Mask Digits="15">NNNNNNNNNNNNNNN</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Wyoming</StateName>
+    <StateCode>WY</StateCode>
+    <IIN>636060</IIN>
+    <Masks>
+      <Mask Digits="9-10">NNNNNNNNNn</Mask>
+    </Masks>
+  </Rule>
+  <Rule>
+    <StateName>Yukon</StateName>
+    <StateCode>YT</StateCode>
+    <IIN>604429</IIN>
+    <Masks>
+      <Mask Digits="1-10">Nnnnnnnnnn</Mask>
+    </Masks>
+  </Rule>
+</DriversValidationRules>

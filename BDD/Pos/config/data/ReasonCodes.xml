@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>SC;unknown_ver;2018-02-07T09:54:22-05:00</Description>
+        <Version>1</Version>
+    </FileHeader>
+    <ReasonCodes>
+        <record>
+            <ReasonCodeId>70000000051</ReasonCodeId>
+            <Description>Cancel Item Reason</Description>
+            <ReasonCategory>32</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000052</ReasonCodeId>
+            <Description>Cancel Transaction Reason</Description>
+            <ReasonCategory>4</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000053</ReasonCodeId>
+            <Description>Change Safe Pay In Reason</Description>
+            <ReasonCategory>1024</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000054</ReasonCodeId>
+            <Description>Change Safe PayOut Reason</Description>
+            <ReasonCategory>2048</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000055</ReasonCodeId>
+            <Description>Discount Reason</Description>
+            <ReasonCategory>16</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000056</ReasonCodeId>
+            <Description>DriveOff Rmbrsmnt PayIn  Rsn</Description>
+            <ReasonCategory>8388608</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000057</ReasonCodeId>
+            <Description>Fuel Adjustment Reason</Description>
+            <ReasonCategory>16384</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000058</ReasonCodeId>
+            <Description>Fuel PayIn Reason</Description>
+            <ReasonCategory>262144</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000059</ReasonCodeId>
+            <Description>Fuel PayOut Reason</Description>
+            <ReasonCategory>524288</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000060</ReasonCodeId>
+            <Description>Fuel Pump Test Reason</Description>
+            <ReasonCategory>81920</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000061</ReasonCodeId>
+            <Description>Inside Cash Redemption Reason</Description>
+            <ReasonCategory>8192</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000062</ReasonCodeId>
+            <Description>Meter Adjustment Reason</Description>
+            <ReasonCategory>32768</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000063</ReasonCodeId>
+            <Description>MoneyOrder Expense PayOut Rsn</Description>
+            <ReasonCategory>64</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000064</ReasonCodeId>
+            <Description>MoneyOrder Reason</Description>
+            <ReasonCategory>256</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000065</ReasonCodeId>
+            <Description>PaidIn Reason</Description>
+            <ReasonCategory>2</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000066</ReasonCodeId>
+            <Description>PaidOut MO Reason</Description>
+            <ReasonCategory>16777216</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000067</ReasonCodeId>
+            <Description>PaidOut Reason</Description>
+            <ReasonCategory>1</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000068</ReasonCodeId>
+            <Description>Payment On Account Reason</Description>
+            <ReasonCategory>33554432</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000069</ReasonCodeId>
+            <Description>Price Override Reason</Description>
+            <ReasonCategory>512</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000070</ReasonCodeId>
+            <Description>Refund Tran Reason</Description>
+            <ReasonCategory>8</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000071</ReasonCodeId>
+            <Description>Safe Adjustment Reason</Description>
+            <ReasonCategory>131072</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000072</ReasonCodeId>
+            <Description>Safe Loan Reason</Description>
+            <ReasonCategory>1048576</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000073</ReasonCodeId>
+            <Description>Safe Reconciliation Reason</Description>
+            <ReasonCategory>2097152</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000074</ReasonCodeId>
+            <Description>Safe Transfer Reason</Description>
+            <ReasonCategory>4194304</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000075</ReasonCodeId>
+            <Description>Time Punch Reason</Description>
+            <ReasonCategory>4096</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000129</ReasonCodeId>
+            <Description>RS 02 - Cancel transaction</Description>
+            <ReasonCategory>4</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000130</ReasonCodeId>
+            <Description>RS 03 - Chance safe pay in</Description>
+            <ReasonCategory>1024</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000131</ReasonCodeId>
+            <Description>RS 04 - Chance safe pay out</Description>
+            <ReasonCategory>2048</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000132</ReasonCodeId>
+            <Description>RS 05 - Discount</Description>
+            <ReasonCategory>16</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000133</ReasonCodeId>
+            <Description>RS 06 - Drive-off reimburseme</Description>
+            <ReasonCategory>8388608</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000134</ReasonCodeId>
+            <Description>RS 07 - Fuel adjustment</Description>
+            <ReasonCategory>16384</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000135</ReasonCodeId>
+            <Description>RS 08 - Fuel prepay pay in</Description>
+            <ReasonCategory>262144</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000136</ReasonCodeId>
+            <Description>RS 09 - Fuel prepay pay out</Description>
+            <ReasonCategory>524288</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000137</ReasonCodeId>
+            <Description>RS 10 - Fuel pump test</Description>
+            <ReasonCategory>81920</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000138</ReasonCodeId>
+            <Description>RS 11 - Inside cash redemptio</Description>
+            <ReasonCategory>8192</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000139</ReasonCodeId>
+            <Description>RS 12 - Meter adjustment</Description>
+            <ReasonCategory>32768</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000140</ReasonCodeId>
+            <Description>RS 13 - Money order expense p</Description>
+            <ReasonCategory>64</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000141</ReasonCodeId>
+            <Description>RS 14 - Money order merchandi</Description>
+            <ReasonCategory>128</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000142</ReasonCodeId>
+            <Description>RS 15 - Money order return</Description>
+            <ReasonCategory>256</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000143</ReasonCodeId>
+            <Description>RS 16 - Paid in</Description>
+            <ReasonCategory>2</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000144</ReasonCodeId>
+            <Description>RS 17 - Paid out</Description>
+            <ReasonCategory>1</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000145</ReasonCodeId>
+            <Description>RS 18 - Paid Out Money Order</Description>
+            <ReasonCategory>16777216</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000146</ReasonCodeId>
+            <Description>RS 19 - Payment on account</Description>
+            <ReasonCategory>33554432</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000147</ReasonCodeId>
+            <Description>RS 20 - Price override</Description>
+            <ReasonCategory>512</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000148</ReasonCodeId>
+            <Description>RS 21 - Refund transaction</Description>
+            <ReasonCategory>8</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000149</ReasonCodeId>
+            <Description>RS 22 - Safe Adjustment</Description>
+            <ReasonCategory>131072</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000150</ReasonCodeId>
+            <Description>RS 23 - Safe Loan</Description>
+            <ReasonCategory>1048576</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000151</ReasonCodeId>
+            <Description>RS 24 - Safe Reconciliation</Description>
+            <ReasonCategory>2097152</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000152</ReasonCodeId>
+            <Description>RS 25 - Safe Transfer</Description>
+            <ReasonCategory>4194304</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000153</ReasonCodeId>
+            <Description>RS 26 - Time punch edit</Description>
+            <ReasonCategory>4096</ReasonCategory>
+        </record>
+        <record>
+            <ReasonCodeId>70000000221</ReasonCodeId>
+            <Description>Store&amp;Recall Cancel Tran</Description>
+            <ReasonCategory>4</ReasonCategory>
+        </record>
+    </ReasonCodes>
+</RelayFile>

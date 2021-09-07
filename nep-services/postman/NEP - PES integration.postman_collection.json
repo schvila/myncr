@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "b8c0d86f-cf53-4333-92d2-b644ad6f8976",
+		"name": "NEP - PES integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Workflows",
+			"item": [
+				{
+					"name": "Approvals",
+					"item": [
+						{
+							"name": "Configure",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"consumers\": [\r\n        {\r\n            \"identifier\": \"1234444321\",\r\n            \"type\": \"PHONE\",\r\n            \"identifierStatus\": \"ACTIVE\",\r\n            \"consumerStatus\": \"ACTIVE\",\r\n            \"firstName\": \"John\",\r\n            \"lastName\": \"Doe\",\r\n            \"internalId\": \"string\"\r\n        }\r\n    ],\r\n    \"promotions\": [\r\n        {\r\n            \"promotionId\": \"dollarofffries\",\r\n            \"type\": \"basicItem\",\r\n            \"trigger\": {\r\n                \"matchingItems\": [\r\n                    {\r\n                        \"categoryCode\": \"87\",\r\n                        \"quantity\": 1\r\n                    },\r\n                    {\r\n                        \"categoryCode\": \"95\",\r\n                        \"quantity\": 1\r\n                    }\r\n                ],\r\n                \"matchingCards\": [\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"rewardApproval\": {\r\n                \"description\": [\r\n                    {\r\n                        \"key\": \"fullDescription\",\r\n                        \"value\": \"Take $1 off any size fries!\"\r\n                    }\r\n                ],\r\n                \"notificationFor\": \"CASHIER_AND_CONSUMER\"\r\n            },\r\n            \"discounts\": [\r\n                {\r\n                    \"amount\": 1,\r\n                    \"quantity\": {\r\n                        \"units\": 1,\r\n                        \"unitType\": \"SIMPLE_QUANTITY\"\r\n                    },\r\n                    \"matchNetUnitPrice\": 0,\r\n                    \"flexNegative\": \"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\": 0,\r\n                    \"returnsAmount\": 0,\r\n                    \"fundingDepts\": [],\r\n                    \"isApplyMarkup\": false,\r\n                    \"isReturnsProration\": false,\r\n                    \"subSequenceIds\": [],\r\n                    \"triggeredItems\": [],\r\n                    \"isApplyAsTender\": false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"promotionId\": \"testpromotion\",\r\n            \"type\": \"basicItem\",\r\n            \"trigger\": {\r\n                \"matchingItems\": [\r\n                    {\r\n                        \"categoryCode\": \"95\",\r\n                        \"quantity\": 1\r\n                    }\r\n                ],\r\n                \"matchingCards\": [\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"rewardApproval\": {},\r\n            \"discounts\": [\r\n                {\r\n                    \"amount\": 2,\r\n                    \"quantity\": {\r\n                        \"units\": 1,\r\n                        \"unitType\": \"SIMPLE_QUANTITY\"\r\n                    },\r\n                    \"matchNetUnitPrice\": 0,\r\n                    \"flexNegative\": \"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\": 0,\r\n                    \"returnsAmount\": 0,\r\n                    \"fundingDepts\": [],\r\n                    \"isApplyMarkup\": false,\r\n                    \"isReturnsProration\": false,\r\n                    \"subSequenceIds\": [],\r\n                    \"triggeredItems\": [],\r\n                    \"isApplyAsTender\": false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"promotionId\": \"dollarofffries-orderlevel\",\r\n            \"type\": \"basicOrder\",\r\n            \"trigger\": {\r\n                \"matchingItems\": [\r\n                    {\r\n                        \"categoryCode\": \"87\",\r\n                        \"quantity\": 1\r\n                    }\r\n                ],\r\n                \"matchingCards\": [\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"rewardApproval\": {\r\n                \"description\": [\r\n                    {\r\n                        \"key\": \"dollarofffries-orderlevel\",\r\n                        \"value\": \"Take $1 off of your order when you buy any size fries!!\"\r\n                    }\r\n                ],\r\n                \"notificationFor\": \"CASHIER_AND_CONSUMER\"\r\n            },\r\n            \"discounts\": [\r\n                {\r\n                    \"amount\": 1,\r\n                    \"quantity\": {\r\n                        \"units\": 1,\r\n                        \"unitType\": \"SIMPLE_QUANTITY\"\r\n                    },\r\n                    \"matchNetUnitPrice\": 0,\r\n                    \"flexNegative\": \"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\": 0,\r\n                    \"returnsAmount\": 0,\r\n                    \"fundingDepts\": [],\r\n                    \"isApplyMarkup\": false,\r\n                    \"isReturnsProration\": false,\r\n                    \"subSequenceIds\": [],\r\n                    \"triggeredItems\": [],\r\n                    \"isApplyAsTender\": false\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"receiptMessages\": [\r\n        {\r\n            \"lines\": [\r\n                {\r\n                    \"content\": \"Welcome to PES loyalty.\",\r\n                    \"attributes\": {\r\n                        \"location\": \"FRONT\",\r\n                        \"type\": \"TEXT\",\r\n                        \"sortId\": 0,\r\n                        \"contentType\": \"GENERAL_RECEIPT_MESSAGE\",\r\n                        \"alignment\": \"CENTER\",\r\n                        \"formats\": [\r\n                            \"BOLD\"\r\n                        ],\r\n                        \"lineBreak\": \"NO_LINE_BREAK\"\r\n                    }\r\n                },\r\n                {\r\n                    \"content\": \"Thank you for using our loyalty.\",\r\n                    \"attributes\": {\r\n                        \"location\": \"BACK\",\r\n                        \"type\": \"TEXT\",\r\n                        \"sortId\": 0,\r\n                        \"contentType\": \"GENERAL_RECEIPT_MESSAGE\",\r\n                        \"alignment\": \"LEFT\",\r\n                        \"formats\": [\r\n                            \"UNDERLINE\"\r\n                        ],\r\n                        \"lineBreak\": \"LINE_BREAK_BEFORE_AFTER_PRINTLINE\"\r\n                    }\r\n                },\r\n                {\r\n                    \"content\": \"You are getting many cool discounts.\",\r\n                    \"attributes\": {\r\n                        \"location\": \"FRONT\",\r\n                        \"type\": \"TEXT\",\r\n                        \"sortId\": 1,\r\n                        \"contentType\": \"GENERAL_RECEIPT_MESSAGE\",\r\n                        \"alignment\": \"RIGHT\",\r\n                        \"formats\": [\r\n                            \"NO_FORMATTING\"\r\n                        ],\r\n                        \"lineBreak\": \"LINE_BREAK_AFTER_PRINTLINE\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}:{{port}}/promotion-execution/simulator/configuration",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"promotion-execution",
+										"simulator",
+										"configuration"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get promotions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "13de0ec5e16244498473693ce3a8555c",
+										"type": "text"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "8a00860b6641a0ae016659377a510021",
+										"type": "text"
+									},
+									{
+										"key": "nep-organization",
+										"value": "pcr-sitecontroller",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderId\": \"050d78a6-dde9-4443-bd24-912bf342435e\",\r\n    \"orderBeginDateTime\": \"2019-02-14T16:57:20.000Z\",\r\n    \"items\": [\r\n        {\r\n            \"sequenceId\": 1,\r\n            \"categoryCode\": \"87\",\r\n            \"itemName\": \"Large Fries\",\r\n            \"quantity\": {\r\n                \"units\": 1,\r\n                \"unitType\": \"SIMPLE_QUANTITY\"\r\n            },\r\n            \"unitPrice\": 2.19,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        },\r\n        {\r\n            \"sequenceId\": 2,\r\n            \"categoryCode\": \"95\",\r\n            \"itemName\": \"Coca Cola\",\r\n            \"quantity\": {\r\n                \"units\": 1,\r\n                \"unitType\": \"SIMPLE_QUANTITY\"\r\n            },\r\n            \"unitPrice\": 2.34,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        },\r\n        \r\n        {\r\n            \"sequenceId\": 3,\r\n            \"categoryCode\": \"110\",\r\n            \"itemName\": \"Snickers\",\r\n            \"quantity\": {\r\n                \"units\": 1,\r\n                \"unitType\": \"SIMPLE_QUANTITY\"\r\n            },\r\n            \"unitPrice\": 4.64,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        }\r\n    ],\r\n    \"consumerIds\": [\r\n        {\r\n            \"identifier\": \"1234444321\",\r\n            \"type\": \"PHONE\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}:{{port}}/promotion-execution/promotions/get",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"promotion-execution",
+										"promotions",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Approve rewards",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "13de0ec5e16244498473693ce3a8555c",
+										"type": "text"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "8a00860b6641a0ae016659377a510021",
+										"type": "text"
+									},
+									{
+										"key": "nep-organization",
+										"value": "pcr-sitecontroller",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderId\": \"050d78a6-dde9-4443-bd24-912bf342435e\",\r\n    \"orderBeginDateTime\": \"2019-02-14T16:57:20.000Z\",\r\n    \"items\": [\r\n        {\r\n            \"sequenceId\": 1,\r\n            \"categoryCode\": \"87\",\r\n            \"itemName\": \"Large Fries\",\r\n            \"quantity\": {\r\n                \"units\": 1,\r\n                \"unitType\": \"SIMPLE_QUANTITY\"\r\n            },\r\n            \"unitPrice\": 2.19,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        },\r\n        {\r\n            \"sequenceId\": 2,\r\n            \"categoryCode\": \"95\",\r\n            \"itemName\": \"Coca Cola\",\r\n            \"quantity\": {\r\n                \"units\": 1,\r\n                \"unitType\": \"SIMPLE_QUANTITY\"\r\n            },\r\n            \"unitPrice\": 2.34,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        },\r\n        \r\n        {\r\n            \"sequenceId\": 3,\r\n            \"categoryCode\": \"110\",\r\n            \"itemName\": \"Snickers\",\r\n            \"quantity\": {\r\n                \"units\": 1,\r\n                \"unitType\": \"SIMPLE_QUANTITY\"\r\n            },\r\n            \"unitPrice\": 4.64,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        }\r\n    ],\r\n    \"consumerIds\": [\r\n        {\r\n            \"identifier\": \"1234444321\",\r\n            \"type\": \"PHONE\"\r\n        }\r\n    ],\r\n    \"rewardApprovals\": [\r\n        {\r\n            \"promotionId\": \"dollarofffries\",\r\n            \"sequenceId\": 1,\r\n            \"approvalFlag\": \"APPROVE\"\r\n        },\r\n        {\r\n            \"promotionId\": \"dollarofffries-orderlevel\",\r\n            \"sequenceId\": 2,\r\n            \"approvalFlag\": \"APPROVE\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}:{{port}}/promotion-execution/promotions/get",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"promotion-execution",
+										"promotions",
+										"get"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "No Approvals",
+					"item": [
+						{
+							"name": "Configure",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"consumers\":[\r\n        {\r\n            \"identifier\":\"1234444321\",\r\n            \"type\":\"PHONE\",\r\n            \"identifierStatus\":\"ACTIVE\",\r\n            \"consumerStatus\":\"ACTIVE\",\r\n            \"firstName\":\"John\",\r\n            \"lastName\":\"Doe\",\r\n            \"internalId\":\"string\"\r\n        }\r\n    ],\r\n    \"promotions\":[\r\n        {\r\n            \"promotionId\":\"dollarofffries\",\r\n            \"type\":\"basicItem\",\r\n            \"trigger\":{\r\n                \"matchingItems\":[\r\n                    {\r\n                        \"categoryCode\":\"87\",\r\n                        \"quantity\":1\r\n                    },\r\n                    {\r\n                        \"categoryCode\":\"95\",\r\n                        \"quantity\":1\r\n                    }\r\n                ],\r\n                \"matchingCards\":[\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"rewardApproval\":{\r\n\r\n            },\r\n            \"discounts\":[\r\n                {\r\n                    \"amount\":1,\r\n                    \"quantity\":{\r\n                        \"units\":1,\r\n                        \"unitType\":\"SIMPLE_QUANTITY\"\r\n                    },\r\n                    \"matchNetUnitPrice\":0,\r\n                    \"flexNegative\":\"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\":0,\r\n                    \"returnsAmount\":0,\r\n                    \"fundingDepts\":[\r\n\r\n                    ],\r\n                    \"isApplyMarkup\":false,\r\n                    \"isReturnsProration\":false,\r\n                    \"subSequenceIds\":[\r\n\r\n                    ],\r\n                    \"triggeredItems\":[\r\n\r\n                    ],\r\n                    \"isApplyAsTender\":false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"promotionId\":\"testpromotion\",\r\n            \"type\":\"basicItem\",\r\n            \"trigger\":{\r\n                \"matchingItems\":[\r\n                    {\r\n                        \"categoryCode\":\"95\",\r\n                        \"quantity\":1\r\n                    }\r\n                ],\r\n                \"matchingCards\":[\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"rewardApproval\":{\r\n\r\n            },\r\n            \"discounts\":[\r\n                {\r\n                    \"amount\":2,\r\n                    \"quantity\":{\r\n                        \"units\":1,\r\n                        \"unitType\":\"SIMPLE_QUANTITY\"\r\n                    },\r\n                    \"matchNetUnitPrice\":0,\r\n                    \"flexNegative\":\"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\":0,\r\n                    \"returnsAmount\":0,\r\n                    \"fundingDepts\":[\r\n\r\n                    ],\r\n                    \"isApplyMarkup\":false,\r\n                    \"isReturnsProration\":false,\r\n                    \"subSequenceIds\":[\r\n\r\n                    ],\r\n                    \"triggeredItems\":[\r\n\r\n                    ],\r\n                    \"isApplyAsTender\":false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"promotionId\":\"dollarofffries-orderlevel\",\r\n            \"type\":\"basicOrder\",\r\n            \"trigger\":{\r\n                \"matchingItems\":[\r\n                    {\r\n                        \"categoryCode\":\"87\",\r\n                        \"quantity\":1\r\n                    }\r\n                ],\r\n                \"matchingCards\":[\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"discounts\":[\r\n                {\r\n                    \"amount\":1,\r\n                    \"quantity\":{\r\n                        \"units\":1,\r\n                        \"unitType\":\"SIMPLE_QUANTITY\"\r\n                    },\r\n                    \"matchNetUnitPrice\":0,\r\n                    \"flexNegative\":\"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\":0,\r\n                    \"returnsAmount\":0,\r\n                    \"fundingDepts\":[\r\n\r\n                    ],\r\n                    \"isApplyMarkup\":false,\r\n                    \"isReturnsProration\":false,\r\n                    \"subSequenceIds\":[\r\n\r\n                    ],\r\n                    \"triggeredItems\":[\r\n\r\n                    ],\r\n                    \"isApplyAsTender\":false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"promotionId\":\"transactionoverlimit-orderlevel\",\r\n            \"type\":\"transactionOverLimit\",\r\n            \"trigger\":{\r\n                \"limit\":2,\r\n                \"matchingCards\":[\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"discounts\":[\r\n                {\r\n                    \"amount\":1,\r\n                    \"quantity\":{\r\n                        \"units\":1,\r\n                        \"unitType\":\"SIMPLE_QUANTITY\"\r\n                    },\r\n                    \"matchNetUnitPrice\":0,\r\n                    \"flexNegative\":\"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\":0,\r\n                    \"returnsAmount\":0,\r\n                    \"fundingDepts\":[\r\n\r\n                    ],\r\n                    \"isApplyMarkup\":false,\r\n                    \"isReturnsProration\":false,\r\n                    \"subSequenceIds\":[\r\n\r\n                    ],\r\n                    \"triggeredItems\":[\r\n\r\n                    ],\r\n                    \"isApplyAsTender\":false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"promotionId\":\"87octanespecial\",\r\n            \"type\":\"basicItem\",\r\n            \"trigger\":{\r\n                \"matchingItems\":[\r\n                    {\r\n                        \"categoryCode\":\"187\",\r\n                        \"quantity\":1\r\n                    }\r\n                ],\r\n                \"matchingCards\":[\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"discounts\":[\r\n                {\r\n                    \"rewardLimit\":20,\r\n                    \"amount\":0.10,\r\n                    \"quantity\":{\r\n                        \"units\":1,\r\n                        \"unitType\":\"GALLON_US_LIQUID\"\r\n                    },\r\n                    \"matchNetUnitPrice\":0,\r\n                    \"flexNegative\":\"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\":0,\r\n                    \"returnsAmount\":0,\r\n                    \"fundingDepts\":[\r\n\r\n                    ],\r\n                    \"isApplyMarkup\":false,\r\n                    \"isReturnsProration\":false,\r\n                    \"subSequenceIds\":[\r\n\r\n                    ],\r\n                    \"triggeredItems\":[\r\n\r\n                    ],\r\n                    \"isApplyAsTender\":false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"promotionId\":\"93octanespecial\",\r\n            \"type\":\"basicItem\",\r\n            \"trigger\":{\r\n                \"matchingItems\":[\r\n                    {\r\n                        \"categoryCode\":\"193\",\r\n                        \"quantity\":1\r\n                    }\r\n                ],\r\n                \"matchingCards\":[\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"discounts\":[\r\n                {\r\n                    \"rewardLimit\":20,\r\n                    \"amount\":0.15,\r\n                    \"quantity\":{\r\n                        \"units\":1,\r\n                        \"unitType\":\"GALLON_US_LIQUID\"\r\n                    },\r\n                    \"matchNetUnitPrice\":0,\r\n                    \"flexNegative\":\"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\":0,\r\n                    \"returnsAmount\":0,\r\n                    \"fundingDepts\":[\r\n\r\n                    ],\r\n                    \"isApplyMarkup\":false,\r\n                    \"isReturnsProration\":false,\r\n                    \"subSequenceIds\":[\r\n\r\n                    ],\r\n                    \"triggeredItems\":[\r\n\r\n                    ],\r\n                    \"isApplyAsTender\":false\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"promotionId\":\"95octanespecial\",\r\n            \"type\":\"basicItem\",\r\n            \"trigger\":{\r\n                \"matchingItems\":[\r\n                    {\r\n                        \"categoryCode\":\"195\",\r\n                        \"quantity\":1\r\n                    }\r\n                ],\r\n                \"matchingCards\":[\r\n                    \"1234444321\"\r\n                ]\r\n            },\r\n            \"discounts\":[\r\n                {\r\n                    \"rewardLimit\":20,\r\n                    \"amount\":0.20,\r\n                    \"quantity\":{\r\n                        \"units\":1,\r\n                        \"unitType\":\"GALLON_US_LIQUID\"\r\n                    },\r\n                    \"matchNetUnitPrice\":0,\r\n                    \"flexNegative\":\"NOT_FLEXED\",\r\n                    \"unitCalculateAmount\":0,\r\n                    \"returnsAmount\":0,\r\n                    \"fundingDepts\":[\r\n\r\n                    ],\r\n                    \"isApplyMarkup\":false,\r\n                    \"isReturnsProration\":false,\r\n                    \"subSequenceIds\":[\r\n\r\n                    ],\r\n                    \"triggeredItems\":[\r\n\r\n                    ],\r\n                    \"isApplyAsTender\":false\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}:{{port}}/promotion-execution/simulator/configuration",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"promotion-execution",
+										"simulator",
+										"configuration"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get promotions",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "nep-enterprise-unit",
+										"value": "13de0ec5e16244498473693ce3a8555c",
+										"type": "text"
+									},
+									{
+										"key": "nep-application-key",
+										"value": "8a00860b6641a0ae016659377a510021",
+										"type": "text"
+									},
+									{
+										"key": "nep-organization",
+										"value": "pcr-sitecontroller",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderId\": \"050d78a6-dde9-4443-bd24-912bf342435e\",\r\n    \"orderBeginDateTime\": \"2019-02-14T16:57:20.000Z\",\r\n    \"items\": [\r\n        {\r\n            \"sequenceId\": 1,\r\n            \"categoryCode\": \"87\",\r\n            \"itemName\": \"Large Fries\",\r\n            \"quantity\": {\r\n                \"units\": 1,\r\n                \"unitType\": \"SIMPLE_QUANTITY\"\r\n            },\r\n            \"unitPrice\": 2.19,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        },\r\n        {\r\n            \"sequenceId\": 2,\r\n            \"categoryCode\": \"95\",\r\n            \"itemName\": \"Coca Cola\",\r\n            \"quantity\": {\r\n                \"units\": 1,\r\n                \"unitType\": \"SIMPLE_QUANTITY\"\r\n            },\r\n            \"unitPrice\": 2.34,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        },\r\n        {\r\n            \"sequenceId\": 3,\r\n            \"categoryCode\": \"110\",\r\n            \"itemName\": \"Snickers\",\r\n            \"quantity\": {\r\n                \"units\": 1,\r\n                \"unitType\": \"SIMPLE_QUANTITY\"\r\n            },\r\n            \"unitPrice\": 4.64,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        },\r\n        {\r\n            \"sequenceId\": 4,\r\n            \"categoryCode\": \"187\",\r\n            \"itemName\": \"87 Octane\",\r\n            \"quantity\": {\r\n                \"units\": 0,\r\n                \"unitType\": \"GALLON_US_LIQUID\"\r\n            },\r\n            \"unitPrice\": 2.199,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        },\r\n        {\r\n            \"sequenceId\": 5,\r\n            \"categoryCode\": \"193\",\r\n            \"itemName\": \"93 Octane\",\r\n            \"quantity\": {\r\n                \"units\": 0,\r\n                \"unitType\": \"GALLON_US_LIQUID\"\r\n            },\r\n            \"unitPrice\": 2.299,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        },\r\n        {\r\n            \"sequenceId\": 6,\r\n            \"categoryCode\": \"195\",\r\n            \"itemName\": \"95 Octane\",\r\n            \"quantity\": {\r\n                \"units\": 0,\r\n                \"unitType\": \"GALLON_US_LIQUID\"\r\n            },\r\n            \"unitPrice\": 2.399,\r\n            \"departmentId\": 1,\r\n            \"familyCode\": 1,\r\n            \"discountable\": true,\r\n            \"considerForOrderLevelRewards\": true\r\n        }\r\n    ],\r\n    \"consumerIds\": [\r\n        {\r\n            \"identifier\": \"1234444321\",\r\n            \"type\": \"PHONE\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}:{{port}}/promotion-execution/promotions/get",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"promotion-execution",
+										"promotions",
+										"get"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "simulator/messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/promotion-execution/simulator/messages",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"promotion-execution",
+						"simulator",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "simulator/messages",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/promotion-execution/simulator/messages",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"promotion-execution",
+						"simulator",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "promotions/finalize",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "nep-enterprise-unit",
+						"value": "13de0ec5e16244498473693ce3a8555c",
+						"type": "text"
+					},
+					{
+						"key": "nep-application-key",
+						"value": "8a00860b6641a0ae016659377a510021",
+						"type": "text"
+					},
+					{
+						"key": "nep-organization",
+						"value": "pcr-sitecontroller",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"orderId\":\"050d78a6-dde9-4443-bd24-912bf342435e\",\r\n   \"orderBeginDateTime\":\"2019-02-14T16:57:20.000Z\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/promotion-execution/promotions/finalize",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"promotion-execution",
+						"promotions",
+						"finalize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "promotions/get",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "nep-enterprise-unit",
+						"value": "13de0ec5e16244498473693ce3a8555c",
+						"type": "text"
+					},
+					{
+						"key": "nep-application-key",
+						"value": "8a00860b6641a0ae016659377a510021",
+						"type": "text"
+					},
+					{
+						"key": "nep-organization",
+						"value": "pcr-sitecontroller",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"orderId\":\"050d78a6-dde9-4443-bd24-912bf342435e\",\r\n   \"orderBeginDateTime\":\"2019-02-14T16:57:20.000Z\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/promotion-execution/promotions/get",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"promotion-execution",
+						"promotions",
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cfd175a7-ac87-4c3c-91e3-1ec703d3d6b1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "48fead29-2177-429f-a406-2069bf1d8338",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

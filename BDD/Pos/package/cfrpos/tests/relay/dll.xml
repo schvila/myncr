@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>CFR POS Unit Test File</Description>
+        <Version>3</Version>
+    </FileHeader>
+    <DLLs>
+        <record>
+            <Name>DbAbsObj.dll</Name>
+        </record>
+        <record>
+            <Name>EpsilonClient.dll</Name>
+        </record>
+        <record>
+            <Name>GCMClient.dll</Name>
+        </record>
+        <record>
+            <Name>PCSTranMan.dll</Name>
+        </record>
+        <record>
+            <Name>PosBDD.dll</Name>
+        </record>
+        <record>
+            <Name>POSSigmaClient.dll</Name>
+        </record>
+    </DLLs>
+</RelayFile>

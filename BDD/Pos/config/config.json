@@ -1,0 +1,71 @@
+{
+    "bin_dir": "c:\\Program Files\\Radiant\\FastPoint\\bin\\",
+    "log_console": true,
+    "log_level": "info",
+    "api": {
+        "pos": {
+            "node_number": 1,
+            "address": "127.0.0.1",
+            "port": 10000
+        },
+        "fuel_sim": {
+            "address": "127.0.0.1",
+            "port": 10000
+        },
+        "carwash_sim": {
+            "address": "127.0.0.1",
+            "port": 10000
+        },
+        "sc_sim": {
+            "address": "127.0.0.1",
+            "port": 8900,
+            "pesport": 8000
+        },
+        "swipe_sim": {
+            "cards": ".\\sim4cfrpos\\api\\swipe_sim\\SimCards.xml",
+            "address": "127.0.0.1",
+            "port": 5000
+        },
+        "checkreader_sim": {
+            "checks": ".\\sim4cfrpos\\api\\checkreader_sim\\CheckData.xml",
+            "address": "127.0.0.1",
+            "port": 5025 
+        },
+        "epc_sim": {
+            "eps_sim": {},
+            "poscache_sim": {},
+			"sigma": {},
+            "configuration_folder": ".\\sim4cfrpos\\runtime\\epc_sim\\configuration",
+            "address": "127.0.0.1",
+            "port": 5001
+        },
+        "scan_sim": {
+            "barcodes": ".\\sim4cfrpos\\api\\scan_sim\\SimBarcodes.xml",
+            "address": "127.0.0.1",
+            "port": 5002
+        },
+        "posapi_sim": {
+            "address": "127.0.0.1",
+            "port": 8080
+        },
+        "print_sim": {
+            "address": "127.0.0.1",
+            "port": 5004
+        },
+        "nepsvcs_sim": {
+            "nep_server_port": 8083,
+            "nep_notification_server_port": 8082
+        },
+        "stmapi_sim": {
+            "address": "127.0.0.1",
+            "port": 5005
+        },
+        "kps_sim": {
+            "address": "127.0.0.1",
+            "port": 5007
+        },
+        "teleq": {
+        }
+    },
+    "take_screenshots": false
+}

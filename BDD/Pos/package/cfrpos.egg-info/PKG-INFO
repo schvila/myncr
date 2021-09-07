@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: cfrpos
+Version: 1.00.0000
+Summary: POS BDD API for POSEngine application and POS BDD simulators.
+Home-page: UNKNOWN
+Author: NCR Corp.
+Author-email: UNKNOWN
+License: NCR Corp. Internal only. Not for public use.
+Description: This package provides a framework capable to communicate with running posengine instance. Use this package to develop test scripts for CFR RPOS POS or solution which uses CFR RPOS POS.
+        
+        Install by using "pip install C:\full_path_to_package\cfrpos-20xx.x.x.xxx" in a python console
+Keywords: library posengine
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
+Classifier: License :: NCR corp

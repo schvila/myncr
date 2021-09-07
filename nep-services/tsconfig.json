@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "target": "es2018",
+        "sourceMap": true,
+        "outDir": "build",
+        "allowJs": true,
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "lib": ["DOM", "ES7", "ScriptHost", "es2018.promise"],
+        "baseUrl": "src",
+        "paths": {
+            "@config/*": [ "config/*" ]
+        }
+    },
+    "exclude": [
+        "src",
+        "node_modules",
+        "postman",
+        "build"
+    ]
+}

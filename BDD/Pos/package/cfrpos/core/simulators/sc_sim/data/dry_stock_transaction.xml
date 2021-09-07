@@ -1,0 +1,960 @@
+<?xml version="1.0"?>
+
+<LHPersistentTran>
+
+
+    <Header>
+
+        <EventId>10190</EventId>
+
+        <SubEventId>0</SubEventId>
+
+        <Destination>1</Destination>
+
+        <TranMode>0</TranMode>
+
+        <TranSequenceNumber>3</TranSequenceNumber>
+
+        <InvoiceNumber>0</InvoiceNumber>
+
+        <InvoiceType/>
+
+        <Version>0</Version>
+
+        <DeviceListId>1</DeviceListId>
+
+        <DeviceControl>131072</DeviceControl>
+
+        <DescriptionId>0</DescriptionId>
+
+        <Description>Default Destination</Description>
+
+        <ItemCount>6</ItemCount>
+
+        <ItemPhysicalCount>6</ItemPhysicalCount>
+
+        <DebitTotal>9900</DebitTotal>
+
+        <TaxTotal>700</TaxTotal>
+
+        <ValueAddedTaxTotal>0</ValueAddedTaxTotal>
+
+        <DiscountTotal>0</DiscountTotal>
+
+        <CreditTotal>-10600</CreditTotal>
+
+        <ServiceChargeTotal>0</ServiceChargeTotal>
+
+        <TerminalId>2</TerminalId>
+
+        <OperatorId>70000000015</OperatorId>
+
+        <Operator2Id>0</Operator2Id>
+
+        <OperatorShiftId>1</OperatorShiftId>
+
+        <DrawerId>1</DrawerId>
+
+        <Status>4</Status>
+
+        <BusinessDate>2021-01-13</BusinessDate>
+
+        <StartTime>2021-01-13T17:09:18.036</StartTime>
+
+        <LastItemTime>2021-01-13T17:09:18.126</LastItemTime>
+
+        <EndTime>2021-01-13T17:09:20.744</EndTime>
+
+        <TransactionChain>0</TransactionChain>
+
+        <CancelBeforeTotalCount>0</CancelBeforeTotalCount>
+
+        <CancelBeforeTotalAmount>0</CancelBeforeTotalAmount>
+
+        <CancelAfterTotalCount>0</CancelAfterTotalCount>
+
+        <CancelAfterTotalAmount>0</CancelAfterTotalAmount>
+
+        <CancelAfterTenderCount>0</CancelAfterTenderCount>
+
+        <CancelAfterTenderAmount>0</CancelAfterTenderAmount>
+
+        <CustomerId>0</CustomerId>
+
+        <CustomerName/>
+
+        <DriverAssignmentTime>0000-00-00T00:00:00.000</DriverAssignmentTime>
+
+        <DriverReturnTime>0000-00-00T00:00:00.000</DriverReturnTime>
+
+        <DriverId>0</DriverId>
+
+        <DriverShiftNumber>0</DriverShiftNumber>
+
+        <DeliveryZone>0</DeliveryZone>
+
+        <PromiseTime>0</PromiseTime>
+
+        <CashIntake>10600</CashIntake>
+
+        <ReasonCodeId>0</ReasonCodeId>
+
+        <CreditCount>0</CreditCount>
+
+        <NumberOfTenderItemizers>6</NumberOfTenderItemizers>
+
+        <AgeVerificationType>0</AgeVerificationType>
+
+        <AgeMinimum>0</AgeMinimum>
+
+        <AgeVerificationDate>0000-00-00T00:00:00.000</AgeVerificationDate>
+
+        <UpdateRevision>0</UpdateRevision>
+
+        <CompletedPump>0</CompletedPump>
+
+        <OperatorLCID>1033</OperatorLCID>
+
+        <CustomerLCID>1033</CustomerLCID>
+
+        <OperatorCodepage>1252</OperatorCodepage>
+
+        <CustomerCodepage>0</CustomerCodepage>
+
+        <OrderSystemId/>
+
+        <OrderReference/>
+
+        <MoreLoyaltyCardsAllowed>1</MoreLoyaltyCardsAllowed>
+
+        <NumPrintsInRevision>0</NumPrintsInRevision>
+
+        <ReverseTransactionChain>0</ReverseTransactionChain>
+
+        <NonMerchCreditTotal>0</NonMerchCreditTotal>
+
+        <BinaryDataChunkCount>2</BinaryDataChunkCount>
+
+        <InvoiceStatus>0</InvoiceStatus>
+
+
+        <NVPs>
+
+            <NVP persist="true" type="5" name="bLoyaltySendAuthAfterCreditDecode">false</NVP>
+
+        </NVPs>
+
+        <ReceiptPrintCount>0</ReceiptPrintCount>
+
+    </Header>
+
+
+    <Detail>
+
+        <TranSequenceNumber>3</TranSequenceNumber>
+
+        <ItemNumber>1</ItemNumber>
+
+        <ParentItemNumber>0</ParentItemNumber>
+
+        <UpdateRevision>0</UpdateRevision>
+
+        <EventId>10109</EventId>
+
+        <SubEventId>0</SubEventId>
+
+        <ItemId>990000000003</ItemId>
+
+        <Modifier1Id>990000000004</Modifier1Id>
+
+        <Modifier2Id>0</Modifier2Id>
+
+        <Modifier3Id>0</Modifier3Id>
+
+        <BarcodeLength>12</BarcodeLength>
+
+        <Barcode>099999999990</Barcode>
+
+        <ItemMode>0</ItemMode>
+
+        <ItemMode2>0</ItemMode2>
+
+        <Version>0</Version>
+
+        <DeviceListId>1</DeviceListId>
+
+        <DeviceControl>0</DeviceControl>
+
+        <DescriptionId>0</DescriptionId>
+
+        <Description>Sale Item A</Description>
+
+        <Quantity>1.0000</Quantity>
+
+        <ExtendedQuantity>1.0000</ExtendedQuantity>
+
+        <UnitPrice>9900</UnitPrice>
+
+        <ExtendedPrice>9900</ExtendedPrice>
+
+        <AccountableOwnerID>70000000003</AccountableOwnerID>
+
+        <TaxItemizerMask>14</TaxItemizerMask>
+
+        <TaxItemizerMaskBase>14</TaxItemizerMaskBase>
+
+        <DiscountItemizerMask>1</DiscountItemizerMask>
+
+        <SubItemCount>0</SubItemCount>
+
+        <SubItemPhysicalCount>0</SubItemPhysicalCount>
+
+        <SubCategory>990000000002</SubCategory>
+
+        <Status>0</Status>
+
+        <Location>0</Location>
+
+        <DiscountItemNumber>0</DiscountItemNumber>
+
+        <ComboId>0</ComboId>
+
+        <ComboSequence>0</ComboSequence>
+
+        <ComboItemType>0</ComboItemType>
+
+        <ComboParent>0</ComboParent>
+
+        <DiscountAmount>0</DiscountAmount>
+
+        <TenderTypeId>0</TenderTypeId>
+
+        <ItemType>1</ItemType>
+
+        <KdsRoutingNumber>0</KdsRoutingNumber>
+
+        <FlavorCount>0</FlavorCount>
+
+        <ReasonCodeId>0</ReasonCodeId>
+
+        <ClientId>0</ClientId>
+
+        <PromoId>0</PromoId>
+
+        <ExchangeRate>1.0000</ExchangeRate>
+
+        <TenderItemizerRank>0</TenderItemizerRank>
+
+        <LoyaltyPointAward>0.0000</LoyaltyPointAward>
+
+        <OriginalUnitPrice>0</OriginalUnitPrice>
+
+        <ExternalId>ITT-099999999990-0-1</ExternalId>
+
+        <EntryMethod>6</EntryMethod>
+
+        <PackSize>1</PackSize>
+
+        <LoyaltyTranId>0</LoyaltyTranId>
+
+        <AddedByItemNumber>0</AddedByItemNumber>
+
+        <PumpNumber>0</PumpNumber>
+
+        <SaleType>0</SaleType>
+
+        <Hose>0</Hose>
+
+        <Tier>0</Tier>
+
+        <RelatedTransactionNumber>0</RelatedTransactionNumber>
+
+        <AuthorizedTime>0000-00-00T00:00:00.000</AuthorizedTime>
+
+        <AuthorizingStation>0</AuthorizingStation>
+
+        <AuthorizingCashier>0</AuthorizingCashier>
+
+        <InitialTranNumber>0</InitialTranNumber>
+
+
+        <NVPs>
+
+            <NVP persist="true" type="1" name="ItemCreditCategory">2010</NVP>
+
+            <NVP persist="true" type="2" name="ManufacturerCoupon.ManufacturerId">99999</NVP>
+
+        </NVPs>
+
+        <QualifiedItemType>1</QualifiedItemType>
+
+        <RetailModifiedItemId>990000000003</RetailModifiedItemId>
+
+    </Detail>
+
+
+    <Detail>
+
+        <TranSequenceNumber>3</TranSequenceNumber>
+
+        <ItemNumber>2</ItemNumber>
+
+        <ParentItemNumber>0</ParentItemNumber>
+
+        <UpdateRevision>0</UpdateRevision>
+
+        <EventId>10118</EventId>
+
+        <SubEventId>0</SubEventId>
+
+        <ItemId>70000000275</ItemId>
+
+        <Modifier1Id>0</Modifier1Id>
+
+        <Modifier2Id>0</Modifier2Id>
+
+        <Modifier3Id>0</Modifier3Id>
+
+        <BarcodeLength>0</BarcodeLength>
+
+        <Barcode>0</Barcode>
+
+        <ItemMode>1331912704</ItemMode>
+
+        <ItemMode2>0</ItemMode2>
+
+        <Version>0</Version>
+
+        <DeviceListId>1</DeviceListId>
+
+        <DeviceControl>131072</DeviceControl>
+
+        <DescriptionId>0</DescriptionId>
+
+        <Description>Cash</Description>
+
+        <Quantity>1.0000</Quantity>
+
+        <ExtendedQuantity>0.0000</ExtendedQuantity>
+
+        <UnitPrice>-10600</UnitPrice>
+
+        <ExtendedPrice>-10600</ExtendedPrice>
+
+        <AccountableOwnerID>0</AccountableOwnerID>
+
+        <TaxItemizerMask>0</TaxItemizerMask>
+
+        <TaxItemizerMaskBase>0</TaxItemizerMaskBase>
+
+        <DiscountItemizerMask>0</DiscountItemizerMask>
+
+        <SubItemCount>0</SubItemCount>
+
+        <SubItemPhysicalCount>0</SubItemPhysicalCount>
+
+        <SubCategory>0</SubCategory>
+
+        <Status>0</Status>
+
+        <Location>0</Location>
+
+        <DiscountItemNumber>0</DiscountItemNumber>
+
+        <ComboId>0</ComboId>
+
+        <ComboSequence>0</ComboSequence>
+
+        <ComboItemType>0</ComboItemType>
+
+        <ComboParent>0</ComboParent>
+
+        <DiscountAmount>0</DiscountAmount>
+
+        <TenderTypeId>1</TenderTypeId>
+
+        <ItemType>6</ItemType>
+
+        <KdsRoutingNumber>0</KdsRoutingNumber>
+
+        <FlavorCount>0</FlavorCount>
+
+        <ReasonCodeId>0</ReasonCodeId>
+
+        <ClientId>0</ClientId>
+
+        <PromoId>0</PromoId>
+
+        <ExchangeRate>1.0000</ExchangeRate>
+
+        <TenderItemizerRank>1</TenderItemizerRank>
+
+        <LoyaltyPointAward>0.0000</LoyaltyPointAward>
+
+        <OriginalUnitPrice>0</OriginalUnitPrice>
+
+        <ExternalId/>
+
+        <EntryMethod>0</EntryMethod>
+
+        <PackSize>0</PackSize>
+
+        <LoyaltyTranId>0</LoyaltyTranId>
+
+        <AddedByItemNumber>0</AddedByItemNumber>
+
+        <PumpNumber>0</PumpNumber>
+
+        <SaleType>0</SaleType>
+
+        <Hose>0</Hose>
+
+        <Tier>0</Tier>
+
+        <RelatedTransactionNumber>0</RelatedTransactionNumber>
+
+        <AuthorizedTime>0000-00-00T00:00:00.000</AuthorizedTime>
+
+        <AuthorizingStation>0</AuthorizingStation>
+
+        <AuthorizingCashier>0</AuthorizingCashier>
+
+        <InitialTranNumber>0</InitialTranNumber>
+
+        <QualifiedItemType>6</QualifiedItemType>
+
+    </Detail>
+
+
+    <Detail>
+
+        <TranSequenceNumber>3</TranSequenceNumber>
+
+        <ItemNumber>3</ItemNumber>
+
+        <ParentItemNumber>0</ParentItemNumber>
+
+        <UpdateRevision>0</UpdateRevision>
+
+        <EventId>10117</EventId>
+
+        <SubEventId>0</SubEventId>
+
+        <ItemId>101</ItemId>
+
+        <Modifier1Id>0</Modifier1Id>
+
+        <Modifier2Id>0</Modifier2Id>
+
+        <Modifier3Id>0</Modifier3Id>
+
+        <BarcodeLength>0</BarcodeLength>
+
+        <Barcode>0</Barcode>
+
+        <ItemMode>0</ItemMode>
+
+        <ItemMode2>0</ItemMode2>
+
+        <Version>1</Version>
+
+        <DeviceListId>1</DeviceListId>
+
+        <DeviceControl>0</DeviceControl>
+
+        <DescriptionId>0</DescriptionId>
+
+        <Description>Tax Item</Description>
+
+        <Quantity>1.0000</Quantity>
+
+        <ExtendedQuantity>1.0000</ExtendedQuantity>
+
+        <UnitPrice>100</UnitPrice>
+
+        <ExtendedPrice>100</ExtendedPrice>
+
+        <AccountableOwnerID>70000000003</AccountableOwnerID>
+
+        <TaxItemizerMask>2</TaxItemizerMask>
+
+        <TaxItemizerMaskBase>2</TaxItemizerMaskBase>
+
+        <DiscountItemizerMask>0</DiscountItemizerMask>
+
+        <SubItemCount>0</SubItemCount>
+
+        <SubItemPhysicalCount>0</SubItemPhysicalCount>
+
+        <SubCategory>0</SubCategory>
+
+        <Status>1048576</Status>
+
+        <Location>0</Location>
+
+        <DiscountItemNumber>0</DiscountItemNumber>
+
+        <ComboId>0</ComboId>
+
+        <ComboSequence>0</ComboSequence>
+
+        <ComboItemType>0</ComboItemType>
+
+        <ComboParent>0</ComboParent>
+
+        <DiscountAmount>0</DiscountAmount>
+
+        <TenderTypeId>0</TenderTypeId>
+
+        <ItemType>0</ItemType>
+
+        <KdsRoutingNumber>0</KdsRoutingNumber>
+
+        <FlavorCount>0</FlavorCount>
+
+        <ReasonCodeId>0</ReasonCodeId>
+
+        <ClientId>0</ClientId>
+
+        <PromoId>0</PromoId>
+
+        <ExchangeRate>1.0000</ExchangeRate>
+
+        <TenderItemizerRank>0</TenderItemizerRank>
+
+        <LoyaltyPointAward>0.0000</LoyaltyPointAward>
+
+        <OriginalUnitPrice>0</OriginalUnitPrice>
+
+        <ExternalId/>
+
+        <EntryMethod>0</EntryMethod>
+
+        <PackSize>0</PackSize>
+
+        <LoyaltyTranId>0</LoyaltyTranId>
+
+        <AddedByItemNumber>0</AddedByItemNumber>
+
+        <PumpNumber>0</PumpNumber>
+
+        <SaleType>0</SaleType>
+
+        <Hose>0</Hose>
+
+        <Tier>0</Tier>
+
+        <RelatedTransactionNumber>0</RelatedTransactionNumber>
+
+        <AuthorizedTime>0000-00-00T00:00:00.000</AuthorizedTime>
+
+        <AuthorizingStation>0</AuthorizingStation>
+
+        <AuthorizingCashier>0</AuthorizingCashier>
+
+        <InitialTranNumber>0</InitialTranNumber>
+
+        <QualifiedItemType>0</QualifiedItemType>
+
+    </Detail>
+
+
+    <Detail>
+
+        <TranSequenceNumber>3</TranSequenceNumber>
+
+        <ItemNumber>4</ItemNumber>
+
+        <ParentItemNumber>0</ParentItemNumber>
+
+        <UpdateRevision>0</UpdateRevision>
+
+        <EventId>10117</EventId>
+
+        <SubEventId>0</SubEventId>
+
+        <ItemId>102</ItemId>
+
+        <Modifier1Id>0</Modifier1Id>
+
+        <Modifier2Id>0</Modifier2Id>
+
+        <Modifier3Id>0</Modifier3Id>
+
+        <BarcodeLength>0</BarcodeLength>
+
+        <Barcode>0</Barcode>
+
+        <ItemMode>0</ItemMode>
+
+        <ItemMode2>0</ItemMode2>
+
+        <Version>1</Version>
+
+        <DeviceListId>1</DeviceListId>
+
+        <DeviceControl>0</DeviceControl>
+
+        <DescriptionId>0</DescriptionId>
+
+        <Description>Tax Item</Description>
+
+        <Quantity>1.0000</Quantity>
+
+        <ExtendedQuantity>1.0000</ExtendedQuantity>
+
+        <UnitPrice>200</UnitPrice>
+
+        <ExtendedPrice>200</ExtendedPrice>
+
+        <AccountableOwnerID>70000000003</AccountableOwnerID>
+
+        <TaxItemizerMask>4</TaxItemizerMask>
+
+        <TaxItemizerMaskBase>4</TaxItemizerMaskBase>
+
+        <DiscountItemizerMask>0</DiscountItemizerMask>
+
+        <SubItemCount>0</SubItemCount>
+
+        <SubItemPhysicalCount>0</SubItemPhysicalCount>
+
+        <SubCategory>0</SubCategory>
+
+        <Status>1048576</Status>
+
+        <Location>0</Location>
+
+        <DiscountItemNumber>0</DiscountItemNumber>
+
+        <ComboId>0</ComboId>
+
+        <ComboSequence>0</ComboSequence>
+
+        <ComboItemType>0</ComboItemType>
+
+        <ComboParent>0</ComboParent>
+
+        <DiscountAmount>0</DiscountAmount>
+
+        <TenderTypeId>0</TenderTypeId>
+
+        <ItemType>0</ItemType>
+
+        <KdsRoutingNumber>0</KdsRoutingNumber>
+
+        <FlavorCount>0</FlavorCount>
+
+        <ReasonCodeId>0</ReasonCodeId>
+
+        <ClientId>0</ClientId>
+
+        <PromoId>0</PromoId>
+
+        <ExchangeRate>1.0000</ExchangeRate>
+
+        <TenderItemizerRank>0</TenderItemizerRank>
+
+        <LoyaltyPointAward>0.0000</LoyaltyPointAward>
+
+        <OriginalUnitPrice>0</OriginalUnitPrice>
+
+        <ExternalId/>
+
+        <EntryMethod>0</EntryMethod>
+
+        <PackSize>0</PackSize>
+
+        <LoyaltyTranId>0</LoyaltyTranId>
+
+        <AddedByItemNumber>0</AddedByItemNumber>
+
+        <PumpNumber>0</PumpNumber>
+
+        <SaleType>0</SaleType>
+
+        <Hose>0</Hose>
+
+        <Tier>0</Tier>
+
+        <RelatedTransactionNumber>0</RelatedTransactionNumber>
+
+        <AuthorizedTime>0000-00-00T00:00:00.000</AuthorizedTime>
+
+        <AuthorizingStation>0</AuthorizingStation>
+
+        <AuthorizingCashier>0</AuthorizingCashier>
+
+        <InitialTranNumber>0</InitialTranNumber>
+
+        <QualifiedItemType>0</QualifiedItemType>
+
+    </Detail>
+
+
+    <Detail>
+
+        <TranSequenceNumber>3</TranSequenceNumber>
+
+        <ItemNumber>5</ItemNumber>
+
+        <ParentItemNumber>0</ParentItemNumber>
+
+        <UpdateRevision>0</UpdateRevision>
+
+        <EventId>10117</EventId>
+
+        <SubEventId>0</SubEventId>
+
+        <ItemId>103</ItemId>
+
+        <Modifier1Id>0</Modifier1Id>
+
+        <Modifier2Id>0</Modifier2Id>
+
+        <Modifier3Id>0</Modifier3Id>
+
+        <BarcodeLength>0</BarcodeLength>
+
+        <Barcode>0</Barcode>
+
+        <ItemMode>0</ItemMode>
+
+        <ItemMode2>0</ItemMode2>
+
+        <Version>1</Version>
+
+        <DeviceListId>1</DeviceListId>
+
+        <DeviceControl>0</DeviceControl>
+
+        <DescriptionId>0</DescriptionId>
+
+        <Description>Tax Item</Description>
+
+        <Quantity>1.0000</Quantity>
+
+        <ExtendedQuantity>1.0000</ExtendedQuantity>
+
+        <UnitPrice>400</UnitPrice>
+
+        <ExtendedPrice>400</ExtendedPrice>
+
+        <AccountableOwnerID>70000000003</AccountableOwnerID>
+
+        <TaxItemizerMask>8</TaxItemizerMask>
+
+        <TaxItemizerMaskBase>8</TaxItemizerMaskBase>
+
+        <DiscountItemizerMask>0</DiscountItemizerMask>
+
+        <SubItemCount>0</SubItemCount>
+
+        <SubItemPhysicalCount>0</SubItemPhysicalCount>
+
+        <SubCategory>0</SubCategory>
+
+        <Status>1048576</Status>
+
+        <Location>0</Location>
+
+        <DiscountItemNumber>0</DiscountItemNumber>
+
+        <ComboId>0</ComboId>
+
+        <ComboSequence>0</ComboSequence>
+
+        <ComboItemType>0</ComboItemType>
+
+        <ComboParent>0</ComboParent>
+
+        <DiscountAmount>0</DiscountAmount>
+
+        <TenderTypeId>0</TenderTypeId>
+
+        <ItemType>0</ItemType>
+
+        <KdsRoutingNumber>0</KdsRoutingNumber>
+
+        <FlavorCount>0</FlavorCount>
+
+        <ReasonCodeId>0</ReasonCodeId>
+
+        <ClientId>0</ClientId>
+
+        <PromoId>0</PromoId>
+
+        <ExchangeRate>1.0000</ExchangeRate>
+
+        <TenderItemizerRank>0</TenderItemizerRank>
+
+        <LoyaltyPointAward>0.0000</LoyaltyPointAward>
+
+        <OriginalUnitPrice>0</OriginalUnitPrice>
+
+        <ExternalId/>
+
+        <EntryMethod>0</EntryMethod>
+
+        <PackSize>0</PackSize>
+
+        <LoyaltyTranId>0</LoyaltyTranId>
+
+        <AddedByItemNumber>0</AddedByItemNumber>
+
+        <PumpNumber>0</PumpNumber>
+
+        <SaleType>0</SaleType>
+
+        <Hose>0</Hose>
+
+        <Tier>0</Tier>
+
+        <RelatedTransactionNumber>0</RelatedTransactionNumber>
+
+        <AuthorizedTime>0000-00-00T00:00:00.000</AuthorizedTime>
+
+        <AuthorizingStation>0</AuthorizingStation>
+
+        <AuthorizingCashier>0</AuthorizingCashier>
+
+        <InitialTranNumber>0</InitialTranNumber>
+
+        <QualifiedItemType>0</QualifiedItemType>
+
+    </Detail>
+
+
+    <Detail>
+
+        <TranSequenceNumber>3</TranSequenceNumber>
+
+        <ItemNumber>6</ItemNumber>
+
+        <ParentItemNumber>0</ParentItemNumber>
+
+        <UpdateRevision>0</UpdateRevision>
+
+        <EventId>10124</EventId>
+
+        <SubEventId>0</SubEventId>
+
+        <ItemId>0</ItemId>
+
+        <Modifier1Id>0</Modifier1Id>
+
+        <Modifier2Id>0</Modifier2Id>
+
+        <Modifier3Id>0</Modifier3Id>
+
+        <BarcodeLength>0</BarcodeLength>
+
+        <Barcode>0</Barcode>
+
+        <ItemMode>0</ItemMode>
+
+        <ItemMode2>0</ItemMode2>
+
+        <Version>0</Version>
+
+        <DeviceListId>0</DeviceListId>
+
+        <DeviceControl>0</DeviceControl>
+
+        <DescriptionId>0</DescriptionId>
+
+        <Description>0010000000016022</Description>
+
+        <Quantity>1.0000</Quantity>
+
+        <ExtendedQuantity>1.0000</ExtendedQuantity>
+
+        <UnitPrice>0</UnitPrice>
+
+        <ExtendedPrice>0</ExtendedPrice>
+
+        <AccountableOwnerID>0</AccountableOwnerID>
+
+        <TaxItemizerMask>0</TaxItemizerMask>
+
+        <TaxItemizerMaskBase>0</TaxItemizerMaskBase>
+
+        <DiscountItemizerMask>0</DiscountItemizerMask>
+
+        <SubItemCount>0</SubItemCount>
+
+        <SubItemPhysicalCount>0</SubItemPhysicalCount>
+
+        <SubCategory>0</SubCategory>
+
+        <Status>1048576</Status>
+
+        <Location>0</Location>
+
+        <DiscountItemNumber>0</DiscountItemNumber>
+
+        <ComboId>0</ComboId>
+
+        <ComboSequence>0</ComboSequence>
+
+        <ComboItemType>0</ComboItemType>
+
+        <ComboParent>0</ComboParent>
+
+        <DiscountAmount>0</DiscountAmount>
+
+        <TenderTypeId>0</TenderTypeId>
+
+        <ItemType>39</ItemType>
+
+        <KdsRoutingNumber>0</KdsRoutingNumber>
+
+        <FlavorCount>0</FlavorCount>
+
+        <ReasonCodeId>0</ReasonCodeId>
+
+        <ClientId>0</ClientId>
+
+        <PromoId>0</PromoId>
+
+        <ExchangeRate>1.0000</ExchangeRate>
+
+        <TenderItemizerRank>0</TenderItemizerRank>
+
+        <LoyaltyPointAward>0.0000</LoyaltyPointAward>
+
+        <OriginalUnitPrice>0</OriginalUnitPrice>
+
+        <ExternalId/>
+
+        <EntryMethod>0</EntryMethod>
+
+        <PackSize>0</PackSize>
+
+        <LoyaltyTranId>0</LoyaltyTranId>
+
+        <AddedByItemNumber>0</AddedByItemNumber>
+
+        <PumpNumber>0</PumpNumber>
+
+        <SaleType>0</SaleType>
+
+        <Hose>0</Hose>
+
+        <Tier>0</Tier>
+
+        <RelatedTransactionNumber>0</RelatedTransactionNumber>
+
+        <AuthorizedTime>0000-00-00T00:00:00.000</AuthorizedTime>
+
+        <AuthorizingStation>0</AuthorizingStation>
+
+        <AuthorizingCashier>0</AuthorizingCashier>
+
+        <InitialTranNumber>0</InitialTranNumber>
+
+        <QualifiedItemType>39</QualifiedItemType>
+
+    </Detail>
+
+</LHPersistentTran>

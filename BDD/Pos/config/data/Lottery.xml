@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>SC;unknown_ver;2018-02-06T08:31:37-05:00</Description>
+        <Version>2</Version>
+    </FileHeader>
+    <Games>
+        <record>
+            <ItemId>990000000017</ItemId>
+            <MaximumPayout>6000000</MaximumPayout>
+            <GameType>0</GameType>
+        </record>
+        <record>
+            <ItemId>990000000018</ItemId>
+            <MaximumPayout>6000000</MaximumPayout>
+            <GameType>1</GameType>
+        </record>
+    </Games>
+    <EndOfFileNumber>
+        <EndOfFileNumber>255</EndOfFileNumber>
+    </EndOfFileNumber>
+</RelayFile>

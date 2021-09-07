@@ -1,0 +1,304 @@
+{
+   "NetworkName":                 "WincorEPS",
+
+   "ServiceRequestPort":                20001,
+   "CardRequestPort":                   20001,
+   "DeviceRequestPort":                 20001,
+   "DeviceWaitRequestPort":              4004,
+   "ServiceWaitRequestPort":             4005,
+   "MobileMessagePort":                  4006,
+   "EPSAddress":                "127.0.0.1",
+
+   "FlowManagerType":                 "Shell",
+   "IFSFVersion":                       "2.6",
+   "RequestIdType":                    "Long",
+   "WaitForSignalTimeoutMS":              101,
+  "MessageEncoding": "JSON",
+
+   "BusyRetryTimes":                    3,
+   "BusyRetryWaitTimeMS":               10000,
+   "TimeoutRetryTimes":                 1,
+   "TimeoutRetryWaitTimeMS":            0,
+   "DefaultPOSRequestTimeoutMS":        60000,
+   "SAFFileSizeByte":                   65536,
+   "SAFQueueSizeByte":                  1048576,
+   "SAFPOSRequestTimeoutMS":            10000,
+   "SAFRetryWaitTimeMS":                300000,
+   "BackgroundWorkstationPrefix":       "CAP",
+   "BackgroundWorkstationOffset":       300,
+   "IgnoreZeroPriceItems":              true,
+   "FuelingWorkstationPrefix":          "ICR",
+   "FuelingWorkstationOffset":          100,
+   "AliveCheckIntervalMS":              300000,
+   "WaitForShutdownTimeoutMS":          5000,
+
+   "SiteAssetDataSupport":              true,
+   "EBTTenderSupport":                  false,
+
+   "POSConfig":
+   {
+        "ReceiveTimeoutMS":                         10000,
+        "ConnectTimeoutMS":                         1000,
+        "SelectTimeoutMS":                           500,
+        "RequestTimeoutMS":                          180000,
+        "ReconciliationWithClosureRequestTimeoutMS": 360000,
+        "ResponseTimeoutMS":                          10000,
+        "MessageReplyTimeoutMS":                      500,
+        "AlertCapable":                               true,
+        "UnsolicitedAdminCapable":                    false,
+        "MobileMessageCapable":                       false,
+        "DefaultWorkstation":                         "",
+        "HandlesForwardedDisplayOutput":             true,
+        "SupportsSAFInBackground":                   true,
+        "SupportsPinPad":                            true,
+        "SupportsPumpNumber":                        false,
+        "ProcessesCardMappingList":                  false,
+        "ProcessesConfigSiteInfo":                   true,
+        "ProcessesPOSConfigMessage":                 false
+   },
+
+   "ICRConfig":
+   {
+        "ReceiveTimeoutMS":                          10000,
+        "ConnectTimeoutMS":                          1000,
+        "SelectTimeoutMS":                           500,
+        "RequestTimeoutMS":                          180000,
+        "ReconciliationWithClosureRequestTimeoutMS": 360000,
+        "ResponseTimeoutMS":                         10000,
+        "MessageReplyTimeoutMS":                     500,
+        "AlertCapable":                              false,
+        "UnsolicitedAdminCapable":                   false,
+        "MobileMessageCapable":                      true,
+        "DefaultWorkstation":                        "ICR101",
+        "HandlesForwardedDisplayOutput":             false,
+        "SupportsSAFInBackground":                   true,
+        "SupportsPinPad":                            false,
+        "SupportsPumpNumber":                        true,
+        "ProcessesCardMappingList":                  false,
+        "ProcessesConfigSiteInfo":                   true,
+        "ProcessesPOSConfigMessage":                 false,
+        "ContactICCCapable":                         true
+   },
+
+   "SCConfig":
+   {
+        "ReceiveTimeoutMS":                          10000,
+        "ConnectTimeoutMS":                          1000,
+        "SelectTimeoutMS":                           2500,
+        "RequestTimeoutMS":                          180000,
+        "ReconciliationWithClosureRequestTimeoutMS": 360000,
+        "ResponseTimeoutMS":                         10000,
+        "MessageReplyTimeoutMS":                     500,
+        "AlertCapable":                              false,
+        "UnsolicitedAdminCapable":                   true,
+        "MobileMessageCapable":                      false,
+        "DefaultWorkstation":                        "STC000",
+        "HandlesForwardedDisplayOutput":             false,
+        "SupportsSAFInBackground":                   false,
+        "SupportsPinPad":                            false,
+        "SupportsPumpNumber":                        false,
+        "ProcessesCardMappingList":                  true,
+        "ProcessesConfigSiteInfo":                   false,
+        "ProcessesPOSConfigMessage":                 true
+   },
+
+   "LogConfig":
+   {
+       "LogOptionsForSmallDisk": "LogSize=5120000,BlockWrite",
+       "LogOptionsForLargeDisk": "LogSize=32768000,BlockWrite,NoBackup,ArchiveExpireDays=5",
+       "SmallLargeBreakPointMb": 800
+   },
+
+   "WorkstationConfigMap":
+   [
+      {
+           "WorkstationPrefix": "POS",
+           "WorkstationConfig":
+           {
+                "WorkstationIdPrefix":          "POS",
+                "WorkstationIdOffset":          0,
+                "LoyaltyCapable":               true,
+                "SyncTimeWithEPS":              false,
+                "SyncTimeThresholdMS":          1000,
+                "AlertCapable":                 true,
+                "UnsolicitedAdminCapable":      false,
+                "MobileMessageCapable":         false,
+                "ShouldPerformAliveCheck":      false,
+                "CanDisplayOutputRequests":     true
+
+           }
+      },
+
+      {
+           "WorkstationPrefix": "ICR",
+           "WorkstationConfig":
+           {
+                "WorkstationIdPrefix":          "ICR",
+                "WorkstationIdOffset":          100,
+                "LoyaltyCapable":               true,
+                "SyncTimeWithEPS":              false,
+                "SyncTimeThresholdMS":          1000,
+                "AlertCapable":                 false,
+                "UnsolicitedAdminCapable":      false,
+                "MobileMessageCapable":         true,
+                "ShouldPerformAliveCheck":      false,
+                "CanDisplayOutputRequests":     true,
+                "ContactICCCapable":            true
+           }
+      },
+
+    {
+      "WorkstationPrefix": "STC",
+      "WorkstationConfig": {
+        "WorkstationIdPrefix": "STC",
+        "WorkstationIdOffset": 0,
+        "LoyaltyCapable": true,
+        "SyncTimeWithEPS": true,
+        "SyncTimeThresholdMS": 1000,
+        "AlertCapable": false,
+        "UnsolicitedAdminCapable": true,
+        "MobileMessageCapable": false,
+        "ShouldPerformAliveCheck": true,
+        "CanDisplayOutputRequests": false
+
+      }
+    },
+
+      {
+           "WorkstationPrefix": "RSM",
+           "WorkstationConfig":
+           {
+                "WorkstationIdPrefix":          "RSM",
+                "WorkstationIdOffset":          0,
+                "LoyaltyCapable":               true,
+                "SyncTimeWithEPS":              false,
+                "SyncTimeThresholdMS":          1000,
+                "AlertCapable":                 false,
+                "UnsolicitedAdminCapable":      false,
+                "MobileMessageCapable":         false,
+                "ShouldPerformAliveCheck":      false,
+                "CanDisplayOutputRequests":     true
+
+           }
+      },
+
+      {
+           "WorkstationPrefix": "CAP",
+           "WorkstationConfig":
+           {
+                "WorkstationIdPrefix":          "CAP",
+                "WorkstationIdOffset":          0,
+                "LoyaltyCapable":               true,
+                "SyncTimeWithEPS":              false,
+                "SyncTimeThresholdMS":          1000,
+                "AlertCapable":                 false,
+                "UnsolicitedAdminCapable":      false,
+                "MobileMessageCapable":         false,
+                "ShouldPerformAliveCheck":      false,
+                "CanDisplayOutputRequests":     true,
+                "NonInteractiveEvent":          true
+
+           }
+      }
+   ],
+
+   "IFSFRadPipeName":                 "IFSF_EPS_SHELL_BAPIDC",
+   "GlobalRadPipeName":               "IFSF_EPS_SHELL_GLOBAL_DC2DC",
+
+   "CardCategoryMap":
+   [
+      { "IFSFEntry": "Debit",            "RPOSEntry": "D" },
+      { "IFSFEntry": "Credit",           "RPOSEntry": "C" },
+      { "IFSFEntry": "PrePaid",          "RPOSEntry": "S" },
+      { "IFSFEntry": "Activation",       "RPOSEntry": "S" },
+      { "IFSFEntry": "Recharge",         "RPOSEntry": "S" },
+      { "IFSFEntry": "Loyalty",          "RPOSEntry": "L" },
+      { "IFSFEntry": "EBT",              "RPOSEntry": "E" },
+      { "IFSFEntry": "Cheque",           "RPOSEntry": "K" },
+      { "IFSFEntry": "Cash",             "RPOSEntry": "OC"},
+      { "IFSFEntry": "CashChange",       "RPOSEntry": "OC"},
+      { "IFSFEntry": "Other",            "RPOSEntry": "O" },
+      { "IFSFEntry": "Coupon",           "RPOSEntry": "O" },
+      { "IFSFEntry": "NA",               "RPOSEntry": "C" }
+   ],
+
+   "EntryMethodMap":
+   [
+        { "IFSFEntry": "Swipe",            "RPOSEntry": "ST" },
+        { "IFSFEntry": "SmartCard",        "RPOSEntry": "CC" },
+        { "IFSFEntry": "RadioFrequency",   "RPOSEntry": "RT" },
+        { "IFSFEntry": "Keyboard",         "RPOSEntry": "MT" },
+        { "IFSFEntry": "Manual",           "RPOSEntry": "MT" },
+        { "IFSFEntry": "Mobile",           "RPOSEntry": "XW" },
+        { "IFSFEntry": "Scanner",          "RPOSEntry": "BB" },
+        { "IFSFEntry": "Speedpass",        "RPOSEntry": "RS" },
+        { "IFSFEntry": "Swipe",            "RPOSEntry": "S"  },
+        { "IFSFEntry": "Manual",           "RPOSEntry": "M"  }
+   ],
+
+   "SecurePromptMap":
+   [
+        { "IFSFEntry": "ENTER CUSTOMER ID",          "RPOSEntry": "USER_ID"        },
+        { "IFSFEntry": "ENTER SECURE CODE",          "RPOSEntry": "SECURE_ID"      },
+        { "IFSFEntry": "ENTER DRIVER ID",            "RPOSEntry": "DRIVER_NUMBER"  },
+        { "IFSFEntry": "ENTER ODOMETER",             "RPOSEntry": "ODOMETER"       },
+        { "IFSFEntry": "ENTER VEHICLE NUMBER",       "RPOSEntry": "VEHICLE_NUMBER" },
+        { "IFSFEntry": "ENTER ZIP CODE",             "RPOSEntry": "ZIP"            },
+        { "IFSFEntry": "ENTER CODE",                 "RPOSEntry": "SECURITY_CODE"  },
+        { "IFSFEntry": "RE-ENTER CUSTOMER ID",       "RPOSEntry": "USER_ID"        },
+        { "IFSFEntry": "RE-ENTER SECURE CODE",       "RPOSEntry": "SECURE_ID"      },
+        { "IFSFEntry": "RE-ENTER ZIP CODE",          "RPOSEntry": "ZIP"            },
+        { "IFSFEntry": "RE-ENTER DRIVER ID",         "RPOSEntry": "DRIVER_NUMBER"  },
+        { "IFSFEntry": "RE-ENTER ODOMETER",          "RPOSEntry": "ODOMETER"       },
+        { "IFSFEntry": "RE-ENTER VEHICLE NUMBER",    "RPOSEntry": "VEHICLE_NUMBER" },
+        { "IFSFEntry": "RE-ENTER CODE",              "RPOSEntry": "SECURITY_CODE"  },
+        { "IFSFEntry": "REENTER CUSTOMER ID",        "RPOSEntry": "USER_ID"        },
+        { "IFSFEntry": "REENTER SECURE CODE",        "RPOSEntry": "SECURE_ID"      },
+        { "IFSFEntry": "REENTER ZIP CODE",           "RPOSEntry": "ZIP"            },
+        { "IFSFEntry": "REENTER DRIVER ID",          "RPOSEntry": "DRIVER_NUMBER"  },
+        { "IFSFEntry": "REENTER ODOMETER",           "RPOSEntry": "ODOMETER"       },
+        { "IFSFEntry": "REENTER VEHICLE NUMBER",     "RPOSEntry": "VEHICLE_NUMBER" },
+        { "IFSFEntry": "REENTER CODE",               "RPOSEntry": "SECURITY_CODE"  }
+   ],
+
+   "ErrorMessageMap":
+   [
+        {"IFSFEntry": "CardBalanceInquiry_EPS_Offline",     "RPOSEntry": "The card balance could not be checked at this time because the POS was offline to the EPS."},
+        {"IFSFEntry": "CardBalanceInquiry_EPS_Processing",  "RPOSEntry": "The EPS failed to process the card balance inquiry.  Please verify that the card is valid and try again later."},
+        {"IFSFEntry": "SystemTest_EPS_Offline",             "RPOSEntry": "The system test failed at this time because the POS was offline to the EPS."},
+        {"IFSFEntry": "SystemTest_EPS_Processing",          "RPOSEntry": "The system test failed at this time because the EPS was offline to the host."},
+        {"IFSFEntry": "StoreValueInCard_Offline",           "RPOSEntry": "One or more Gift Cards could not be activated at this time because the POS was offline to the EPS.  Please refund the value of any remaining Gift Card(s) needing Activation."},
+        {"IFSFEntry": "Split_Tender_Refund_Not_Allowed",    "RPOSEntry": "Split-tender refunds are not allowed with primary network tenders."}
+   ],
+
+   "MessageMap":
+   [
+        {"IFSFEntry": "SystemTest_Success_Text",    "RPOSEntry": "The system test was successful."},
+        {"IFSFEntry": "SystemTest_Success_Title",   "RPOSEntry": "System Test Result"}
+   ],
+
+   "SvcBalanceInquiryHeader":
+   [    "************ BALANCE INQUIRY ***********",
+        "$P_STORE_NAME",
+        "$P_STORE_ADDRESS",
+        "$P_STORE_ADDRESS_2",
+        ""
+   ],
+
+   "SvcActivationHeader":
+   [    "************ CARD ACTIVATED ************",
+        "$P_STORE_NAME",
+        "$P_STORE_ADDRESS",
+        "$P_STORE_ADDRESS_2",
+        ""
+   ],
+
+   "DefaultSecurePrompt":               "ENTER_NUMBER",
+   "DefaultReadCardPrompt":             "PLEASE SWIPE CARD",
+   "DefaultCashBackPrompt":             "ENTER CASHBACK",
+   "DefaultCashBackConfirmationPrompt": "Do you want cash back?",
+   "NewMailAlertText":                  "New mail arrived",
+   "DefaultOutputTimeoutInSeconds":     10,
+   "MaxCashBackAmount":                 0,
+   "SendNegativePriceItemsAsLocalDiscount": true
+}

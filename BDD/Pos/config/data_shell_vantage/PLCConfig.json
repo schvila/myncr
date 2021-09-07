@@ -1,0 +1,10 @@
+{
+    "EpsilonMinReservedSubsystemID"  :  1,
+    "EpsilonMaxReservedSubsystemID"  :  9,
+    "InternalMinReservedSubsystemID" :  10,
+    "InternalMaxReservedSubsystemID" :  20,
+
+    "SubSystems": [
+        {"SubSystemName": "PLC", "SubSystemId" :  10}
+    ]
+}

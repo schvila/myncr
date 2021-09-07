@@ -1,0 +1,4 @@
+[
+{"RSSysGetLocalClientNumber":123,"RSSysGetParameter":{"PRIMARY_IP_INFORMATION":{"IPAddress":"127.0.0.1","SubnetMask":"255.255.255.0"}}},
+{"RSSysGetLocalClientNumber":1,"RSSysGetParameter":{"PRIMARY_IP_INFORMATION":{"IPAddress":"127.0.0.1","SubnetMask":"255.255.255.0"}}}
+]

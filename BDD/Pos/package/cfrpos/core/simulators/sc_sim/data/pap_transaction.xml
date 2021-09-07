@@ -1,0 +1,506 @@
+<?xml version="1.0"?>
+
+<LHPersistentTran>
+
+
+  <Header>
+
+    <EventId>10190</EventId>
+
+    <SubEventId>0</SubEventId>
+
+    <Destination>1</Destination>
+
+    <TranMode>0</TranMode>
+
+    <TranSequenceNumber>1</TranSequenceNumber>
+
+    <InvoiceNumber>0</InvoiceNumber>
+
+    <InvoiceType/>
+
+    <Version>0</Version>
+
+    <DeviceListId>1</DeviceListId>
+
+    <DeviceControl>0</DeviceControl>
+
+    <DescriptionId>0</DescriptionId>
+
+    <Description>Default Destination</Description>
+
+    <ItemCount>2</ItemCount>
+
+    <ItemPhysicalCount>2</ItemPhysicalCount>
+
+    <DebitTotal>500000</DebitTotal>
+
+    <TaxTotal>0</TaxTotal>
+
+    <ValueAddedTaxTotal>0</ValueAddedTaxTotal>
+
+    <DiscountTotal>0</DiscountTotal>
+
+    <CreditTotal>-500000</CreditTotal>
+
+    <ServiceChargeTotal>0</ServiceChargeTotal>
+
+    <TerminalId>100</TerminalId>
+
+    <OperatorId>1</OperatorId>
+
+    <Operator2Id>0</Operator2Id>
+
+    <OperatorShiftId>1</OperatorShiftId>
+
+    <DrawerId>0</DrawerId>
+
+    <Status>4</Status>
+
+    <BusinessDate>2020-12-06</BusinessDate>
+
+    <StartTime>2020-12-18T03:53:59.323</StartTime>
+
+    <LastItemTime>2020-12-18T03:54:09.100</LastItemTime>
+
+    <EndTime>2020-12-18T03:53:59.323</EndTime>
+
+    <TransactionChain>0</TransactionChain>
+
+    <CancelBeforeTotalCount>0</CancelBeforeTotalCount>
+
+    <CancelBeforeTotalAmount>0</CancelBeforeTotalAmount>
+
+    <CancelAfterTotalCount>0</CancelAfterTotalCount>
+
+    <CancelAfterTotalAmount>0</CancelAfterTotalAmount>
+
+    <CancelAfterTenderCount>0</CancelAfterTenderCount>
+
+    <CancelAfterTenderAmount>0</CancelAfterTenderAmount>
+
+    <CustomerId>0</CustomerId>
+
+    <CustomerName/>
+
+    <DriverAssignmentTime>0000-00-00T00:00:00.000</DriverAssignmentTime>
+
+    <DriverReturnTime>0000-00-00T00:00:00.000</DriverReturnTime>
+
+    <DriverId>0</DriverId>
+
+    <DriverShiftNumber>0</DriverShiftNumber>
+
+    <DeliveryZone>0</DeliveryZone>
+
+    <PromiseTime>0</PromiseTime>
+
+    <CashIntake>0</CashIntake>
+
+    <ReasonCodeId>0</ReasonCodeId>
+
+    <CreditCount>1</CreditCount>
+
+    <NumberOfTenderItemizers>0</NumberOfTenderItemizers>
+
+    <AgeVerificationType>0</AgeVerificationType>
+
+    <AgeMinimum>0</AgeMinimum>
+
+    <AgeVerificationDate>0000-00-00T00:00:00.000</AgeVerificationDate>
+
+    <UpdateRevision>0</UpdateRevision>
+
+    <CompletedPump>100</CompletedPump>
+
+    <OperatorLCID>3084</OperatorLCID>
+
+    <CustomerLCID>3084</CustomerLCID>
+
+    <OperatorCodepage>1252</OperatorCodepage>
+
+    <CustomerCodepage>1252</CustomerCodepage>
+
+    <OrderSystemId/>
+
+    <OrderReference/>
+
+    <MoreLoyaltyCardsAllowed>1</MoreLoyaltyCardsAllowed>
+
+    <NumPrintsInRevision>0</NumPrintsInRevision>
+
+    <ReverseTransactionChain>0</ReverseTransactionChain>
+
+    <NonMerchCreditTotal>0</NonMerchCreditTotal>
+
+    <BinaryDataChunkCount>1</BinaryDataChunkCount>
+
+    <InvoiceStatus>0</InvoiceStatus>
+
+    <ReceiptPrintCount>0</ReceiptPrintCount>
+
+  </Header>
+
+
+  <Detail>
+
+    <TranSequenceNumber>1</TranSequenceNumber>
+
+    <ItemNumber>1</ItemNumber>
+
+    <ParentItemNumber>0</ParentItemNumber>
+
+    <UpdateRevision>0</UpdateRevision>
+
+    <EventId>10109</EventId>
+
+    <SubEventId>1</SubEventId>
+
+    <ItemId>5070000022</ItemId>
+
+    <Modifier1Id>70000022</Modifier1Id>
+
+    <Modifier2Id>1</Modifier2Id>
+
+    <Modifier3Id>2</Modifier3Id>
+
+    <BarcodeLength>0</BarcodeLength>
+
+    <Barcode>0</Barcode>
+
+    <ItemMode>0</ItemMode>
+
+    <ItemMode2>0</ItemMode2>
+
+    <Version>0</Version>
+
+    <DeviceListId>1</DeviceListId>
+
+    <DeviceControl>0</DeviceControl>
+
+    <DescriptionId>0</DescriptionId>
+
+    <Description>Regular</Description>
+
+    <Quantity>12.5000</Quantity>
+
+    <ExtendedQuantity>12.5000</ExtendedQuantity>
+
+    <UnitPrice>40000</UnitPrice>
+
+    <ExtendedPrice>500000</ExtendedPrice>
+
+    <AccountableOwnerID>70000000003</AccountableOwnerID>
+
+    <TaxItemizerMask>0</TaxItemizerMask>
+
+    <TaxItemizerMaskBase>0</TaxItemizerMaskBase>
+
+    <DiscountItemizerMask>4</DiscountItemizerMask>
+
+    <SubItemCount>0</SubItemCount>
+
+    <SubItemPhysicalCount>0</SubItemPhysicalCount>
+
+    <SubCategory>75000000008</SubCategory>
+
+    <Status>0</Status>
+
+    <Location>0</Location>
+
+    <DiscountItemNumber>0</DiscountItemNumber>
+
+    <ComboId>0</ComboId>
+
+    <ComboSequence>0</ComboSequence>
+
+    <ComboItemType>0</ComboItemType>
+
+    <ComboParent>0</ComboParent>
+
+    <DiscountAmount>0</DiscountAmount>
+
+    <TenderTypeId>0</TenderTypeId>
+
+    <ItemType>7</ItemType>
+
+    <KdsRoutingNumber>0</KdsRoutingNumber>
+
+    <FlavorCount>0</FlavorCount>
+
+    <ReasonCodeId>0</ReasonCodeId>
+
+    <ClientId>0</ClientId>
+
+    <PromoId>0</PromoId>
+
+    <ExchangeRate>1.0000</ExchangeRate>
+
+    <TenderItemizerRank>0</TenderItemizerRank>
+
+    <LoyaltyPointAward>0.0000</LoyaltyPointAward>
+
+    <OriginalUnitPrice>40000</OriginalUnitPrice>
+
+    <ExternalId/>
+
+    <EntryMethod>0</EntryMethod>
+
+    <PackSize>0</PackSize>
+
+    <LoyaltyTranId>0</LoyaltyTranId>
+
+    <AddedByItemNumber>0</AddedByItemNumber>
+
+    <PumpNumber>3</PumpNumber>
+
+    <SaleType>4</SaleType>
+
+    <Hose>3</Hose>
+
+    <Tier>2</Tier>
+
+    <RelatedTransactionNumber>0</RelatedTransactionNumber>
+
+    <AuthorizedTime>2020-12-18T03:53:59.323</AuthorizedTime>
+
+    <AuthorizingStation>100</AuthorizingStation>
+
+    <AuthorizingCashier>0</AuthorizingCashier>
+
+    <InitialTranNumber>0</InitialTranNumber>
+
+    <QualifiedItemType>704</QualifiedItemType>
+
+    <RetailModifiedItemId>75000000195</RetailModifiedItemId>
+
+  </Detail>
+
+
+  <Detail>
+
+    <TranSequenceNumber>1</TranSequenceNumber>
+
+    <ItemNumber>2</ItemNumber>
+
+    <ParentItemNumber>0</ParentItemNumber>
+
+    <UpdateRevision>0</UpdateRevision>
+
+    <EventId>10118</EventId>
+
+    <SubEventId>0</SubEventId>
+
+    <ItemId>70000000357</ItemId>
+
+    <Modifier1Id>0</Modifier1Id>
+
+    <Modifier2Id>0</Modifier2Id>
+
+    <Modifier3Id>0</Modifier3Id>
+
+    <BarcodeLength>0</BarcodeLength>
+
+    <Barcode>0</Barcode>
+
+    <ItemMode>4503616981332480</ItemMode>
+
+    <ItemMode2>0</ItemMode2>
+
+    <Version>0</Version>
+
+    <DeviceListId>1</DeviceListId>
+
+    <DeviceControl>528640</DeviceControl>
+
+    <DescriptionId>0</DescriptionId>
+
+    <Description>Credit</Description>
+
+    <Quantity>1.0000</Quantity>
+
+    <ExtendedQuantity>0.0000</ExtendedQuantity>
+
+    <UnitPrice>-500000</UnitPrice>
+
+    <ExtendedPrice>-500000</ExtendedPrice>
+
+    <AccountableOwnerID>0</AccountableOwnerID>
+
+    <TaxItemizerMask>0</TaxItemizerMask>
+
+    <TaxItemizerMaskBase>0</TaxItemizerMaskBase>
+
+    <DiscountItemizerMask>0</DiscountItemizerMask>
+
+    <SubItemCount>0</SubItemCount>
+
+    <SubItemPhysicalCount>0</SubItemPhysicalCount>
+
+    <SubCategory>0</SubCategory>
+
+    <Status>0</Status>
+
+    <Location>0</Location>
+
+    <DiscountItemNumber>0</DiscountItemNumber>
+
+    <ComboId>0</ComboId>
+
+    <ComboSequence>0</ComboSequence>
+
+    <ComboItemType>0</ComboItemType>
+
+    <ComboParent>0</ComboParent>
+
+    <DiscountAmount>0</DiscountAmount>
+
+    <TenderTypeId>3</TenderTypeId>
+
+    <ItemType>6</ItemType>
+
+    <KdsRoutingNumber>0</KdsRoutingNumber>
+
+    <FlavorCount>0</FlavorCount>
+
+    <ReasonCodeId>0</ReasonCodeId>
+
+    <ClientId>0</ClientId>
+
+    <PromoId>0</PromoId>
+
+    <ExchangeRate>1.0000</ExchangeRate>
+
+    <TenderItemizerRank>0</TenderItemizerRank>
+
+    <LoyaltyPointAward>0.0000</LoyaltyPointAward>
+
+    <OriginalUnitPrice>0</OriginalUnitPrice>
+
+    <ExternalId/>
+
+    <EntryMethod>0</EntryMethod>
+
+    <PackSize>0</PackSize>
+
+    <LoyaltyTranId>0</LoyaltyTranId>
+
+    <AddedByItemNumber>0</AddedByItemNumber>
+
+    <PumpNumber>0</PumpNumber>
+
+    <SaleType>0</SaleType>
+
+    <Hose>0</Hose>
+
+    <Tier>0</Tier>
+
+    <RelatedTransactionNumber>0</RelatedTransactionNumber>
+
+    <AuthorizedTime>0000-00-00T00:00:00.000</AuthorizedTime>
+
+    <AuthorizingStation>0</AuthorizingStation>
+
+    <AuthorizingCashier>0</AuthorizingCashier>
+
+    <InitialTranNumber>0</InitialTranNumber>
+
+
+    <NVPs>
+
+      <NVP persist="true" type="1" name="OfflineApproval">0</NVP>
+
+      <NVP persist="true" type="4" name="RPOS.ExternalCardType"/>
+
+    </NVPs>
+
+    <QualifiedItemType>6</QualifiedItemType>
+
+  </Detail>
+
+
+  <Credit>
+
+    <TranSequenceNumber>1</TranSequenceNumber>
+
+    <ItemNumber>2</ItemNumber>
+
+    <CardType>1100</CardType>
+
+    <CardNumber>549983XXXXXX1121</CardNumber>
+
+    <CheckABANumber/>
+
+    <CheckSequenceNumber/>
+
+    <RSAPublicKeyId/>
+
+    <EncryptedCardNumber/>
+
+    <RSA3DESEncryptedKey/>
+
+    <EventType>CAPTURE</EventType>
+
+    <CardCategory>C</CardCategory>
+
+    <EntryMethod>ST</EntryMethod>
+
+    <CardDescription>MasterCard</CardDescription>
+
+    <CardShortDescription/>
+
+    <CardShorterDescription>MC</CardShorterDescription>
+
+    <TransactionTime>2020-12-18T03:53:54.000</TransactionTime>
+
+    <ChargeTo/>
+
+    <ExpDateMonth>12</ExpDateMonth>
+
+    <ExpDateYear>18</ExpDateYear>
+
+    <CustomerName/>
+
+    <EpsilonTranNumber>100004847</EpsilonTranNumber>
+
+    <BatchNumber>1</BatchNumber>
+
+    <BatchSequenceNumber>10</BatchSequenceNumber>
+
+    <ReferenceNumber>002012</ReferenceNumber>
+
+    <ApprovalCode>9 </ApprovalCode>
+
+    <Odometer/>
+
+    <DriverNumber/>
+
+    <VehicleNumber/>
+
+    <PurchaseOrderNumber/>
+
+    <AuthCaptureStatus>0</AuthCaptureStatus>
+
+    <CreditUpdateRevision>0</CreditUpdateRevision>
+
+    <InvoiceNumber/>
+
+    <HostTerminalId>123</HostTerminalId>
+
+    <Stan/>
+
+    <Access/>
+
+    <ShortDescript/>
+
+    <MOP/>
+
+    <CardDescript/>
+
+    <HostResponseCode>01</HostResponseCode>
+
+    <AlternateId/>
+
+  </Credit>
+
+</LHPersistentTran>

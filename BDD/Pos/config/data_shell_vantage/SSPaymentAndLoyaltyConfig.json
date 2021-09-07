@@ -1,0 +1,26 @@
+{
+    "AutoPrintEODReports":              false,
+    "EODPrinterDevice":                 "SetThisToDefaultPrinterName",
+    "EODPrinterFont":                   "Courier New",
+    "EODPrinterFontSize":               9.0,
+
+    "DCRadPipeName":                    "IFSF_EPS_SHELL_BAPIDC",
+    "SCRadPipeName":                    "SSPAYMENTANDLOYALTY",
+    "ResponseTimeoutMS":                180000,
+    "ReplyTimeoutMS":                   500,
+    "MessageEncoding":                  "JSON",
+    "LocationId":                       "STC000",
+    "StartupMsgRetryWaitMS":            60000,
+    "DefaultMinimumFuelPrice":          10,
+    "WidePrinterForReportsAvailable":   true,
+    "BarcodeScannerTypeName":           "BCScanner",
+    "MinCardTypeId":                    7000,
+    "MaxCardTypeId":                    7999,
+    "RSMWorkstationIds":                "RSM090|RSM091|RSM092|RSM093|RSM094|RSM095|RSM096|RSM097|RSM098|RSM099",
+    "RSMUserInputInterval":             8,
+    "RSMMaintenanceThreadTimeoutMS":    300000,
+    "RSMWaitingSessionLifetimeMS":      1800000,
+    "SecondaryPaymentSupport":          true,
+    "SecondaryLoyaltySupport":          false,
+    "SendPosManClientTestMessage":      false
+}

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>SC;unknown_ver;2018-02-07T09:55:35-05:00</Description>
+        <Version>10</Version>
+    </FileHeader>
+    <LogicalPrinters>
+        <record>
+            <LogicalDeviceId>101</LogicalDeviceId>
+            <LogicalDeviceName>001 Receipt Printer</LogicalDeviceName>
+            <Configuration>2456</Configuration>
+            <NormalReceiptPrintTypeGroupId>70000000014</NormalReceiptPrintTypeGroupId>
+            <CreditReceiptPrintTypeGroupId>0</CreditReceiptPrintTypeGroupId>
+            <CanceledReceiptPrintTypeGroupId>70000000016</CanceledReceiptPrintTypeGroupId>
+            <RefundedReceiptPrintTypeGroupId>70000000015</RefundedReceiptPrintTypeGroupId>
+            <TillTranReceiptPrintTypeGroupId>70000000013</TillTranReceiptPrintTypeGroupId>
+            <FuelOnlyReceiptPrintTypeGroupId>0</FuelOnlyReceiptPrintTypeGroupId>
+            <RemotePrinterFlag>0</RemotePrinterFlag>
+            <LoadBalancingPrinterGroupFlag>0</LoadBalancingPrinterGroupFlag>
+            <PrintJobTimeout>0</PrintJobTimeout>
+        </record>
+    </LogicalPrinters>
+    <PrinterRoutingRecs>
+        <record>
+            <TerminalDeviceRoutingId>1</TerminalDeviceRoutingId>
+            <DeviceListId>1</DeviceListId>
+            <DestinationId>1</DestinationId>
+            <LogicalDeviceId>101</LogicalDeviceId>
+        </record>
+    </PrinterRoutingRecs>
+    <LoadBalancingPrinterGroups />
+</RelayFile>

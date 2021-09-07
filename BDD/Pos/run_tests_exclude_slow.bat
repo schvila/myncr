@@ -1,0 +1,1 @@
+behave -v -D bdd_config=config.user.json --tags ~@slow

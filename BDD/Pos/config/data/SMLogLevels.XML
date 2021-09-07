@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<SMLogLevels>
+	<Node id="0">
+		<Module id="">
+			<Debug>1</Debug>
+			<Info>1</Info>
+			<Warning>1</Warning>
+			<Error>1</Error>
+		</Module>
+	</Node>
+</SMLogLevels>

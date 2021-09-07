@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelayFile>
+    <FileHeader>
+        <Description>SC;unknown_ver;2018-02-06T08:31:37-05:00</Description>
+        <Version>2</Version>
+    </FileHeader>
+    <MoneyOrderRecs>
+        <record>
+            <ItemId>990000000022</ItemId>
+            <Modifier1DefaultId>990000000006</Modifier1DefaultId>
+            <Modifier2DefaultId>0</Modifier2DefaultId>
+            <Modifier3DefaultId>0</Modifier3DefaultId>
+            <MaxFaceValue>1000000</MaxFaceValue>
+            <MoneyOrderFee>6900</MoneyOrderFee>
+            <RefundFee>7900</RefundFee>
+            <FeeItemId>0</FeeItemId>
+            <FeeModifier1DefaultId>0</FeeModifier1DefaultId>
+            <FeeModifier2DefaultId>0</FeeModifier2DefaultId>
+            <FeeModifier3DefaultId>0</FeeModifier3DefaultId>
+            <SerialNumberSource>2</SerialNumberSource>
+            <SerialMin>9</SerialMin>
+            <SerialMax>9</SerialMax>
+        </record>
+    </MoneyOrderRecs>
+</RelayFile>
